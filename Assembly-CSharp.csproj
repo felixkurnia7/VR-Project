@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnFromList.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRJoystick.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Z Axis -1\Drawer_Pull_Zopp.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\RotateObject.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\MoveWithVelocity.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\VibrateController.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnObject.cs" />
     <Compile Include="Assets\Extended Scripts\SceneTransitionManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetMaterialColor.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Scenes\Quitgame.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTimedInterval.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayAnimation.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\TeleportAreaWithFade.cs" />
@@ -84,8 +86,12 @@
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnButtonPress.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\TranslateObject.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleRay.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Closet\ClosetopencloseDoor.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\TableFlip\TableFlipR.cs" />
     <Compile Include="Assets\Samples\OpenAI Unity\0.2.0\Whisper\Whisper.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayVideo.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Windows\opencloseWindowApt.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Slide\BRGlassDoor.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnVelocity.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetParticleRate.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightColor.cs" />
@@ -99,7 +105,9 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleInterface.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ChangeMaterial.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\DisplayFPS.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Slide\opencloseSlide.cs" />
     <Compile Include="Assets\Extended Scripts\Closed_Captions.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\OvenOpen\OvenFlip.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleVisibility.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightIntensity.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\CreateTrail.cs" />
@@ -117,6 +125,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayQuickSound.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ConvertValueToHue.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\StickToObject.cs" />
+    <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\TableFlip\TableFlipL.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayContinuousSound.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\MatchRotation.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
@@ -137,12 +146,14 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Furniture\3d\Materials\Color Selection.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\_Course Library\Licenses.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Brick Project Studio\Apartment Kit\Scenes\BPS Apartment Kit.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
