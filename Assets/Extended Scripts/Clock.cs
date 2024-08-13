@@ -18,7 +18,7 @@ public class Clock : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(System.DateTime.Now.Hour + " " + System.DateTime.Now.Minute + " " + System.DateTime.Now.Second);
+        //Debug.Log(System.DateTime.Now.Hour + " " + System.DateTime.Now.Minute + " " + System.DateTime.Now.Second);
     }
 
     void UpdateClock()
