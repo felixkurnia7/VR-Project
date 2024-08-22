@@ -11,6 +11,7 @@ public class SpeechRecognition : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private int sampleSize;
 
     private AudioClip clip;
     private byte[] bytes;
@@ -50,6 +51,20 @@ public class SpeechRecognition : MonoBehaviour
         bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);
         recording = false;
         SendRecording();
+
+        // CHECK VOLUME
+        // Calculate the RMS (Root Mean Square) volume
+        float rms = 0f;
+        for (int i = 0; i < sampleSize; i++)
+        {
+            rms += samples[i] * samples[i];
+        }
+        rms = Mathf.Sqrt(rms / sampleSize);
+
+        // Convert RMS to decibels
+        float volume = 20f * Mathf.Log10(rms / 0.1f);  // The 0.1f is the reference value for silence
+
+        Debug.Log($"Volume: {volume:F2} dB");
     }
 
     private void SendRecording()

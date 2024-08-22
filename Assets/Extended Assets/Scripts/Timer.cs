@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour
 
             timespan = TimeSpan.FromSeconds(time);
 
-            timerText.text = String.Format("{0:D2}:{1:D2}:{2:D2}", timespan.Hours, timespan.Minutes, timespan.Seconds);
+            timerText.text = String.Format("{1:D2}:{2:D2}", timespan.Hours, timespan.Minutes, timespan.Seconds);
         }
     }
 
