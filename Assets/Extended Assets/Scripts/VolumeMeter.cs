@@ -9,7 +9,7 @@ public class VolumeMeter : MonoBehaviour
     public float volumeThreshold = 0.1f;  // Threshold to consider as "loud"
 
     private AudioSource audioSource;
-    private float[] samples;
+    [SerializeField] private float[] samples;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class VolumeMeter : MonoBehaviour
         {
             // Create an AudioSource component
             audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.clip = Microphone.Start(microphoneName, true, 1, AudioSettings.outputSampleRate);
+            audioSource.clip = Microphone.Start(null, false, 1, AudioSettings.outputSampleRate);
             audioSource.loop = true;
             audioSource.mute = true;  // We don't want to hear the microphone input
             samples = new float[sampleSize];

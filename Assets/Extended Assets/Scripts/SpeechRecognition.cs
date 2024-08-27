@@ -11,7 +11,7 @@ public class SpeechRecognition : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private int sampleSize;
+    //[SerializeField] private int sampleSize;
 
     private AudioClip clip;
     private byte[] bytes;
@@ -50,21 +50,23 @@ public class SpeechRecognition : MonoBehaviour
         clip.GetData(samples, 0);
         bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);
         recording = false;
+        File.WriteAllBytes(Application.dataPath + "/test.wav", bytes);
+
         SendRecording();
 
         // CHECK VOLUME
         // Calculate the RMS (Root Mean Square) volume
-        float rms = 0f;
-        for (int i = 0; i < sampleSize; i++)
-        {
-            rms += samples[i] * samples[i];
-        }
-        rms = Mathf.Sqrt(rms / sampleSize);
+        //float rms = 0f;
+        //for (int i = 0; i < sampleSize; i++)
+        //{
+        //    rms += samples[i] * samples[i];
+        //}
+        //rms = Mathf.Sqrt(rms / sampleSize);
 
-        // Convert RMS to decibels
-        float volume = 20f * Mathf.Log10(rms / 0.1f);  // The 0.1f is the reference value for silence
+        //// Convert RMS to decibels
+        //float volume = 20f * Mathf.Log10(rms / 0.1f);  // The 0.1f is the reference value for silence
 
-        Debug.Log($"Volume: {volume:F2} dB");
+        //Debug.Log($"Volume: {volume:F2} dB");
     }
 
     private void SendRecording()
@@ -73,6 +75,7 @@ public class SpeechRecognition : MonoBehaviour
         text.text = "Sending...";
         stopButton.interactable = false;
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
+            Debug.Log(response);
             text.color = Color.white;
             text.text = response;
             startButton.interactable = true;
@@ -85,30 +88,28 @@ public class SpeechRecognition : MonoBehaviour
 
     private byte[] EncodeAsWAV(float[] samples, int frequency, int channels)
     {
-        using (var memoryStream = new MemoryStream(44 + samples.Length * 2))
+        using var memoryStream = new MemoryStream(44 + samples.Length * 2);
+        using (BinaryWriter writer = new(memoryStream))
         {
-            using (var writer = new BinaryWriter(memoryStream))
-            {
-                writer.Write("RIFF".ToCharArray());
-                writer.Write(36 + samples.Length * 2);
-                writer.Write("WAVE".ToCharArray());
-                writer.Write("fmt ".ToCharArray());
-                writer.Write(16);
-                writer.Write((ushort)1);
-                writer.Write((ushort)channels);
-                writer.Write(frequency);
-                writer.Write(frequency * channels * 2);
-                writer.Write((ushort)(channels * 2));
-                writer.Write((ushort)16);
-                writer.Write("data".ToCharArray());
-                writer.Write(samples.Length * 2);
+            writer.Write("RIFF".ToCharArray());
+            writer.Write(36 + samples.Length * 2);
+            writer.Write("WAVE".ToCharArray());
+            writer.Write("fmt ".ToCharArray());
+            writer.Write(16);
+            writer.Write((ushort)1);
+            writer.Write((ushort)channels);
+            writer.Write(frequency);
+            writer.Write(frequency * channels * 2);
+            writer.Write((ushort)(channels * 2));
+            writer.Write((ushort)16);
+            writer.Write("data".ToCharArray());
+            writer.Write(samples.Length * 2);
 
-                foreach (var sample in samples)
-                {
-                    writer.Write((short)(sample * short.MaxValue));
-                }
+            foreach (var sample in samples)
+            {
+                writer.Write((short)(sample * short.MaxValue));
             }
-            return memoryStream.ToArray();
         }
+        return memoryStream.ToArray();
     }
 }
