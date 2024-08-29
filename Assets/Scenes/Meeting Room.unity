@@ -2784,7 +2784,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
@@ -8985,7 +8985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1383984664}
   isCountdown: 0
-  time: 0
+  time: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
   isRunning: 0
 --- !u!1 &1391459084
 GameObject:

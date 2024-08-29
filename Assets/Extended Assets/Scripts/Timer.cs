@@ -10,8 +10,10 @@ public class Timer : MonoBehaviour
     private TextMeshProUGUI timerText;
     [SerializeField]
     private bool isCountdown;
+    //[SerializeField]
+    //private float time;
     [SerializeField]
-    private float time;
+    private TimerValue time;
     [SerializeField]
     private bool isRunning;
 
@@ -20,7 +22,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isRunning = true;
+        isRunning = false;
     }
 
     // Update is called once per frame
@@ -29,17 +31,17 @@ public class Timer : MonoBehaviour
         if (isRunning)
         {
             if (isCountdown)
-                time -= Time.deltaTime;
+                time.value -= Time.deltaTime;
             else
-                time += Time.deltaTime;
+                time.value += Time.deltaTime;
 
-            if (isCountdown && time < 0)
+            if (isCountdown && time.value < 0)
             {
-                time = 0;
+                time.ResetTimer();
                 isRunning = false;
             }
 
-            timespan = TimeSpan.FromSeconds(time);
+            timespan = TimeSpan.FromSeconds(time.value);
 
             timerText.text = String.Format("{1:D2}:{2:D2}", timespan.Hours, timespan.Minutes, timespan.Seconds);
         }

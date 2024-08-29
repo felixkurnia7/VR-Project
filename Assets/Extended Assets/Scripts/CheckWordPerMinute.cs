@@ -1,111 +1,118 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
+using System;
+using TMPro;
 
 public class CheckWordPerMinute : MonoBehaviour
 {
-    //private const string ASR_API_URL = "YOUR_HUGGING_FACE_API_URL"; // Replace with your Hugging Face ASR API URL
-    //private const string ASR_API_KEY = "YOUR_HUGGING_FACE_API_KEY"; // Replace with your Hugging Face API Key
+    [SerializeField]
+    private SpeechRecognition speechRecognition;
+    [SerializeField]
+    private TextMeshProUGUI text;
+
+    public string apiUrl = "https://api-inference.huggingface.co/models/your-model"; // Replace with your model's URL
+    public string apiKey = "your-api-key"; // Replace with your Hugging Face API key
 
     private float speechStartTime;
     private float speechEndTime;
-    private bool isSpeaking = false;
     private int wordCount = 0;
+    private bool isSpeaking = false;
 
-    // Update is called once per frame
+    private void Awake()
+    {
+        speechRecognition.CheckWMP += CountWPM;
+    }
+
     void Update()
     {
-        // Example of detecting start and stop of speech (you need actual implementation)
-        if (IsUserSpeaking())
+        // Example check to start and stop speech recording
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            if (!isSpeaking)
-            {
-                isSpeaking = true;
-                speechStartTime = Time.time;
-            }
+            StartRecording();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            StopRecording();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        speechRecognition.CheckWMP -= CountWPM;
+    }
+
+    void CountWPM(string responseText, float time)
+    {
+        int newWordCount = CountWords(responseText);
+
+        // Update word count
+        wordCount += newWordCount;
+
+        // Calculate WPM
+        float durationInMinutes = time / 60f;
+        float wordsPerMinute = wordCount / durationInMinutes;
+
+        text.text = wordsPerMinute.ToString();
+    }
+
+    void StartRecording()
+    {
+        // Implement your speech recording logic here
+        // For example, start recording audio or send it to ASR
+        speechStartTime = Time.time;
+        isSpeaking = true;
+    }
+
+    void StopRecording()
+    {
+        // Implement your logic to stop recording and get transcription
+        // For example, stop recording audio or send the recorded audio to ASR
+        speechEndTime = Time.time;
+        isSpeaking = false;
+
+        // Simulate getting transcription result
+        StartCoroutine(GetTranscriptionResult());
+    }
+
+    IEnumerator GetTranscriptionResult()
+    {
+        // Simulate API request
+        using UnityWebRequest www = UnityWebRequest.Post(apiUrl, "");
+        www.SetRequestHeader("Authorization", "Bearer " + apiKey);
+        // Add audio file or parameters to the request here
+
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.Success)
+        {
+            // Parse the response to get transcription
+            string responseText = www.downloadHandler.text;
+            int newWordCount = CountWords(responseText);
+
+            // Update word count
+            wordCount += newWordCount;
+
+            // Calculate WPM
+            float durationInMinutes = (speechEndTime - speechStartTime) / 60f;
+            float wordsPerMinute = wordCount / durationInMinutes;
+
+            Debug.Log($"Words per minute: {wordsPerMinute}");
         }
         else
         {
-            if (isSpeaking)
-            {
-                isSpeaking = false;
-                speechEndTime = Time.time;
-                AnalyzeSpeechSegment();
-            }
+            Debug.LogError("Error: " + www.error);
         }
     }
 
-    private bool IsUserSpeaking()
-    {
-        // Implement your method to determine if the user is speaking
-        // For example, you might use a microphone input or ASR status
-        return false;
-    }
-
-    private void AnalyzeSpeechSegment()
-    {
-        if (speechEndTime > speechStartTime)
-        {
-            float durationInSeconds = speechEndTime - speechStartTime;
-            float wordsPerMinute = CalculateWPM(wordCount, durationInSeconds);
-
-            Debug.Log($"Speech Duration: {durationInSeconds} seconds");
-            Debug.Log($"Words Per Minute: {wordsPerMinute}");
-        }
-
-        // Reset for the next segment
-        wordCount = 0;
-        speechStartTime = 0;
-        speechEndTime = 0;
-    }
-
-    private float CalculateWPM(int wordCount, float durationInSeconds)
-    {
-        if (durationInSeconds <= 0)
-            return 0;
-
-        float durationInMinutes = durationInSeconds / 60f;
-        return wordCount / durationInMinutes;
-    }
-
-    // Example method to call the ASR API
-    //public IEnumerator GetTranscriptFromAudio(byte[] audioData)
-    //{
-    //    using (UnityWebRequest request = new UnityWebRequest(ASR_API_URL, "POST"))
-    //    {
-    //        request.uploadHandler = new UploadHandlerRaw(audioData);
-    //        request.downloadHandler = new DownloadHandlerBuffer();
-    //        request.SetRequestHeader("Authorization", $"Bearer {ASR_API_KEY}");
-    //        request.SetRequestHeader("Content-Type", "audio/wav"); // Adjust content type if needed
-
-    //        yield return request.SendWebRequest();
-
-    //        if (request.result == UnityWebRequest.Result.Success)
-    //        {
-    //            string responseText = request.downloadHandler.text;
-    //            string transcript = ExtractTranscriptFromResponse(responseText);
-    //            wordCount += CountWords(transcript);
-    //            Debug.Log($"Transcript: {transcript}");
-    //        }
-    //        else
-    //        {
-    //            Debug.LogError($"Error: {request.error}");
-    //        }
-    //    }
-    //}
-
-    //private string ExtractTranscriptFromResponse(string responseText)
-    //{
-    //    // Implement response parsing logic
-    //    // Example: Extracting transcript from JSON response
-    //    return Regex.Match(responseText, @"(?<=""text":")[^""]*").Value;
-    //}
-
-    private int CountWords(string text)
+    int CountWords(string text)
     {
         if (string.IsNullOrWhiteSpace(text))
             return 0;
 
-        return text.Split(new[] { ' ', '\r', '\n' }, System.StringSplitOptions.RemoveEmptyEntries).Length;
+        // Split text by whitespace and count the words
+        string[] words = text.Split(new[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+        return words.Length;
     }
 }

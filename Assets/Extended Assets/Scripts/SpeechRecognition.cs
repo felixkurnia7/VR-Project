@@ -5,12 +5,16 @@ using System.IO;
 using TMPro;
 using UnityEngine.UI;
 using HuggingFace.API;
+using System;
 
 public class SpeechRecognition : MonoBehaviour
 {
+    public Action<String, float> CheckWMP;
+
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TimerValue timer;
     //[SerializeField] private int sampleSize;
 
     private AudioClip clip;
@@ -54,19 +58,6 @@ public class SpeechRecognition : MonoBehaviour
 
         SendRecording();
 
-        // CHECK VOLUME
-        // Calculate the RMS (Root Mean Square) volume
-        //float rms = 0f;
-        //for (int i = 0; i < sampleSize; i++)
-        //{
-        //    rms += samples[i] * samples[i];
-        //}
-        //rms = Mathf.Sqrt(rms / sampleSize);
-
-        //// Convert RMS to decibels
-        //float volume = 20f * Mathf.Log10(rms / 0.1f);  // The 0.1f is the reference value for silence
-
-        //Debug.Log($"Volume: {volume:F2} dB");
     }
 
     private void SendRecording()
@@ -79,11 +70,13 @@ public class SpeechRecognition : MonoBehaviour
             text.color = Color.white;
             text.text = response;
             startButton.interactable = true;
+            CheckWMP?.Invoke(response, timer.value);
         }, error => {
             text.color = Color.red;
             text.text = error;
             startButton.interactable = true;
         });
+        timer.ResetTimer();
     }
 
     private byte[] EncodeAsWAV(float[] samples, int frequency, int channels)
