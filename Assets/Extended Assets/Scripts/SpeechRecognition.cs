@@ -14,7 +14,7 @@ public class SpeechRecognition : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private TimerValue timer;
+    [SerializeField] private FloatValue timer;
     //[SerializeField] private int sampleSize;
 
     private AudioClip clip;
@@ -70,13 +70,13 @@ public class SpeechRecognition : MonoBehaviour
             text.color = Color.white;
             text.text = response;
             startButton.interactable = true;
-            CheckWMP?.Invoke(response, timer.value);
+            //CheckWMP?.Invoke(response, timer.value);
         }, error => {
             text.color = Color.red;
             text.text = error;
             startButton.interactable = true;
         });
-        timer.ResetTimer();
+        //timer.ResetTimer();
     }
 
     private byte[] EncodeAsWAV(float[] samples, int frequency, int channels)

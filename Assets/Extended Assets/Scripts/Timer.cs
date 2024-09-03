@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     //[SerializeField]
     //private float time;
     [SerializeField]
-    private TimerValue time;
+    private FloatValue time;
     [SerializeField]
     private bool isRunning;
 
