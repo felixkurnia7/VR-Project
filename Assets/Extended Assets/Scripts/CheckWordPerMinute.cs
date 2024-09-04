@@ -11,31 +11,14 @@ public class CheckWordPerMinute : MonoBehaviour
     private SpeechRecognition speechRecognition;
     [SerializeField]
     private TextMeshProUGUI text;
-
-    public string apiUrl = "https://api-inference.huggingface.co/models/your-model"; // Replace with your model's URL
-    public string apiKey = "your-api-key"; // Replace with your Hugging Face API key
-
-    private float speechStartTime;
-    private float speechEndTime;
+    [SerializeField]
+    private FloatValue time;
     private int wordCount = 0;
-    private bool isSpeaking = false;
+    private float wordsPerMinute;
 
     private void Awake()
     {
         speechRecognition.CheckWMP += CountWPM;
-    }
-
-    void Update()
-    {
-        // Example check to start and stop speech recording
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StartRecording();
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            StopRecording();
-        }
     }
 
     private void OnDestroy()
@@ -43,67 +26,26 @@ public class CheckWordPerMinute : MonoBehaviour
         speechRecognition.CheckWMP -= CountWPM;
     }
 
-    void CountWPM(string responseText, float time)
+    void CountWPM(string responseText)
     {
         int newWordCount = CountWords(responseText);
-
+        Debug.Log(newWordCount);
         // Update word count
         wordCount += newWordCount;
+        Debug.Log(wordCount);
 
-        // Calculate WPM
-        float durationInMinutes = time / 60f;
-        float wordsPerMinute = wordCount / durationInMinutes;
-
-        text.text = wordsPerMinute.ToString();
-    }
-
-    void StartRecording()
-    {
-        // Implement your speech recording logic here
-        // For example, start recording audio or send it to ASR
-        speechStartTime = Time.time;
-        isSpeaking = true;
-    }
-
-    void StopRecording()
-    {
-        // Implement your logic to stop recording and get transcription
-        // For example, stop recording audio or send the recorded audio to ASR
-        speechEndTime = Time.time;
-        isSpeaking = false;
-
-        // Simulate getting transcription result
-        StartCoroutine(GetTranscriptionResult());
-    }
-
-    IEnumerator GetTranscriptionResult()
-    {
-        // Simulate API request
-        using UnityWebRequest www = UnityWebRequest.Post(apiUrl, "");
-        www.SetRequestHeader("Authorization", "Bearer " + apiKey);
-        // Add audio file or parameters to the request here
-
-        yield return www.SendWebRequest();
-
-        if (www.result == UnityWebRequest.Result.Success)
+        if (time.value < 60)
         {
-            // Parse the response to get transcription
-            string responseText = www.downloadHandler.text;
-            int newWordCount = CountWords(responseText);
-
-            // Update word count
-            wordCount += newWordCount;
-
-            // Calculate WPM
-            float durationInMinutes = (speechEndTime - speechStartTime) / 60f;
-            float wordsPerMinute = wordCount / durationInMinutes;
-
-            Debug.Log($"Words per minute: {wordsPerMinute}");
+            wordsPerMinute = wordCount;
         }
         else
         {
-            Debug.LogError("Error: " + www.error);
+            // Calculate WPM
+            float durationInMinutes = time.value / 60f; // Convert seconds to minutes
+            wordsPerMinute = wordCount / durationInMinutes;
         }
+
+        text.text = wordsPerMinute.ToString();
     }
 
     int CountWords(string text)

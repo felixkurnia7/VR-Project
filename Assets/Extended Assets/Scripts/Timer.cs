@@ -7,6 +7,8 @@ using System;
 public class Timer : MonoBehaviour
 {
     [SerializeField]
+    private SpeechRecognition speechRecognition;
+    [SerializeField]
     private TextMeshProUGUI timerText;
     [SerializeField]
     private bool isCountdown;
@@ -23,6 +25,14 @@ public class Timer : MonoBehaviour
     void Start()
     {
         isRunning = false;
+        speechRecognition.StartTimer += StartTimer;
+        speechRecognition.StopTimer += StopTimer;
+    }
+
+    private void OnDestroy()
+    {
+        speechRecognition.StartTimer -= StartTimer;
+        speechRecognition.StopTimer -= StopTimer;
     }
 
     // Update is called once per frame
@@ -49,6 +59,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
+        time.ResetTimer();
         isRunning = true;
     }
 
