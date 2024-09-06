@@ -7,7 +7,7 @@ public class FloatValue : ScriptableObject
 {
     public float value;
 
-    public void ResetTimer()
+    public void ResetValue()
     {
         value = 0f;
     }

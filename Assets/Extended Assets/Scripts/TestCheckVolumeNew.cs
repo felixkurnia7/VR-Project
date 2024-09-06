@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 using TMPro;
 using UnityEngine.UI;
 
-public class CheckVolumeSpeaking : MonoBehaviour
+public class TestCheckVolumeNew : MonoBehaviour
 {
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private FloatValue volume;
+    [SerializeField] private TextMeshProUGUI timerText;
     public string microphoneName; // The name of the microphone
     public int sampleRate = 44100; // Sample rate for the microphone
     public int bufferSize = 256; // Buffer size for audio samples
@@ -18,12 +18,14 @@ public class CheckVolumeSpeaking : MonoBehaviour
     private float[] audioSamples;
     private bool isMicrophoneAvailable;
     private bool isRecording;
+    private float recordingStartTime;
+    private float totalVolume;
+    private int volumeSampleCount;
 
     void Start()
     {
         if (Microphone.devices.Length > 0)
         {
-            // Use the first available microphone
             microphoneName = Microphone.devices[0];
             audioClip = Microphone.Start(microphoneName, true, 1, sampleRate);
             audioSamples = new float[bufferSize];
@@ -45,17 +47,23 @@ public class CheckVolumeSpeaking : MonoBehaviour
         {
             int micPosition = Microphone.GetPosition(microphoneName);
 
-            // Ensure that we are accessing valid data
             if (micPosition >= bufferSize)
             {
-                // Correct the offset to avoid negative values
                 int offset = (micPosition - bufferSize) % audioClip.samples;
-
-                // Get the audio data
                 audioClip.GetData(audioSamples, offset);
-                volume.value = CalculateVolume(audioSamples);
-                text.text = volume.ToString();
+                float currentVolume = CalculateVolume(audioSamples);
+
+                volume.value = currentVolume;
+                text.text = $"Current Volume: {volume}";
                 Debug.Log($"Volume: {volume}");
+
+                // Accumulate volume data
+                totalVolume += currentVolume;
+                volumeSampleCount++;
+
+                // Update the timer display
+                float elapsedTime = Time.time - recordingStartTime;
+                timerText.text = $"Time: {elapsedTime:F2} seconds";
             }
         }
     }
@@ -65,6 +73,9 @@ public class CheckVolumeSpeaking : MonoBehaviour
         startButton.interactable = false;
         stopButton.interactable = true;
         isRecording = true;
+        recordingStartTime = Time.time;
+        totalVolume = 0;
+        volumeSampleCount = 0;
     }
 
     void StopVolumeRecording()
@@ -72,6 +83,13 @@ public class CheckVolumeSpeaking : MonoBehaviour
         isRecording = false;
         startButton.interactable = true;
         stopButton.interactable = false;
+
+        if (volumeSampleCount > 0)
+        {
+            float averageVolume = totalVolume / volumeSampleCount;
+            text.text += $"\nAverage Volume: {averageVolume}";
+            Debug.Log($"Average Volume: {averageVolume}");
+        }
     }
 
     float CalculateVolume(float[] samples)

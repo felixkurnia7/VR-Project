@@ -13,7 +13,8 @@ public class CheckWordPerMinute : MonoBehaviour
     private TextMeshProUGUI text;
     [SerializeField]
     private FloatValue time;
-    private int wordCount = 0;
+    [SerializeField]
+    private IntValue WPM;
     private float wordsPerMinute;
 
     private void Awake()
@@ -28,21 +29,22 @@ public class CheckWordPerMinute : MonoBehaviour
 
     void CountWPM(string responseText)
     {
+        WPM.ResetValue(); ;
         int newWordCount = CountWords(responseText);
         Debug.Log(newWordCount);
         // Update word count
-        wordCount += newWordCount;
-        Debug.Log(wordCount);
+        WPM.value += newWordCount;
+        Debug.Log(WPM.value);
 
         if (time.value < 60)
         {
-            wordsPerMinute = wordCount;
+            wordsPerMinute = WPM.value;
         }
         else
         {
             // Calculate WPM
             float durationInMinutes = time.value / 60f; // Convert seconds to minutes
-            wordsPerMinute = wordCount / durationInMinutes;
+            wordsPerMinute = WPM.value / durationInMinutes;
         }
 
         text.text = wordsPerMinute.ToString();

@@ -7,7 +7,7 @@ public class IntValue : ScriptableObject
 {
     public int value;
 
-    public void ResetTimer()
+    public void ResetValue()
     {
         value = 0;
     }

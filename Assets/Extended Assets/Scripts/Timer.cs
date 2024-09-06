@@ -47,7 +47,7 @@ public class Timer : MonoBehaviour
 
             if (isCountdown && time.value < 0)
             {
-                time.ResetTimer();
+                time.ResetValue();
                 isRunning = false;
             }
 
@@ -59,7 +59,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        time.ResetTimer();
+        time.ResetValue();
         isRunning = true;
     }
 
