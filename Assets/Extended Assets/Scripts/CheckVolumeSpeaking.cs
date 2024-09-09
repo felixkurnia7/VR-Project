@@ -7,57 +7,39 @@ using UnityEngine.UI;
 
 public class CheckVolumeSpeaking : MonoBehaviour
 {
+    [SerializeField] private SpeechRecognition speechRecognition;
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private FloatValue volume;
+    [SerializeField] private TextMeshProUGUI timerText;
     public string microphoneName; // The name of the microphone
     public int sampleRate = 44100; // Sample rate for the microphone
     public int bufferSize = 256; // Buffer size for audio samples
-    private AudioClip audioClip;
-    private float[] audioSamples;
     private bool isMicrophoneAvailable;
     private bool isRecording;
+    private float recordingStartTime;
+    private float totalVolume;
+    private int volumeSampleCount;
 
     void Start()
     {
-        if (Microphone.devices.Length > 0)
-        {
-            // Use the first available microphone
-            microphoneName = Microphone.devices[0];
-            audioClip = Microphone.Start(microphoneName, true, 1, sampleRate);
-            audioSamples = new float[bufferSize];
-            isMicrophoneAvailable = true;
-        }
-        else
-        {
-            Debug.LogError("No microphone detected");
-            isMicrophoneAvailable = false;
-        }
-        startButton.onClick.AddListener(StartVolumeRecording);
-        stopButton.onClick.AddListener(StopVolumeRecording);
-        stopButton.interactable = false;
+        //speechRecognition.StartCheckVolume += StartVolumeRecording;
+        //speechRecognition.StopCheckVolume += StopVolumeRecording;
+
+        speechRecognition.CheckVolume += CheckVolume;
     }
 
     void Update()
     {
-        if (isMicrophoneAvailable && isRecording)
-        {
-            int micPosition = Microphone.GetPosition(microphoneName);
 
-            // Ensure that we are accessing valid data
-            if (micPosition >= bufferSize)
-            {
-                // Correct the offset to avoid negative values
-                int offset = (micPosition - bufferSize) % audioClip.samples;
+    }
 
-                // Get the audio data
-                audioClip.GetData(audioSamples, offset);
-                volume.value = CalculateVolume(audioSamples);
-                text.text = volume.ToString();
-                Debug.Log($"Volume: {volume}");
-            }
-        }
+    private void OnDestroy()
+    {
+        //speechRecognition.StartCheckVolume -= StartVolumeRecording;
+        //speechRecognition.StopCheckVolume -= StopVolumeRecording;
+        speechRecognition.CheckVolume -= CheckVolume;
     }
 
     void StartVolumeRecording()
@@ -65,6 +47,9 @@ public class CheckVolumeSpeaking : MonoBehaviour
         startButton.interactable = false;
         stopButton.interactable = true;
         isRecording = true;
+        recordingStartTime = Time.time;
+        totalVolume = 0;
+        volumeSampleCount = 0;
     }
 
     void StopVolumeRecording()
@@ -72,6 +57,26 @@ public class CheckVolumeSpeaking : MonoBehaviour
         isRecording = false;
         startButton.interactable = true;
         stopButton.interactable = false;
+
+        //if (volumeSampleCount > 0)
+        //{
+        //    float averageVolume = totalVolume / volumeSampleCount;
+        //    text.text += $"\nAverage Volume: {averageVolume}";
+        //    Debug.Log($"Average Volume: {averageVolume}");
+        //}
+    }
+
+    void CheckVolume(float[] samples)
+    {
+        float currentVolume = CalculateVolume(samples);
+
+        volume.value = currentVolume;
+        text.text = $"Current Volume: {volume.value}";
+        Debug.Log($"Volume: {volume.value}");
+
+        // Accumulate volume data
+        //totalVolume += currentVolume;
+        //volumeSampleCount++;
     }
 
     float CalculateVolume(float[] samples)
@@ -83,13 +88,5 @@ public class CheckVolumeSpeaking : MonoBehaviour
         }
         float rms = Mathf.Sqrt(sum / samples.Length); // Root Mean Square
         return rms * 1000.0f; // Scale for better visualization
-    }
-
-    void OnApplicationQuit()
-    {
-        if (isMicrophoneAvailable)
-        {
-            Microphone.End(microphoneName);
-        }
     }
 }

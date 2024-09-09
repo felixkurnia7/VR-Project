@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class TestCheckVolumeNew : MonoBehaviour
 {
+    [SerializeField] private SpeechRecognition speechRecognition;
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
@@ -24,10 +25,13 @@ public class TestCheckVolumeNew : MonoBehaviour
 
     void Start()
     {
+        //speechRecognition.StartCheckVolume += StartVolumeRecording;
+        //speechRecognition.StopCheckVolume += StopVolumeRecording;
+        speechRecognition.CheckVolume += CheckVolume;
         if (Microphone.devices.Length > 0)
         {
             microphoneName = Microphone.devices[0];
-            audioClip = Microphone.Start(microphoneName, true, 1, sampleRate);
+            audioClip = Microphone.Start(microphoneName, true, 20, sampleRate);
             audioSamples = new float[bufferSize];
             isMicrophoneAvailable = true;
         }
@@ -68,6 +72,13 @@ public class TestCheckVolumeNew : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        //speechRecognition.StartCheckVolume -= StartVolumeRecording;
+        //speechRecognition.StopCheckVolume -= StopVolumeRecording;
+        speechRecognition.CheckVolume -= CheckVolume;
+    }
+
     void StartVolumeRecording()
     {
         startButton.interactable = false;
@@ -92,6 +103,15 @@ public class TestCheckVolumeNew : MonoBehaviour
         }
     }
 
+    void CheckVolume(float[] samples)
+    {
+        float currentVolume = CalculateVolume(audioSamples);
+
+        volume.value = currentVolume;
+        text.text = $"Current Volume: {volume}";
+        Debug.Log($"Volume: {volume}");
+    }
+
     float CalculateVolume(float[] samples)
     {
         float sum = 0.0f;
@@ -101,13 +121,5 @@ public class TestCheckVolumeNew : MonoBehaviour
         }
         float rms = Mathf.Sqrt(sum / samples.Length); // Root Mean Square
         return rms * 1000.0f; // Scale for better visualization
-    }
-
-    void OnApplicationQuit()
-    {
-        if (isMicrophoneAvailable)
-        {
-            Microphone.End(microphoneName);
-        }
     }
 }

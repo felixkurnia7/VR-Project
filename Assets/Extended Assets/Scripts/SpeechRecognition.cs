@@ -13,15 +13,18 @@ public class SpeechRecognition : MonoBehaviour
     public Action<String> CheckWMP;
     public Action StartTimer;
     public Action StopTimer;
+    public Action<float[]> CheckVolume;
 
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private int bufferSize;
     //[SerializeField] private int sampleSize;
 
     private AudioClip clip;
     private byte[] bytes;
     private bool recording;
+    private float[] samples;
 
     private void Start()
     {
@@ -32,10 +35,14 @@ public class SpeechRecognition : MonoBehaviour
 
     private void Update()
     {
-        if (recording && Microphone.GetPosition(null) >= clip.samples)
-        {
-            StopRecording();
-        }
+        //if (recording && Microphone.GetPosition(null) >= clip.samples)
+        //{
+        //    StopRecording();
+        //}
+        //if (recording)
+        //{
+        //    CheckVolume(samples);
+        //}
     }
 
     private void StartRecording()
@@ -53,12 +60,13 @@ public class SpeechRecognition : MonoBehaviour
     {
         StopTimer?.Invoke();
         var position = Microphone.GetPosition(null);
+        int offset = (position - bufferSize) % clip.samples;
         Microphone.End(null);
-        var samples = new float[clip.samples * clip.channels];
+        samples = new float[clip.samples * clip.channels];
         //clip.GetData(samples, 0);
         try
         {
-            clip.GetData(samples, 0);
+            clip.GetData(samples, offset);
         }
         catch (Exception ex)
         {
@@ -66,6 +74,7 @@ public class SpeechRecognition : MonoBehaviour
         }
         //SaveWavFile(savePath, clip);
         bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);
+        CheckVolume(samples);
         recording = false;
         Debug.Log("Encoding...");
         File.WriteAllBytes(Application.dataPath + "/test.wav", bytes);
