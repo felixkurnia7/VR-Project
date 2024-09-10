@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class TeleportAreaWithFade : TeleportationArea
 {
-    private FadeCanvas fadeCanvas = null;
+    private FadeCanvas fadeCanvas;
 
     protected override void Awake()
     {
