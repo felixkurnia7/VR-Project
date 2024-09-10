@@ -2,25 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class EyeContact : MonoBehaviour
 {
+    [SerializeField]
+    private Camera mainCamera;
     [SerializeField]
     private float _distance;
     [SerializeField]
     private LayerMask npcLayer;
     [SerializeField]
     private bool isLookingAtNPC;
+    
     [SerializeField]
-    private int _eyeContactScore = 0;
-
-    float alpha;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float _eyeContactScore = 0;
 
     // Update is called once per frame
     void Update()
@@ -30,12 +26,16 @@ public class EyeContact : MonoBehaviour
 
     private void CheckEyeContact()
     {
-        isLookingAtNPC = Physics.Raycast(transform.position, transform.forward, _distance, npcLayer);
+        RaycastHit hit;
+        isLookingAtNPC = Physics.Raycast(mainCamera.gameObject.transform.position, mainCamera.gameObject.transform.forward, out hit, _distance, npcLayer);
 
-        if (isLookingAtNPC)
+        if (isLookingAtNPC && hit.collider.CompareTag("NPC"))
         {
             // Increment eye contact value
-            _eyeContactScore += 1;
+            _eyeContactScore += Time.deltaTime;
+            var NPC = hit.collider.gameObject.GetComponent<NPC_Movement>();
+            NPC.LookedAtNPC();
+            //LookAtNPC?.Invoke();
             // NPC animation changed
         }
     }
@@ -43,6 +43,6 @@ public class EyeContact : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = isLookingAtNPC ? Color.green : Color.red;
-        Gizmos.DrawRay(transform.position, transform.forward * _distance);
+        Gizmos.DrawRay(mainCamera.gameObject.transform.position, mainCamera.gameObject.transform.forward * _distance);
     }
 }

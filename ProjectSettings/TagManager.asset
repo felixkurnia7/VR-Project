@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flame
+  - NPC
   layers:
   - Default
   - TransparentFX

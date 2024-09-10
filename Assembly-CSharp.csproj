@@ -56,7 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Extended Assets\Scripts\CheckWordPerMinute.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\CheckWordPerMinute.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnFromList.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRJoystick.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Z Axis -1\Drawer_Pull_Zopp.cs" />
@@ -99,14 +99,14 @@
     <Compile Include="Assets\Resources\HuggingFaceAPI\Examples\Scripts\SpeechRecognitionExample.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Slide\BRGlassDoor.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnVelocity.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\Timer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetParticleRate.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightColor.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRSlider.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\Notes.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnPull.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\BallBounce.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\EyeContact.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\EyeContact.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\TeleportPlayer.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SO\FloatValue.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\VolumeMeter.cs" />
@@ -119,12 +119,12 @@
     <Compile Include="Assets\Extended Assets\Scripts\Closed_Captions.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\OvenOpen\OvenFlip.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleVisibility.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\CheckVolumeSpeaking.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\CheckVolumeSpeaking.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightIntensity.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\CreateTrail.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTilt.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleParticle.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\SpeechRecognition.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\SpeechRecognition.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\TeleportAnchorWithFade.cs" />
     <Compile Include="Assets\Resources\HuggingFaceAPI\Examples\Scripts\TextToImageExample.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlaySoundsFromList.cs" />
@@ -142,8 +142,10 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayContinuousSound.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\MatchRotation.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\CheckHandMovement.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\SO\NPC.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\NPC_Movement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
