@@ -3,7 +3,27 @@ guid: 3e86dd0661aef064096fe8e3a3b31e2b
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blk
+    second: {fileID: 2100000, guid: 2cde0a14a789aee439c91f25d49eb196, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_slat
+    second: {fileID: 2100000, guid: ad1fddeed65ec8c49a6d8f133ad28270, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: b758a3d654b34f8429f1d06a9d7ab814, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_bolt
+    second: {fileID: 2100000, guid: a0dbf3c7645fa8d429cf5f4a4d539b29, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
