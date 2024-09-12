@@ -19,12 +19,14 @@ public class SpeechRecognition : MonoBehaviour
     [SerializeField] private Button stopButton;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private int bufferSize;
+    [SerializeField] private StringValue textSO;
     //[SerializeField] private int sampleSize;
 
     private AudioClip clip;
     private byte[] bytes;
     private bool recording;
     private float[] samples;
+    private float recordingStartTime;
 
     private void Start()
     {
@@ -37,11 +39,35 @@ public class SpeechRecognition : MonoBehaviour
     {
         //if (recording && Microphone.GetPosition(null) >= clip.samples)
         //{
-        //    StopRecording();
+        //    Debug.Log("Iterasi");
         //}
         //if (recording)
         //{
         //    CheckVolume(samples);
+        //}
+        //if (recording)
+        //{
+        //    float elapsedTime = Time.time - recordingStartTime;
+        //    Debug.Log("Time: " + elapsedTime);
+        //    if (elapsedTime >= 10)
+        //    {
+        //        var position = Microphone.GetPosition(null);
+        //        int offset = (position - bufferSize) % clip.samples;
+        //        Microphone.End(null);
+        //        samples = new float[clip.samples * clip.channels];
+        //        //clip.GetData(samples, 0);
+        //        try
+        //        {
+        //            clip.GetData(samples, offset);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Debug.LogError($"Error getting audio data: {ex.Message}");
+        //        }
+        //        //SaveWavFile(savePath, clip);
+        //        bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);
+        //        SendToASR(bytes);
+        //    }
         //}
     }
 
@@ -51,8 +77,9 @@ public class SpeechRecognition : MonoBehaviour
         text.text = "Recording...";
         startButton.interactable = false;
         stopButton.interactable = true;
-        clip = Microphone.Start(null, true, 20, 44100);
+        clip = Microphone.Start(null, true, 10, 44100);
         recording = true;
+        recordingStartTime = Time.time;
         StartTimer?.Invoke();
     }
 
@@ -91,6 +118,7 @@ public class SpeechRecognition : MonoBehaviour
         stopButton.interactable = false;
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             Debug.Log(response);
+            //textSO.text += response;
             text.color = Color.white;
             text.text = response;
             startButton.interactable = true;
@@ -101,6 +129,22 @@ public class SpeechRecognition : MonoBehaviour
             startButton.interactable = true;
         });
     }
+
+    //private void SendToASR(byte[] bytes)
+    //{
+    //    HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
+    //        Debug.Log(response);
+    //        textSO.text += response;
+    //        text.color = Color.white;
+    //        text.text = response;
+    //        startButton.interactable = true;
+    //        CheckWMP?.Invoke(response);
+    //    }, error => {
+    //        text.color = Color.red;
+    //        text.text = error;
+    //        startButton.interactable = true;
+    //    });
+    //}
 
     private byte[] EncodeAsWAV(float[] samples, int frequency, int channels)
     {

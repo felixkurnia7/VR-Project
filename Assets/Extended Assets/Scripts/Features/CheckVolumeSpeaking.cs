@@ -69,10 +69,11 @@ public class CheckVolumeSpeaking : MonoBehaviour
     void CheckVolume(float[] samples)
     {
         float currentVolume = CalculateVolume(samples);
+        string volumeString = currentVolume.ToString("F2");
 
         volume.value = currentVolume;
-        text.text = $"Current Volume: {volume.value}";
-        Debug.Log($"Volume: {volume.value}");
+        text.text = $"Current Volume: " + volumeString;
+        Debug.Log($"Volume: " + volumeString);
 
         // Accumulate volume data
         //totalVolume += currentVolume;
