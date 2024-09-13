@@ -71,7 +71,7 @@ public class SpeechRecognition : MonoBehaviour
         //}
     }
 
-    private void StartRecording()
+    public void StartRecording()
     {
         text.color = Color.white;
         text.text = "Recording...";
@@ -83,7 +83,7 @@ public class SpeechRecognition : MonoBehaviour
         StartTimer?.Invoke();
     }
 
-    private void StopRecording()
+    public void StopRecording()
     {
         StopTimer?.Invoke();
         var position = Microphone.GetPosition(null);
