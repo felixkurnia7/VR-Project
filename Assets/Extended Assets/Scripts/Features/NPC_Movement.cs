@@ -13,7 +13,7 @@ public class NPC_Movement : MonoBehaviour
 
     private void Awake()
     {
-        npc.ResetNPC();
+        //ResetNPC();
     }
 
     // Update is called once per frame
@@ -26,5 +26,10 @@ public class NPC_Movement : MonoBehaviour
     public void LookedAtNPC()
     {
         npc.stare += Time.deltaTime;
+    }
+
+    public void ResetNPC()
+    {
+        npc.ResetNPC();
     }
 }
