@@ -6,9 +6,9 @@ using TMPro;
 public class CheckHandMovement : MonoBehaviour
 {
     [SerializeField]
-    private Transform leftHand;
+    private Transform leftHandController;
     [SerializeField]
-    private Transform rightHand;
+    private Transform rightHandController;
 
     [SerializeField]
     private float movementThreshold;
@@ -16,7 +16,10 @@ public class CheckHandMovement : MonoBehaviour
     private float stationaryTimeThreshold;
     [SerializeField]
     private float smoothFactor;
-
+    [SerializeField]
+    private Hand leftHand;
+    [SerializeField]
+    private Hand rightHand;
     [SerializeField]
     private TextMeshProUGUI leftHandText;
     [SerializeField]
@@ -31,8 +34,8 @@ public class CheckHandMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        prevLeftHandPosition = leftHand.position;
-        prevRightHandPosition = rightHand.position;
+        prevLeftHandPosition = leftHandController.position;
+        prevRightHandPosition = rightHandController.position;
         stationaryTime = 0.0f;
         smoothedLeftVelocity = 0.0f;
         smoothedRightVelocity = 0.0f;
@@ -41,12 +44,26 @@ public class CheckHandMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 curLeftHandPosition = leftHand.position;
-        Vector3 curRightHandPosition = rightHand.position;
+        Vector3 curLeftHandPosition = leftHandController.position;
+        Vector3 curRightHandPosition = rightHandController.position;
         float leftVelocity = (curLeftHandPosition - prevLeftHandPosition).magnitude / Time.deltaTime;
 
         float rightVelocity = (curRightHandPosition - prevRightHandPosition).magnitude / Time.deltaTime;
 
+        CheckHandMove(leftVelocity, rightVelocity);
+
+        prevLeftHandPosition = curLeftHandPosition;
+        prevRightHandPosition = curRightHandPosition;
+    }
+
+    public void ResetHandValue()
+    {
+        leftHand.ResetValue();
+        rightHand.ResetValue();
+    }
+
+    private void CheckHandMove(float leftVelocity, float rightVelocity)
+    {
         // Apply exponential moving average for smoothing
         smoothedLeftVelocity = smoothFactor * leftVelocity + (1 - smoothFactor) * smoothedLeftVelocity;
         smoothedRightVelocity = smoothFactor * rightVelocity + (1 - smoothFactor) * smoothedRightVelocity;
@@ -56,6 +73,7 @@ public class CheckHandMovement : MonoBehaviour
             stationaryTime = 0.0f;
             //Debug.Log("Left Hand is moving");
             leftHandText.text = "Moving";
+            leftHand.HandMoving();
         }
         else
         {
@@ -72,16 +90,14 @@ public class CheckHandMovement : MonoBehaviour
             stationaryTime = 0.0f;
             //Debug.Log("Right Hand is moving");
             rightHandText.text = "Moving";
+            rightHand.HandMoving();
         }
         else
         {
             stationaryTime += Time.deltaTime;
             if (stationaryTime >= stationaryTimeThreshold)
                 rightHandText.text = "";
-                //Debug.Log("Right Hand is stationary");
+            //Debug.Log("Right Hand is stationary");
         }
-
-        prevLeftHandPosition = curLeftHandPosition;
-        prevRightHandPosition = curRightHandPosition;
     }
 }

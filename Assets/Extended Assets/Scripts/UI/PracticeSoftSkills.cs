@@ -8,6 +8,10 @@ public class PracticeSoftSkills : MonoBehaviour
     [SerializeField]
     private GameObject speechRecognition;
     [SerializeField]
+    private GameObject speechRecognitionSystem;
+    [SerializeField]
+    private GameObject checkVolumeSystem;
+    [SerializeField]
     private GameObject welcomeSR;
     [SerializeField]
     private GameObject ASR;
@@ -22,6 +26,8 @@ public class PracticeSoftSkills : MonoBehaviour
     [SerializeField]
     private GameObject eyeContact;
     [SerializeField]
+    private GameObject eyeContactSystem;
+    [SerializeField]
     private GameObject welcomeEC;
     [SerializeField]
     private GameObject panelEC;
@@ -29,6 +35,8 @@ public class PracticeSoftSkills : MonoBehaviour
     [Header("HAND MOVEMENT")]
     [SerializeField]
     private GameObject handMovement;
+    [SerializeField]
+    private GameObject handMovementSystem;
     [SerializeField]
     private GameObject welcomeHM;
     [SerializeField]
@@ -50,6 +58,8 @@ public class PracticeSoftSkills : MonoBehaviour
         {
             case 1:
                 speechRecognition.SetActive(true);
+                speechRecognitionSystem.SetActive(true);
+                checkVolumeSystem.SetActive(true);
                 welcomeSR.SetActive(true);
                 ASR.SetActive(false);
                 WPM.SetActive(false);
@@ -57,10 +67,12 @@ public class PracticeSoftSkills : MonoBehaviour
                 timer.SetActive(false);
 
                 eyeContact.SetActive(false);
+                eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
 
                 handMovement.SetActive(false);
+                handMovementSystem.SetActive(false);
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
@@ -69,6 +81,8 @@ public class PracticeSoftSkills : MonoBehaviour
                 break;
             case 2:
                 speechRecognition.SetActive(false);
+                speechRecognitionSystem.SetActive(false);
+                checkVolumeSystem.SetActive(false);
                 welcomeSR.SetActive(false);
                 ASR.SetActive(false);
                 WPM.SetActive(false);
@@ -76,10 +90,12 @@ public class PracticeSoftSkills : MonoBehaviour
                 timer.SetActive(false);
 
                 eyeContact.SetActive(true);
+                eyeContactSystem.SetActive(true);
                 welcomeEC.SetActive(true);
                 panelEC.SetActive(false);
 
                 handMovement.SetActive(false);
+                handMovementSystem.SetActive(false);
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
@@ -88,6 +104,8 @@ public class PracticeSoftSkills : MonoBehaviour
                 break;
             case 3:
                 speechRecognition.SetActive(false);
+                speechRecognitionSystem.SetActive(false);
+                checkVolumeSystem.SetActive(false);
                 welcomeSR.SetActive(false);
                 ASR.SetActive(false);
                 WPM.SetActive(false);
@@ -95,10 +113,12 @@ public class PracticeSoftSkills : MonoBehaviour
                 timer.SetActive(false);
 
                 eyeContact.SetActive(false);
+                eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
 
                 handMovement.SetActive(true);
+                handMovementSystem.SetActive(true);
                 welcomeHM.SetActive(true);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
@@ -107,6 +127,8 @@ public class PracticeSoftSkills : MonoBehaviour
                 break;
             default:
                 speechRecognition.SetActive(false);
+                speechRecognitionSystem.SetActive(false);
+                checkVolumeSystem.SetActive(false);
                 welcomeSR.SetActive(false);
                 ASR.SetActive(false);
                 WPM.SetActive(false);
@@ -114,10 +136,12 @@ public class PracticeSoftSkills : MonoBehaviour
                 timer.SetActive(false);
 
                 eyeContact.SetActive(false);
+                eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
 
                 handMovement.SetActive(false);
+                handMovementSystem.SetActive(false);
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);

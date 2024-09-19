@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Create NPC", fileName = "NPC")]
+[CreateAssetMenu(menuName = "New Features/NPC", fileName = "Create New NPC")]
 public class NPC : ScriptableObject
 {
     public float stare;
