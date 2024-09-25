@@ -6,10 +6,13 @@ using UnityEngine;
 public class Hand : ScriptableObject
 {
     public float value;
+    public float movementThreshold = 10f;
+    public float score;
 
     public void ResetValue()
     {
         value = 0f;
+        score = 0f;
     }
 
     public void HandMoving()

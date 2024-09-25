@@ -128,6 +128,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\Closed_Captions.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\OvenOpen\OvenFlip.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleVisibility.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Training.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckVolumeSpeaking.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightIntensity.cs" />
     <Compile Include="Assets\Lets Make a VR Game\Oculus Hands\Scripts\AnimateHandOnInput.cs" />

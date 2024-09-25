@@ -21,6 +21,8 @@ public class CheckHandMovement : MonoBehaviour
     [SerializeField]
     private Hand rightHand;
     [SerializeField]
+    private FloatValue timer;
+    [SerializeField]
     private TextMeshProUGUI leftHandText;
     [SerializeField]
     private TextMeshProUGUI rightHandText;
@@ -30,6 +32,8 @@ public class CheckHandMovement : MonoBehaviour
     private float stationaryTime;
     private float smoothedLeftVelocity;
     private float smoothedRightVelocity;
+
+    private float totalScore;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +64,15 @@ public class CheckHandMovement : MonoBehaviour
     {
         leftHand.ResetValue();
         rightHand.ResetValue();
+    }
+    
+    // Apakah nilai hand movement itu dari per waktu atau per threshold value?
+    public void CountScore()
+    {
+        leftHand.score = (leftHand.value / timer.value) * 100f;
+        rightHand.score = (rightHand.value / timer.value) * 100f;
+
+        totalScore = leftHand.score + rightHand.score;
     }
 
     private void CheckHandMove(float leftVelocity, float rightVelocity)

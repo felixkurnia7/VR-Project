@@ -119,7 +119,7 @@ public class SpeechRecognition : MonoBehaviour
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             Debug.Log(response);
             //textSO.text += response;
-            textSO.text = response;
+            textSO.text += response;
             text.color = Color.white;
             text.text = textSO.text;
             startButton.interactable = true;

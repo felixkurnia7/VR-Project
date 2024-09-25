@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21b0bffcd7d291d41817f661729e6040
+guid: 96ee1159e3479c14e8ea21efcdbfc7a1
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
@@ -11,12 +11,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ch33_body
-    second: {fileID: 2100000, guid: 2b7aa34633023f54e98b57f9c894f540, type: 2}
+    second: {fileID: 2100000, guid: abaac79ac7070344a9989ea265364ef6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ch33_hair
-    second: {fileID: 2100000, guid: 3b3c633d427e67e4eb794e31cac6f439, type: 2}
+    second: {fileID: 2100000, guid: f9a7bb11a5a6cc64381e514e40f1e2cb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -510,13 +510,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Character_Edit2(Clone)
+    - name: Player(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Armature
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -550,8 +550,13 @@ ModelImporter:
       position: {x: 2.5781554e-12, y: 0.0694429, z: 0.01982481}
       rotation: {x: 0.0000000012103358, y: -1.1602645e-20, z: 2.4688953e-19, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: mixamorig7:Head_end
+    - name: mixamorig7:HeadTop_End
       parentName: mixamorig7:Head
+      position: {x: -1.7319576e-12, y: 0.22789596, z: 0.06506055}
+      rotation: {x: -5.376674e-24, y: -2.0684197e-20, z: 2.821665e-19, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mixamorig7:HeadTop_End_end
+      parentName: mixamorig7:HeadTop_End
       position: {x: -0, y: 0.23700088, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -915,77 +920,77 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Belt
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 0.000000004765962, y: -0.000000017285346, z: -5.9604927e-10}
       rotation: {x: 0.00000008146035, y: 3.469447e-18, z: 3.577867e-18, w: 1}
       scale: {x: 0.9999999, y: 1, z: 1}
     - name: Ch33_Tie
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: -0.0000000020861626, y: 0.00000007033348, z: -0.000000012814985}
       rotation: {x: 0.00000008146034, y: -1.6653345e-16, z: 3.2326095e-38, w: 1}
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: Ch33_Body
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Hair
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: -0.0000000020861626, y: 0.00000007033348, z: -0.000000012814985}
       rotation: {x: 0.00000008146034, y: -1.6653345e-16, z: 3.2326095e-38, w: 1}
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: Ch33_Shoes
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Suit
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 0.000000004765962, y: -0.000000017285346, z: -5.9604927e-10}
       rotation: {x: 0.00000008146035, y: 3.469447e-18, z: 3.577867e-18, w: 1}
       scale: {x: 0.9999999, y: 1, z: 1}
     - name: Ch33_Shirt
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 0.000000004765962, y: -0.000000017285346, z: -5.9604927e-10}
       rotation: {x: 0.00000008146035, y: 3.469447e-18, z: 3.577867e-18, w: 1}
       scale: {x: 0.9999999, y: 1, z: 1}
     - name: Ch33_Pants
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Eyelashes
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: -0.0000000020861626, y: 0.00000007033348, z: -0.000000012814985}
       rotation: {x: 0.00000008146034, y: -1.6653345e-16, z: 3.2326095e-38, w: 1}
       scale: {x: 0.9999999, y: 0.9999999, z: 1}
     - name: Ch33_Body.001
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Body.002
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Body.003
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Body.004
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Body.005
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Ch33_Body.006
-      parentName: Character_Edit2(Clone)
+      parentName: Player(Clone)
       position: {x: 1.8626449e-10, y: -1.4901087e-10, z: -0.0000000045448543}
       rotation: {x: 0.00000008146035, y: 1.479114e-31, z: -1.179612e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
