@@ -9,7 +9,7 @@ using System;
 
 public class SpeechRecognition : MonoBehaviour
 {
-    public string savePath = "microphone_recording.wav";
+    //public string savePath = "microphone_recording.wav";
     public Action<String> CheckWMP;
     public Action StartTimer;
     public Action StopTimer;
@@ -24,9 +24,9 @@ public class SpeechRecognition : MonoBehaviour
 
     private AudioClip clip;
     private byte[] bytes;
-    private bool recording;
+    //private bool recording;
     private float[] samples;
-    private float recordingStartTime;
+    //private float recordingStartTime;
 
     private void Start()
     {
@@ -78,8 +78,8 @@ public class SpeechRecognition : MonoBehaviour
         startButton.interactable = false;
         stopButton.interactable = true;
         clip = Microphone.Start(null, true, 10, 44100);
-        recording = true;
-        recordingStartTime = Time.time;
+        //recording = true;
+        //recordingStartTime = Time.time;
         StartTimer?.Invoke();
     }
 
@@ -102,7 +102,7 @@ public class SpeechRecognition : MonoBehaviour
         //SaveWavFile(savePath, clip);
         bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);
         CheckVolume(samples);
-        recording = false;
+        //recording = false;
         Debug.Log("Encoding...");
         File.WriteAllBytes(Application.dataPath + "/test.wav", bytes);
         

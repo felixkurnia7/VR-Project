@@ -40,6 +40,24 @@ public class Training : MonoBehaviour
     [SerializeField]
     private GameObject UI_handmovement;
 
+    [Header("Systems")]
+    [SerializeField]
+    private GameObject speechRecognition;
+    [SerializeField]
+    private GameObject eyeContactSystem;
+    [SerializeField]
+    private GameObject checkVolumeSystem;
+    [SerializeField]
+    private GameObject handMovementSystem;
+
+    private void Awake()
+    {
+        speechRecognition.SetActive(false);
+        eyeContactSystem.SetActive(false);
+        checkVolumeSystem.SetActive(false);
+        handMovementSystem.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +83,11 @@ public class Training : MonoBehaviour
         NPC5.ResetNPC();
         leftHand.ResetValue();
         rightHand.ResetValue();
+
+        speechRecognition.SetActive(true);
+        eyeContactSystem.SetActive(true);
+        checkVolumeSystem.SetActive(true);
+        handMovementSystem.SetActive(true);
     }
 
     public void StopTraining()
