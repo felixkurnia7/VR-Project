@@ -1713,7 +1713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fec1737448230a4d988b97f26c85592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savePath: microphone_recording.wav
   startButton: {fileID: 117258230}
   stopButton: {fileID: 1213770849}
   text: {fileID: 498169935}
@@ -6067,7 +6066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &457674732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16208,6 +16207,70 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1240348921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1247929498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1247929500}
+  - component: {fileID: 1247929499}
+  m_Layer: 0
+  m_Name: Training
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1247929499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247929498}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfc8b0131c7be74e867b523f68d8f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  WPM: {fileID: 0}
+  volume: {fileID: 0}
+  timer: {fileID: 0}
+  NPC1: {fileID: 0}
+  NPC2: {fileID: 0}
+  NPC3: {fileID: 0}
+  NPC4: {fileID: 0}
+  NPC5: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  UI_WPM: {fileID: 0}
+  UI_volume: {fileID: 0}
+  UI_timer: {fileID: 0}
+  UI_eyecontact: {fileID: 0}
+  UI_handmovement: {fileID: 0}
+  speechRecognition: {fileID: 0}
+  eyeContactSystem: {fileID: 0}
+  checkVolumeSystem: {fileID: 0}
+  handMovementSystem: {fileID: 0}
+--- !u!4 &1247929500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247929498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280293794
 GameObject:
   m_ObjectHideFlags: 0

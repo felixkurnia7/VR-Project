@@ -6454,7 +6454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011498757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20729,6 +20729,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8997159047594559837, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997159047594559837, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.095
+      objectReference: {fileID: 0}
     - target: {fileID: 8997159048017913588, guid: d8c131e77d063a04ca1009197d58c971,
         type: 3}
       propertyPath: m_Enabled
@@ -21286,6 +21296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997159048017913590, guid: d8c131e77d063a04ca1009197d58c971,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997159048017913590, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
       propertyPath: head.vrTarget
       value: 
       objectReference: {fileID: 1134581297}
@@ -21302,7 +21317,7 @@ PrefabInstance:
     - target: {fileID: 8997159048017913590, guid: d8c131e77d063a04ca1009197d58c971,
         type: 3}
       propertyPath: headBodyPositionOffset.y
-      value: -0.85
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 8997159048187470146, guid: d8c131e77d063a04ca1009197d58c971,
         type: 3}
@@ -21333,6 +21348,16 @@ PrefabInstance:
         type: 3}
       propertyPath: sideStepLength
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997159048644377088, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997159048644377088, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.095
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8c131e77d063a04ca1009197d58c971, type: 3}
