@@ -21,6 +21,8 @@ public class PracticeSoftSkills : MonoBehaviour
     private GameObject volumeSpeak;
     [SerializeField]
     private GameObject timer;
+    [SerializeField]
+    private OnButtonPress button;
 
     [Header("EYE CONTACT")]
     [SerializeField]
@@ -78,6 +80,8 @@ public class PracticeSoftSkills : MonoBehaviour
                 rightPanel.SetActive(false);
 
                 gameObject.SetActive(false);
+
+                button.enabled = false;
                 break;
             case 2:
                 speechRecognition.SetActive(false);

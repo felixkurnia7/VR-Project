@@ -9,7 +9,7 @@ using System;
 
 public class SpeechRecognition : MonoBehaviour
 {
-    //public string savePath = "microphone_recording.wav";
+    public string savePath = "microphone_recording.wav";
     public Action<String> CheckWMP;
     public Action StartTimer;
     public Action StopTimer;
@@ -20,13 +20,13 @@ public class SpeechRecognition : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private int bufferSize;
     [SerializeField] private StringValue textSO;
-    //[SerializeField] private int sampleSize;
+    [SerializeField] private int sampleSize;
 
     private AudioClip clip;
     private byte[] bytes;
-    //private bool recording;
+    private bool recording;
     private float[] samples;
-    //private float recordingStartTime;
+    private float recordingStartTime;
 
     private void Start()
     {
