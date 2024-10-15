@@ -22,7 +22,7 @@ public class PracticeSoftSkills : MonoBehaviour
     [SerializeField]
     private GameObject timer;
     [SerializeField]
-    private OnButtonPress button;
+    private GameObject secondaryButton;
 
     [Header("EYE CONTACT")]
     [SerializeField]
@@ -45,6 +45,8 @@ public class PracticeSoftSkills : MonoBehaviour
     private GameObject leftPanel;
     [SerializeField]
     private GameObject rightPanel;
+    [SerializeField]
+    private GameObject resetButton;
 
     private int index;
 
@@ -78,10 +80,11 @@ public class PracticeSoftSkills : MonoBehaviour
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
+                resetButton.SetActive(false);
 
                 gameObject.SetActive(false);
 
-                button.enabled = false;
+                secondaryButton.SetActive(true);
                 break;
             case 2:
                 speechRecognition.SetActive(false);
@@ -103,8 +106,11 @@ public class PracticeSoftSkills : MonoBehaviour
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
+                resetButton.SetActive(false);
 
                 gameObject.SetActive(false);
+
+                secondaryButton.SetActive(false);
                 break;
             case 3:
                 speechRecognition.SetActive(false);
@@ -126,8 +132,11 @@ public class PracticeSoftSkills : MonoBehaviour
                 welcomeHM.SetActive(true);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
+                resetButton.SetActive(false);
 
                 gameObject.SetActive(false);
+
+                secondaryButton.SetActive(false);
                 break;
             default:
                 speechRecognition.SetActive(false);
@@ -149,8 +158,11 @@ public class PracticeSoftSkills : MonoBehaviour
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
+                resetButton.SetActive(false);
 
                 gameObject.SetActive(false);
+
+                secondaryButton.SetActive(false);
                 break;
         }
     }

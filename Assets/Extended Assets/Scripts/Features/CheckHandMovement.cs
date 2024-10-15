@@ -38,6 +38,7 @@ public class CheckHandMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetHandValue();
         prevLeftHandPosition = leftHandController.position;
         prevRightHandPosition = rightHandController.position;
         stationaryTime = 0.0f;
@@ -58,6 +59,8 @@ public class CheckHandMovement : MonoBehaviour
 
         prevLeftHandPosition = curLeftHandPosition;
         prevRightHandPosition = curRightHandPosition;
+
+        CountScore();
     }
 
     public void ResetHandValue()
@@ -69,10 +72,18 @@ public class CheckHandMovement : MonoBehaviour
     // Apakah nilai hand movement itu dari per waktu atau per threshold value?
     public void CountScore()
     {
-        leftHand.score = (leftHand.value / timer.value) * 100f;
-        rightHand.score = (rightHand.value / timer.value) * 100f;
+        leftHand.score = (leftHand.value / leftHand.movementThreshold) * 100f;
+        rightHand.score = (rightHand.value / leftHand.movementThreshold) * 100f;
 
-        totalScore = leftHand.score + rightHand.score;
+        if (leftHand.score >= 100f)
+            leftHand.score = 100f;
+        if (rightHand.score >= 100f)
+            rightHand.score = 100f;
+
+        leftHandText.text = leftHand.score.ToString();
+        
+        rightHandText.text = rightHand.score.ToString();
+        totalScore = (leftHand.score + rightHand.score) / 2;
     }
 
     private void CheckHandMove(float leftVelocity, float rightVelocity)
@@ -85,7 +96,7 @@ public class CheckHandMovement : MonoBehaviour
         {
             stationaryTime = 0.0f;
             //Debug.Log("Left Hand is moving");
-            leftHandText.text = "Moving";
+            //leftHandText.text = "Moving";
             leftHand.HandMoving();
         }
         else
@@ -94,7 +105,7 @@ public class CheckHandMovement : MonoBehaviour
             if (stationaryTime >= stationaryTimeThreshold)
             {
                 //Debug.Log("Left Hand is stationary");
-                leftHandText.text = "";
+                //leftHandText.text = "";
             }
         }
 
@@ -102,14 +113,14 @@ public class CheckHandMovement : MonoBehaviour
         {
             stationaryTime = 0.0f;
             //Debug.Log("Right Hand is moving");
-            rightHandText.text = "Moving";
+            //rightHandText.text = "Moving";
             rightHand.HandMoving();
         }
         else
         {
             stationaryTime += Time.deltaTime;
-            if (stationaryTime >= stationaryTimeThreshold)
-                rightHandText.text = "";
+            //if (stationaryTime >= stationaryTimeThreshold)
+            //    rightHandText.text = "";
             //Debug.Log("Right Hand is stationary");
         }
     }
