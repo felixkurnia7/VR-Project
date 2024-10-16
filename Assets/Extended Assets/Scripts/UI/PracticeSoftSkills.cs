@@ -33,6 +33,8 @@ public class PracticeSoftSkills : MonoBehaviour
     private GameObject welcomeEC;
     [SerializeField]
     private GameObject panelEC;
+    [SerializeField]
+    private GameObject eyeContactUI;
 
     [Header("HAND MOVEMENT")]
     [SerializeField]
@@ -74,6 +76,7 @@ public class PracticeSoftSkills : MonoBehaviour
                 eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
+                eyeContactUI.SetActive(false);
 
                 handMovement.SetActive(false);
                 handMovementSystem.SetActive(false);
@@ -100,6 +103,7 @@ public class PracticeSoftSkills : MonoBehaviour
                 eyeContactSystem.SetActive(true);
                 welcomeEC.SetActive(true);
                 panelEC.SetActive(false);
+                eyeContactUI.SetActive(false);
 
                 handMovement.SetActive(false);
                 handMovementSystem.SetActive(false);
@@ -126,6 +130,7 @@ public class PracticeSoftSkills : MonoBehaviour
                 eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
+                eyeContactUI.SetActive(false);
 
                 handMovement.SetActive(true);
                 handMovementSystem.SetActive(true);
@@ -152,6 +157,7 @@ public class PracticeSoftSkills : MonoBehaviour
                 eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
+                eyeContactUI.SetActive(false);
 
                 handMovement.SetActive(false);
                 handMovementSystem.SetActive(false);

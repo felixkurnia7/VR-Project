@@ -132,6 +132,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckVolumeSpeaking.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightIntensity.cs" />
     <Compile Include="Assets\Lets Make a VR Game\Oculus Hands\Scripts\AnimateHandOnInput.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\UI\EyeContactUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\CreateTrail.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTilt.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SO\Hand.cs" />

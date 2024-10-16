@@ -10,17 +10,24 @@ public class NPC_Movement : MonoBehaviour
     private NPC npc;
     [SerializeField]
     private float eyeContactThreshold;
+    [SerializeField]
+    private bool eyeContactDone;
+    [SerializeField]
+    private EyeContactUI eyeContactUI;
 
     private void Awake()
     {
-        //ResetNPC();
+        ResetNPC();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (npc.stare >= eyeContactThreshold)
+        if (npc.stare >= eyeContactThreshold && !npc.eyeContactDone)
+        {
+            eyeContactUI.EyeContactFinish();
             npc.DoneEyeContact();
+        }
     }
 
     public void LookedAtNPC()
