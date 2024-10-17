@@ -6,7 +6,6 @@ using UnityEngine;
 public class NPC : ScriptableObject
 {
     public float stare;
-    public float eyeContactThreshold;
     public bool isStare;
     public bool eyeContactDone;
 

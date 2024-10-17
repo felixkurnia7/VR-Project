@@ -29,7 +29,17 @@ public class EyeContact : MonoBehaviour
         RaycastHit hit;
         isLookingAtNPC = Physics.Raycast(mainCamera.gameObject.transform.position, mainCamera.gameObject.transform.forward, out hit, _distance, npcLayer);
 
-        if (isLookingAtNPC && hit.collider.CompareTag("NPC"))
+        if (isLookingAtNPC && hit.collider.gameObject.GetComponent<Panel>())
+        {
+            // Increment eye contact value
+            _eyeContactScore += Time.deltaTime;
+            var NPC = hit.collider.gameObject.GetComponent<Panel>();
+            NPC.LookingAtPanel();
+            //LookAtNPC?.Invoke();
+            // NPC animation changed
+        }
+
+        if (isLookingAtNPC && hit.collider.gameObject.GetComponent<NPC_Movement>())
         {
             // Increment eye contact value
             _eyeContactScore += Time.deltaTime;

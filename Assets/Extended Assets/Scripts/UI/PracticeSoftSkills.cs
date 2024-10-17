@@ -23,6 +23,8 @@ public class PracticeSoftSkills : MonoBehaviour
     private GameObject timer;
     [SerializeField]
     private GameObject secondaryButton;
+    [SerializeField]
+    private GameObject resetSpeechRecognition;
 
     [Header("EYE CONTACT")]
     [SerializeField]
@@ -35,6 +37,8 @@ public class PracticeSoftSkills : MonoBehaviour
     private GameObject panelEC;
     [SerializeField]
     private GameObject eyeContactUI;
+    [SerializeField]
+    private GameObject resetEyeContact;
 
     [Header("HAND MOVEMENT")]
     [SerializeField]
@@ -48,7 +52,7 @@ public class PracticeSoftSkills : MonoBehaviour
     [SerializeField]
     private GameObject rightPanel;
     [SerializeField]
-    private GameObject resetButton;
+    private GameObject resetHandMovement;
 
     private int index;
 
@@ -71,19 +75,21 @@ public class PracticeSoftSkills : MonoBehaviour
                 WPM.SetActive(false);
                 volumeSpeak.SetActive(false);
                 timer.SetActive(false);
+                resetSpeechRecognition.SetActive(false);
 
                 eyeContact.SetActive(false);
                 eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
                 eyeContactUI.SetActive(false);
+                resetEyeContact.SetActive(false);
 
                 handMovement.SetActive(false);
                 handMovementSystem.SetActive(false);
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
-                resetButton.SetActive(false);
+                resetHandMovement.SetActive(false);
 
                 gameObject.SetActive(false);
 
@@ -98,19 +104,21 @@ public class PracticeSoftSkills : MonoBehaviour
                 WPM.SetActive(false);
                 volumeSpeak.SetActive(false);
                 timer.SetActive(false);
+                resetSpeechRecognition.SetActive(false);
 
                 eyeContact.SetActive(true);
                 eyeContactSystem.SetActive(true);
                 welcomeEC.SetActive(true);
                 panelEC.SetActive(false);
                 eyeContactUI.SetActive(false);
+                resetEyeContact.SetActive(false);
 
                 handMovement.SetActive(false);
                 handMovementSystem.SetActive(false);
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
-                resetButton.SetActive(false);
+                resetHandMovement.SetActive(false);
 
                 gameObject.SetActive(false);
 
@@ -125,19 +133,21 @@ public class PracticeSoftSkills : MonoBehaviour
                 WPM.SetActive(false);
                 volumeSpeak.SetActive(false);
                 timer.SetActive(false);
+                resetSpeechRecognition.SetActive(false);
 
                 eyeContact.SetActive(false);
                 eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
                 eyeContactUI.SetActive(false);
+                resetEyeContact.SetActive(false);
 
                 handMovement.SetActive(true);
                 handMovementSystem.SetActive(true);
                 welcomeHM.SetActive(true);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
-                resetButton.SetActive(false);
+                resetHandMovement.SetActive(false);
 
                 gameObject.SetActive(false);
 
@@ -152,19 +162,21 @@ public class PracticeSoftSkills : MonoBehaviour
                 WPM.SetActive(false);
                 volumeSpeak.SetActive(false);
                 timer.SetActive(false);
+                resetSpeechRecognition.SetActive(false);
 
                 eyeContact.SetActive(false);
                 eyeContactSystem.SetActive(false);
                 welcomeEC.SetActive(false);
                 panelEC.SetActive(false);
                 eyeContactUI.SetActive(false);
+                resetEyeContact.SetActive(false);
 
                 handMovement.SetActive(false);
                 handMovementSystem.SetActive(false);
                 welcomeHM.SetActive(false);
                 leftPanel.SetActive(false);
                 rightPanel.SetActive(false);
-                resetButton.SetActive(false);
+                resetHandMovement.SetActive(false);
 
                 gameObject.SetActive(false);
 
