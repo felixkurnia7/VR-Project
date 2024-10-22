@@ -6,9 +6,17 @@ using UnityEngine;
 public class StringValue : ScriptableObject
 {
     public string text;
+    public List<string> fillerWords = new();
+    public int totalFillerWords;
 
     public void ResetText()
     {
         text = "";
+        fillerWords.Clear();
+    }
+
+    public void CountFillerWords()
+    {
+        totalFillerWords = fillerWords.Count;
     }
 }

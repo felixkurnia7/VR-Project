@@ -68,6 +68,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\Clock.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnCollision.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnJoystickMove.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Panel.cs" />
     <Compile Include="Assets\Extended Assets\TestASR.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\FadeCanvasOnOverlap.cs" />
     <Compile Include="Assets\VR Body\IKTargetFollowVRRig.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\UI\PracticeSoftSkills.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Scenes\Quitgame.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTimedInterval.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\FadeOutPanel.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayAnimation.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\TeleportAreaWithFade.cs" />
     <Compile Include="Assets\VR Body\IKFootSolver.cs" />
@@ -160,8 +162,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Panel.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Features\FadeOutPanel.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\FillerWordDetector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
