@@ -10,9 +10,7 @@ public class CheckVolumeSpeaking : MonoBehaviour
     [SerializeField] private SpeechRecognition speechRecognition;
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
-    [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private FloatValue volume;
-    [SerializeField] private TextMeshProUGUI timerText;
     public string microphoneName; // The name of the microphone
     public int sampleRate = 44100; // Sample rate for the microphone
     public int bufferSize = 256; // Buffer size for audio samples
@@ -26,13 +24,8 @@ public class CheckVolumeSpeaking : MonoBehaviour
     {
         //speechRecognition.StartCheckVolume += StartVolumeRecording;
         //speechRecognition.StopCheckVolume += StopVolumeRecording;
-
+        ResetVolumeSpeaking();
         speechRecognition.CheckVolume += CheckVolume;
-    }
-
-    void Update()
-    {
-
     }
 
     private void OnDestroy()
@@ -42,38 +35,16 @@ public class CheckVolumeSpeaking : MonoBehaviour
         speechRecognition.CheckVolume -= CheckVolume;
     }
 
-    void StartVolumeRecording()
+    private void ResetVolumeSpeaking()
     {
-        startButton.interactable = false;
-        stopButton.interactable = true;
-        isRecording = true;
-        recordingStartTime = Time.time;
-        totalVolume = 0;
-        volumeSampleCount = 0;
-    }
-
-    void StopVolumeRecording()
-    {
-        isRecording = false;
-        startButton.interactable = true;
-        stopButton.interactable = false;
-
-        //if (volumeSampleCount > 0)
-        //{
-        //    float averageVolume = totalVolume / volumeSampleCount;
-        //    text.text += $"\nAverage Volume: {averageVolume}";
-        //    Debug.Log($"Average Volume: {averageVolume}");
-        //}
+        volume.ResetValue();
     }
 
     void CheckVolume(float[] samples)
     {
         float currentVolume = CalculateVolume(samples);
-        string volumeString = currentVolume.ToString("F2");
 
         volume.value = currentVolume;
-        text.text = $"Current Volume: " + volumeString;
-        Debug.Log($"Volume: " + volumeString);
 
         // Accumulate volume data
         //totalVolume += currentVolume;

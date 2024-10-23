@@ -10,14 +10,14 @@ using System;
 public class SpeechRecognition : MonoBehaviour
 {
     public string savePath = "microphone_recording.wav";
-    public Action<String> CheckWMP;
+    public Action<string> CheckWMP;
     public Action StartTimer;
     public Action StopTimer;
     public Action<float[]> CheckVolume;
 
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
-    [SerializeField] private TextMeshProUGUI text;
+//[SerializeField] private TextMeshProUGUI text;
     [SerializeField] private int bufferSize;
     [SerializeField] private StringValue textSO;
     [SerializeField] private int sampleSize;
@@ -30,6 +30,7 @@ public class SpeechRecognition : MonoBehaviour
 
     private void Start()
     {
+        ResetText();
         startButton.onClick.AddListener(StartRecording);
         stopButton.onClick.AddListener(StopRecording);
         stopButton.interactable = false;
@@ -71,10 +72,15 @@ public class SpeechRecognition : MonoBehaviour
         //}
     }
 
+    private void ResetText()
+    {
+        textSO.ResetText();
+    }
+
     public void StartRecording()
     {
-        text.color = Color.white;
-        text.text = "Recording...";
+        //text.color = Color.white;
+        //text.text = "Recording...";
         startButton.interactable = false;
         stopButton.interactable = true;
         clip = Microphone.Start(null, true, 10, 44100);
@@ -113,27 +119,20 @@ public class SpeechRecognition : MonoBehaviour
 
     private void SendRecording()
     {
-        text.color = Color.yellow;
-        text.text = "Sending...";
+        //text.color = Color.yellow;
         stopButton.interactable = false;
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             Debug.Log(response);
             //textSO.text += response;
             textSO.text += " " + response;
-            text.color = Color.white;
-            text.text = textSO.text;
+            //text.color = Color.white;
+            //text.text = textSO.text;
             startButton.interactable = true;
             CheckWMP?.Invoke(response);
         }, error => {
-            text.color = Color.red;
-            text.text = error;
+            Debug.Log(error);
             startButton.interactable = true;
         });
-    }
-
-    public void ResetText()
-    {
-        textSO.ResetText();
     }
 
     //private void SendToASR(byte[] bytes)

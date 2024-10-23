@@ -22,10 +22,6 @@ public class CheckHandMovement : MonoBehaviour
     private Hand rightHand;
     [SerializeField]
     private FloatValue timer;
-    [SerializeField]
-    private TextMeshProUGUI leftHandText;
-    [SerializeField]
-    private TextMeshProUGUI rightHandText;
 
     private Vector3 prevLeftHandPosition;
     private Vector3 prevRightHandPosition;
@@ -80,9 +76,6 @@ public class CheckHandMovement : MonoBehaviour
         if (rightHand.score >= 100f)
             rightHand.score = 100f;
 
-        leftHandText.text = leftHand.score.ToString();
-        
-        rightHandText.text = rightHand.score.ToString();
         totalScore = (leftHand.score + rightHand.score) / 2;
     }
 

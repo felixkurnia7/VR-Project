@@ -6,11 +6,13 @@ public class PracticeSoftSkills : MonoBehaviour
 {
     [Header("SPEECH RECOGNITION")]
     [SerializeField]
-    private GameObject speechRecognition;
+    private GameObject speechRecognitionUI;
     [SerializeField]
     private GameObject speechRecognitionSystem;
     [SerializeField]
     private GameObject checkVolumeSystem;
+    [SerializeField]
+    private GameObject CheckWPMSystem;
     [SerializeField]
     private GameObject welcomeSR;
     [SerializeField]
@@ -67,9 +69,10 @@ public class PracticeSoftSkills : MonoBehaviour
         switch(index)
         {
             case 1:
-                speechRecognition.SetActive(true);
+                speechRecognitionUI.SetActive(true);
                 speechRecognitionSystem.SetActive(true);
                 checkVolumeSystem.SetActive(true);
+                CheckWPMSystem.SetActive(true);
                 welcomeSR.SetActive(true);
                 ASR.SetActive(false);
                 WPM.SetActive(false);
@@ -96,9 +99,10 @@ public class PracticeSoftSkills : MonoBehaviour
                 secondaryButton.SetActive(true);
                 break;
             case 2:
-                speechRecognition.SetActive(false);
+                speechRecognitionUI.SetActive(false);
                 speechRecognitionSystem.SetActive(false);
                 checkVolumeSystem.SetActive(false);
+                CheckWPMSystem.SetActive(false);
                 welcomeSR.SetActive(false);
                 ASR.SetActive(false);
                 WPM.SetActive(false);
@@ -125,9 +129,10 @@ public class PracticeSoftSkills : MonoBehaviour
                 secondaryButton.SetActive(false);
                 break;
             case 3:
-                speechRecognition.SetActive(false);
+                speechRecognitionUI.SetActive(false);
                 speechRecognitionSystem.SetActive(false);
                 checkVolumeSystem.SetActive(false);
+                CheckWPMSystem.SetActive(false);
                 welcomeSR.SetActive(false);
                 ASR.SetActive(false);
                 WPM.SetActive(false);
@@ -154,9 +159,10 @@ public class PracticeSoftSkills : MonoBehaviour
                 secondaryButton.SetActive(false);
                 break;
             default:
-                speechRecognition.SetActive(false);
+                speechRecognitionUI.SetActive(false);
                 speechRecognitionSystem.SetActive(false);
                 checkVolumeSystem.SetActive(false);
+                CheckWPMSystem.SetActive(false);
                 welcomeSR.SetActive(false);
                 ASR.SetActive(false);
                 WPM.SetActive(false);

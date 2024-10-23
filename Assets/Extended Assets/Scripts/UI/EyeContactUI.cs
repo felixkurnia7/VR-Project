@@ -6,7 +6,9 @@ using TMPro;
 public class EyeContactUI : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI eyeContactText;
+    private TextMeshProUGUI eyeContactTextPractice;
+    [SerializeField]
+    private TextMeshProUGUI eyeContactTextResult;
 
     public int total;
 
@@ -14,12 +16,15 @@ public class EyeContactUI : MonoBehaviour
     void Update()
     {
         CheckEyeContactUI();
-
     }
 
     private void CheckEyeContactUI()
     {
-        eyeContactText.text = total.ToString();
+        if (eyeContactTextPractice != null)
+            eyeContactTextPractice.text = total.ToString();
+
+        if (eyeContactTextResult != null)
+            eyeContactTextResult.text = total.ToString();
     }
 
     public void EyeContactFinish()
