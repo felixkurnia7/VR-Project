@@ -155,9 +155,11 @@
     <Compile Include="Assets\Extended Assets\Scripts\VolumeMeterWithClip.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRKnob.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\FillerWordDetector.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\UI\VolumeUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayQuickSound.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ConvertValueToHue.cs" />
     <Compile Include="Assets\Lets Make a VR Game\UI 3D Examples\UI_3D\Scripts\XRGripButton.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\UI\HandMovementUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\StickToObject.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\TableFlip\TableFlipL.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayContinuousSound.cs" />
@@ -165,8 +167,6 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\UI\VolumeUI.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\UI\HandMovementUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

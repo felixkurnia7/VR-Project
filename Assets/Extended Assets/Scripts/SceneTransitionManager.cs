@@ -22,14 +22,22 @@ public class SceneTransitionManager : MonoBehaviour
 
     [SerializeField]
     private FadeCanvas _fade;
+    private float alpha = 0.0f;
+    [SerializeField]
+    private CanvasGroup canvasGroup = null;
 
-    public void GoToSceneAsync(string sceneName)
+    public void MainMenuGoToSceneAsync(string sceneName)
     {
         menuScreen.SetActive(false);
         communicationScreen.SetActive(false);
         leadershipsScreen.SetActive(false);
         LoadingScreen.SetActive(true);
 
+        StartCoroutine(GoToSceneAsyncRoutineSlider(sceneName));
+    }
+
+    public void GoToSceneAsync(string sceneName)
+    {
         StartCoroutine(GoToSceneAsyncRoutine(sceneName));
     }
 
@@ -38,7 +46,7 @@ public class SceneTransitionManager : MonoBehaviour
     //    StartCoroutine(GoToLoadingSceneRoutine(sceneToGo));
     //}
 
-    IEnumerator GoToSceneAsyncRoutine(string sceneName)
+    IEnumerator GoToSceneAsyncRoutineSlider(string sceneName)
     {
         _fade.StartFadeIn();
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
@@ -54,15 +62,34 @@ public class SceneTransitionManager : MonoBehaviour
 
     }
 
-    //IEnumerator GoToLoadingSceneRoutine(string sceneToGo)
-    //{
-    //    _loading.sceneToGo = sceneToGo;
+    IEnumerator GoToSceneAsyncRoutine(string sceneToGo)
+    {
+        StartCoroutine(FadeIn(3f));
+        
+        while (alpha <= 1)
+        {
+            Debug.Log(alpha);
+            yield return null;
+        }
 
-    //    AsyncOperation operation = SceneManager.LoadSceneAsync("Loading");
+        SceneManager.LoadSceneAsync(sceneToGo);
+    }
 
-    //    while (!operation.isDone)
-    //    {
-    //        yield return null;
-    //    }
-    //}
+    private IEnumerator FadeIn(float duration)
+    {
+        float elapsedTime = 0.0f;
+
+        while (alpha <= 1.0f)
+        {
+            SetAlpha(elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private void SetAlpha(float value)
+    {
+        alpha = value;
+        canvasGroup.alpha = alpha;
+    }
 }
