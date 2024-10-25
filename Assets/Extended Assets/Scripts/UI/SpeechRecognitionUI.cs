@@ -11,6 +11,8 @@ public class SpeechRecognitionUI : MonoBehaviour
     private TextMeshProUGUI textPractice;
     [SerializeField]
     private TextMeshProUGUI textResult;
+    [SerializeField]
+    private TextMeshProUGUI fillerWord;
 
     // Update is called once per frame
     void Update()
@@ -25,6 +27,9 @@ public class SpeechRecognitionUI : MonoBehaviour
 
         if (textResult != null)
             textResult.text = textSpeechRecognition.text;
+
+        if (fillerWord != null)
+            fillerWord.text = textSpeechRecognition.totalFillerWords.ToString();
     }
 
     public void ResetText()

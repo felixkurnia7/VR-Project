@@ -29,7 +29,7 @@ public class CheckHandMovement : MonoBehaviour
     private float smoothedLeftVelocity;
     private float smoothedRightVelocity;
 
-    private float totalScore;
+    public float totalScore;
 
     // Start is called before the first frame update
     void Start()

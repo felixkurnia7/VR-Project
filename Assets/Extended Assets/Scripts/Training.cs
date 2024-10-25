@@ -8,7 +8,7 @@ public class Training : MonoBehaviour
     [SerializeField]
     private StringValue text;
     [SerializeField]
-    private IntValue WPM;
+    private FloatValue WPM;
     [SerializeField]
     private FloatValue volume;
     [SerializeField]
@@ -30,15 +30,9 @@ public class Training : MonoBehaviour
 
     [Header("User Interface")]
     [SerializeField]
-    private GameObject UI_WPM;
+    private GameObject statistic;
     [SerializeField]
-    private GameObject UI_volume;
-    [SerializeField]
-    private GameObject UI_timer;
-    [SerializeField]
-    private GameObject UI_eyecontact;
-    [SerializeField]
-    private GameObject UI_handmovement;
+    private GameObject resultUI;
 
     [Header("Systems")]
     [SerializeField]
@@ -48,27 +42,15 @@ public class Training : MonoBehaviour
     [SerializeField]
     private GameObject checkVolumeSystem;
     [SerializeField]
+    private GameObject checkWPMSystem;
+    [SerializeField]
+    private GameObject fillerWordDetector;
+    [SerializeField]
     private GameObject handMovementSystem;
 
-    private void Awake()
-    {
-        speechRecognition.SetActive(false);
-        eyeContactSystem.SetActive(false);
-        checkVolumeSystem.SetActive(false);
-        handMovementSystem.SetActive(false);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("NPC")]
+    [SerializeField]
+    private GameObject NPC;
 
     public void StartTraining()
     {
@@ -88,14 +70,24 @@ public class Training : MonoBehaviour
         eyeContactSystem.SetActive(true);
         checkVolumeSystem.SetActive(true);
         handMovementSystem.SetActive(true);
+        checkWPMSystem.SetActive(true);
+        fillerWordDetector.SetActive(true);
+
+        NPC.SetActive(true);
     }
 
     public void StopTraining()
     {
-        UI_WPM.SetActive(true);
-        UI_volume.SetActive(true);
-        UI_timer.SetActive(true);
-        UI_handmovement.SetActive(true);
-        UI_eyecontact.SetActive(true);
+        speechRecognition.SetActive(false);
+        eyeContactSystem.SetActive(false);
+        checkVolumeSystem.SetActive(false);
+        handMovementSystem.SetActive(false);
+        checkWPMSystem.SetActive(false);
+        fillerWordDetector.SetActive(false);
+
+        statistic.SetActive(true);
+        resultUI.SetActive(true);
+
+        NPC.SetActive(false);
     }
 }
