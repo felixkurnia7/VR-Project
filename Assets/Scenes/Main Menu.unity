@@ -2644,6 +2644,7 @@ MonoBehaviour:
   loadingSlider: {fileID: 1654362302}
   timer: 10
   _fade: {fileID: 1150512}
+  canvasGroup: {fileID: 0}
 --- !u!4 &220759036
 Transform:
   m_ObjectHideFlags: 0
@@ -20729,6 +20730,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8997159047417979410, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997159047443684404, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997159047594559826, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8997159047594559837, guid: d8c131e77d063a04ca1009197d58c971,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21358,6 +21374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.095
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997159048644377089, guid: d8c131e77d063a04ca1009197d58c971,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8c131e77d063a04ca1009197d58c971, type: 3}

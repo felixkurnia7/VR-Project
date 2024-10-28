@@ -167,6 +167,9 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPCLookAtPlayer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\ObjLookAtPlayer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\HeadLookAtPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
