@@ -4222,7 +4222,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230797050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d0b230c5dec5fb4da7cb1decd6bf8ee, type: 3}
   m_Name: 
@@ -4645,7 +4645,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272259392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d0b230c5dec5fb4da7cb1decd6bf8ee, type: 3}
   m_Name: 
@@ -5106,7 +5106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306842618}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d0b230c5dec5fb4da7cb1decd6bf8ee, type: 3}
   m_Name: 
@@ -13579,7 +13579,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880318911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d0b230c5dec5fb4da7cb1decd6bf8ee, type: 3}
   m_Name: 
@@ -19282,6 +19282,11 @@ MonoBehaviour:
   checkWPMSystem: {fileID: 749790396}
   fillerWordDetector: {fileID: 1106929971}
   handMovementSystem: {fileID: 1790582756}
+  chair1: {fileID: 1618972569}
+  chair2: {fileID: 272259392}
+  chair3: {fileID: 306842618}
+  chair4: {fileID: 230797050}
+  chair5: {fileID: 880318911}
   NPC: {fileID: 1826986335}
 --- !u!4 &1247929500
 Transform:
@@ -23234,7 +23239,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618972569}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d0b230c5dec5fb4da7cb1decd6bf8ee, type: 3}
   m_Name: 
@@ -39163,7 +39168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6201740516023545761
 Transform:
   m_ObjectHideFlags: 0

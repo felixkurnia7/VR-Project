@@ -48,6 +48,18 @@ public class Training : MonoBehaviour
     [SerializeField]
     private GameObject handMovementSystem;
 
+    [Header("GameObject")]
+    [SerializeField]
+    private GameObject chair1;
+    [SerializeField]
+    private GameObject chair2;
+    [SerializeField]
+    private GameObject chair3;
+    [SerializeField]
+    private GameObject chair4;
+    [SerializeField]
+    private GameObject chair5;
+
     [Header("NPC")]
     [SerializeField]
     private GameObject NPC;
@@ -72,6 +84,12 @@ public class Training : MonoBehaviour
         handMovementSystem.SetActive(true);
         checkWPMSystem.SetActive(true);
         fillerWordDetector.SetActive(true);
+
+        chair1.GetComponent<ObjLookAtPlayer>().enabled = true;
+        chair2.GetComponent<ObjLookAtPlayer>().enabled = true;
+        chair3.GetComponent<ObjLookAtPlayer>().enabled = true;
+        chair4.GetComponent<ObjLookAtPlayer>().enabled = true;
+        chair5.GetComponent<ObjLookAtPlayer>().enabled = true;
 
         NPC.SetActive(true);
     }
