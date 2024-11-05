@@ -170,12 +170,9 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTree\Node.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTree\Tree.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTree\Sequence.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTree\Selector.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\NPC_AI.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\TaskNormal.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Node.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Strategies.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI 2\NPC_AI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
