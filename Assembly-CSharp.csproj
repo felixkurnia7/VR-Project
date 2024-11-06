@@ -75,9 +75,11 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\FadeCanvas.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\ObjLookAtPlayer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRLever.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Strategies.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\LookAtPlayer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\RemoveObjectsWithTag.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\ReticleRotation.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI 2\NPC_AI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnObject.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SceneTransitionManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetMaterialColor.cs" />
@@ -143,6 +145,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\CreateTrail.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTilt.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SO\Hand.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Node.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleParticle.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\SpeechRecognition.cs" />
     <Compile Include="Assets\Lets Make a VR Game\UI 3D Examples\UI_3D\Scripts\XRPushButton.cs" />
@@ -170,9 +173,6 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Node.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Strategies.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\NPC AI 2\NPC_AI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

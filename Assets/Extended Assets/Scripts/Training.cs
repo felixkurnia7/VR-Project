@@ -12,7 +12,7 @@ public class Training : MonoBehaviour
     [SerializeField]
     private FloatValue volume;
     [SerializeField]
-    private FloatValue timer;
+    private FloatValue time;
     [SerializeField]
     private NPC NPC1;
     [SerializeField]
@@ -29,6 +29,8 @@ public class Training : MonoBehaviour
     private Hand rightHand;
 
     [Header("User Interface")]
+    //[SerializeField]
+    //private GameObject timerCanvas;
     [SerializeField]
     private GameObject statistic;
     [SerializeField]
@@ -47,6 +49,8 @@ public class Training : MonoBehaviour
     private GameObject fillerWordDetector;
     [SerializeField]
     private GameObject handMovementSystem;
+    [SerializeField]
+    private Timer timer;
 
     [Header("GameObject")]
     [SerializeField]
@@ -69,7 +73,7 @@ public class Training : MonoBehaviour
         text.ResetText();
         WPM.ResetValue();
         volume.ResetValue();
-        timer.ResetValue();
+        time.ResetValue();
         NPC1.ResetNPC();
         NPC2.ResetNPC();
         NPC3.ResetNPC();
@@ -77,6 +81,8 @@ public class Training : MonoBehaviour
         NPC5.ResetNPC();
         leftHand.ResetValue();
         rightHand.ResetValue();
+
+        timer.StartTimer();
 
         speechRecognition.SetActive(true);
         eyeContactSystem.SetActive(true);
@@ -102,6 +108,8 @@ public class Training : MonoBehaviour
         handMovementSystem.SetActive(false);
         checkWPMSystem.SetActive(false);
         fillerWordDetector.SetActive(false);
+
+        timer.StopTimer();
 
         statistic.SetActive(true);
         resultUI.SetActive(true);

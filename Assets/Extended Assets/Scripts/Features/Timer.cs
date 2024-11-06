@@ -17,14 +17,13 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private FloatValue time;
     [SerializeField]
-    private bool isRunning;
+    public bool isRunning;
 
     TimeSpan timespan;
 
     // Start is called before the first frame update
     void Start()
     {
-        isRunning = false;
         speechRecognition.StartTimer += StartTimer;
         speechRecognition.StopTimer += StopTimer;
     }
@@ -59,7 +58,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer()
     {
-        time.ResetValue();
+        //time.ResetValue();
         isRunning = true;
     }
 

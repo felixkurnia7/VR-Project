@@ -66,6 +66,42 @@ namespace BehaviourTrees
         public Node.Status Process() => predicate() ? Node.Status.Success : Node.Status.Failure;
     }
 
+    public class PlayAnimationNPC : IStrategy
+    {
+        readonly Animator anim;
+        readonly bool idle;
+        readonly bool interested;
+        readonly bool bored;
+
+        public PlayAnimationNPC(Animator anim, bool idle = false, bool interested = false, bool bored = false)
+        {
+            this.anim = anim;
+            this.idle = idle;
+            this.interested = interested;
+            this.bored = bored;
+        }
+
+        public Node.Status Process()
+        {
+            if (idle && !interested && !bored)
+            {
+                Debug.Log("Play Animation idle");
+            }
+
+            if (!idle && interested && !bored)
+            {
+                Debug.Log("Play Animation Interested");
+            }
+
+            if (!idle && !interested && bored)
+            {
+                Debug.Log("Play Animation Bored");
+            }
+
+            return Node.Status.Running;
+        }
+    }
+
     //public class PatrolStrategy : IStrategy
     //{
     //    readonly Transform entity;

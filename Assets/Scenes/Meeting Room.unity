@@ -14968,7 +14968,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1247929498}
+      - m_Target: {fileID: 1898130016}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -14978,7 +14978,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1816986366}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -14991,6 +14991,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1247929498}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 721527129}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1247929499}
         m_TargetAssemblyTypeName: Training, Assembly-CSharp
@@ -16811,18 +16835,6 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 380361094}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 721527129}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -19250,7 +19262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1247929499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19266,7 +19278,7 @@ MonoBehaviour:
   text: {fileID: 11400000, guid: f0f451d7495dddc4ab36b7108432f163, type: 2}
   WPM: {fileID: 11400000, guid: 4da69f4e19079044ea484ec00c86fb3f, type: 2}
   volume: {fileID: 11400000, guid: 526d35bd406931143be5a52e89c7d2ce, type: 2}
-  timer: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
+  time: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
   NPC1: {fileID: 11400000, guid: f8e650723962a254cb41e5b30d086c1c, type: 2}
   NPC2: {fileID: 11400000, guid: a288804068c08394f97d394c91ae6a29, type: 2}
   NPC3: {fileID: 11400000, guid: 1acab1600b3c40b43bc7100ab4ea2e48, type: 2}
@@ -19282,12 +19294,13 @@ MonoBehaviour:
   checkWPMSystem: {fileID: 749790396}
   fillerWordDetector: {fileID: 1106929971}
   handMovementSystem: {fileID: 1790582756}
+  timer: {fileID: 1383984666}
   chair1: {fileID: 1618972569}
   chair2: {fileID: 272259392}
   chair3: {fileID: 306842618}
   chair4: {fileID: 230797050}
   chair5: {fileID: 880318911}
-  NPC: {fileID: 1826986335}
+  NPC: {fileID: 6195097542573431205}
 --- !u!4 &1247929500
 Transform:
   m_ObjectHideFlags: 0
@@ -25416,7 +25429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1826986336
 Transform:
   m_ObjectHideFlags: 0
@@ -39169,7 +39182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6201740516023545761
 Transform:
   m_ObjectHideFlags: 0
@@ -40230,10 +40243,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06d4f2312427e064e819ad9a6a8acce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wpm: {fileID: 0}
+  volume: {fileID: 0}
   timer: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
   npc: {fileID: 11400000, guid: a288804068c08394f97d394c91ae6a29, type: 2}
-  timerThreshold: 60
-  eyeContactThreshold: 2
+  timeInterestedThreshold: 10
+  wpmInterestedThreshold: 0
+  stareInterestedThreshold: 0
+  timeExcitedThreshold: 0
+  wpmExcitedThreshold: 0
+  isStareDone: 0
+  handExcitedThreshold: 0
+  timeBoredThreshold: 20
+  timeConfuseThreshold: 0
+  wpmConfuseThreshold: 0
+  stareConfuseThreshold: 0
+  volumeConfuseThreshold: 0
+  isNormal: 0
 --- !u!1 &6831442149020113711
 GameObject:
   m_ObjectHideFlags: 0
