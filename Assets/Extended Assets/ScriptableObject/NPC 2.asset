@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4d87e088d33594c99a23b5067e0673, type: 3}
   m_Name: NPC 2
   m_EditorClassIdentifier: 
-  stare: 3
+  stare: 2
   isStare: 0
   eyeContactDone: 0

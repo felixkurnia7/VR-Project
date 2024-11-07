@@ -33,8 +33,8 @@ public class NPC_AI : MonoBehaviour
     [SerializeField] float stareConfuseThreshold;
     [SerializeField] float volumeConfuseThreshold;
 
-    [SerializeField]
-    private bool isNormal;
+    //[SerializeField]
+    //private bool isNormal;
 
     readonly private Animator anim;
     BehaviourTree tree;
@@ -46,58 +46,148 @@ public class NPC_AI : MonoBehaviour
 
         PrioritySelector actions = new("NPC Logic");
 
-        // Sequence Interested
-        Sequence playInterestedAnimSeq = new("PlayInterestedAnimSeq", 5);
-        bool IsPassTimeThreshold()
+        // All Sequences
+        Sequence interestedSequence = new("InterestedSequence", 5);
+        Sequence excitedSequence = new("ExcitedSequence", 10);
+        Sequence boredSequence = new("BoredSequence", 20);
+        Sequence confuseSequence = new("ConfuseSequence", 15);
+
+        // Check Statuses
+        bool CheckTimeInterested()
         {
             if (timer.value > timeInterestedThreshold)
             {
                 return true;
             }
-            playInterestedAnimSeq.Reset();
+            interestedSequence.Reset();
             return false;
         }
 
-        playInterestedAnimSeq.AddChild(new Leaf("IsNotPassTimeThreshold?", new Condition(IsPassTimeThreshold)));
-        playInterestedAnimSeq.AddChild(new Leaf("PlayAnimationInterested", new PlayAnimationNPC(anim, false, true)));
-        actions.AddChild(playInterestedAnimSeq);
-        // -----------------------------------------------------------
+        bool CheckWPMInterested()
+        {
+            if (wpm.value > wpmInterestedThreshold)
+                return true;
+            interestedSequence.Reset();
+            return false;
+        }
 
-        // Sequence Bored
-        Sequence playBoredSeq = new("PlayBoredSeq", 10);
-        bool IsBored()
+        bool CheckEyeContactInterested()
+        {
+            if (npc.stare > stareInterestedThreshold)
+                return true;
+            interestedSequence.Reset();
+            return false;
+        }
+
+        bool CheckTimeExcited()
+        {
+            if (timer.value > timeExcitedThreshold)
+                return true;
+            excitedSequence.Reset();
+            return false;
+        }
+
+        bool CheckWPMExcited()
+        {
+            if (wpm.value > wpmExcitedThreshold)
+                return true;
+            excitedSequence.Reset();
+            return false;
+        }
+
+        bool CheckHandExcited()
+        {
+            if ((leftHand.value + rightHand.value) > handExcitedThreshold)
+                return true;
+            excitedSequence.Reset();
+            return false;
+        }
+
+        bool CheckEyeContactExcited()
+        {
+            if (npc.eyeContactDone == isStareDone)
+                return true;
+            excitedSequence.Reset();
+            return false;
+        }
+
+        bool CheckTimeBored()
         {
             if (timer.value > timeBoredThreshold)
             {
                 return true;
             }
-            playBoredSeq.Reset();
+            boredSequence.Reset();
             return false;
         }
-        
-        playBoredSeq.AddChild(new Leaf("IsBored", new Condition(IsBored)));
-        playBoredSeq.AddChild(new Leaf("PlayAnimationBored", new PlayAnimationNPC(anim, false, false, true)));
-        actions.AddChild(playBoredSeq);
+
+        bool CheckTimeConfuse()
+        {
+            if (timer.value > timeConfuseThreshold)
+                return true;
+            confuseSequence.Reset();
+            return false;
+        }
+
+        bool CheckWPMConfuse()
+        {
+            if (wpm.value < wpmConfuseThreshold)
+                return true;
+            confuseSequence.Reset();
+            return false;
+        }
+
+        bool CheckVolumeConfuse()
+        {
+            if (volume.value < volumeConfuseThreshold)
+                return true;
+            confuseSequence.Reset();
+            return false;
+        }
+
+        bool CheckEyeContactConfuse()
+        {
+            if (npc.stare < stareConfuseThreshold)
+                return true;
+            confuseSequence.Reset();
+            return false;
+        }
+
+        // Sequence Interested
+        interestedSequence.AddChild(new Leaf("IsPassTimeInterested?", new Condition(CheckTimeInterested)));
+        interestedSequence.AddChild(new Leaf("IsPassWPMInterested?", new Condition(CheckWPMInterested)));
+        interestedSequence.AddChild(new Leaf("IsPassEyeContactInterested?", new Condition(CheckEyeContactInterested)));
+        interestedSequence.AddChild(new Leaf("PlayAnimationInterested", new PlayAnimationNPC(anim, false, true)));
+        actions.AddChild(interestedSequence);
+        // -----------------------------------------------------------
+
+        // Sequence Excited
+        excitedSequence.AddChild(new Leaf("IsPassTimeExcited?", new Condition(CheckTimeExcited)));
+        excitedSequence.AddChild(new Leaf("IsPassWPMExcited?", new Condition(CheckWPMExcited)));
+        excitedSequence.AddChild(new Leaf("IsPassHandExcited?", new Condition(CheckHandExcited)));
+        excitedSequence.AddChild(new Leaf("IsEyeContactDone?", new Condition(CheckEyeContactExcited)));
+        excitedSequence.AddChild(new Leaf("PlayAnimationExcited", new PlayAnimationNPC(anim, false, false, true)));
+        actions.AddChild(excitedSequence);
+        // -------------------------------------------------------------
+
+        // Sequence Bored
+        boredSequence.AddChild(new Leaf("IsPassTimeBored?", new Condition(CheckTimeBored)));
+        boredSequence.AddChild(new Leaf("PlayAnimationBored", new PlayAnimationNPC(anim, false, false, false, true)));
+        actions.AddChild(boredSequence);
+        // -------------------------------------------------------------
+
+        // Sequence Confuse
+        confuseSequence.AddChild(new Leaf("IsPassTimeConfuse?", new Condition(CheckTimeConfuse)));
+        confuseSequence.AddChild(new Leaf("IsPassWPMConfuse?", new Condition(CheckWPMConfuse)));
+        confuseSequence.AddChild(new Leaf("IsPassVolumeConfuse?", new Condition(CheckVolumeConfuse)));
+        confuseSequence.AddChild(new Leaf("IsPassEyeContactConfuse?", new Condition(CheckEyeContactConfuse)));
+        confuseSequence.AddChild(new Leaf("PlayAnimationConfuse", new PlayAnimationNPC(anim, false, false, false, false, true)));
+        actions.AddChild(confuseSequence);
         // -------------------------------------------------------------
 
         // Play idle animation
-        Leaf playNormal = new("PlayAnimationNormal", new PlayAnimationNPC(anim, true, false));
-
+        Leaf playNormal = new("PlayAnimationNormal", new PlayAnimationNPC(anim, true));
         actions.AddChild(playNormal);
-        
-
-        //Sequence playActNormal = new Sequence("PlayActNormal", 10);
-        //playActNormal.AddChild(new Leaf("IsTimerNotPassThreshold", new Condition(() => timer.value < timerThreshold)));
-        //playActNormal.AddChild(new Leaf("PlayActNormal", new ActionStrategy(() => PlayAnimationNormal())));
-
-        //Sequence playActInteresed = new Sequence("PlayActInterested", 0);
-        //playActInteresed.AddChild(new Leaf("IsEyeContactPassThreshold", new Condition(() => npc.stare > eyeContactThreshold)));
-        //playActInteresed.AddChild(new Leaf("PlayAnimationIntersted", new ActionStrategy(() => PlayAnimationInterested())));
-
-        ////Selector playAllActs = new Selector("PlayAllActs");
-        //PrioritySelector playAllActs = new PrioritySelector("PlayAllActs");
-        //playAllActs.AddChild(playActInteresed);
-        //playAllActs.AddChild(playActNormal);
 
         tree.AddChild(actions);
     }

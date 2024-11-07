@@ -71,31 +71,51 @@ namespace BehaviourTrees
         readonly Animator anim;
         readonly bool idle;
         readonly bool interested;
+        readonly bool excited;
         readonly bool bored;
+        readonly bool confuse;
 
-        public PlayAnimationNPC(Animator anim, bool idle = false, bool interested = false, bool bored = false)
+        public PlayAnimationNPC(Animator anim, bool idle = false, bool interested = false,
+                                bool excited = false, bool bored = false, bool confuse = false)
         {
             this.anim = anim;
             this.idle = idle;
             this.interested = interested;
+            this.excited = excited;
             this.bored = bored;
+            this.confuse = confuse;
         }
 
         public Node.Status Process()
         {
-            if (idle && !interested && !bored)
+            // Idle
+            if (idle && !interested && !excited && !bored && !confuse)
             {
                 Debug.Log("Play Animation idle");
             }
 
-            if (!idle && interested && !bored)
+            // Interested
+            if (!idle && interested && !excited && !bored && !confuse)
             {
                 Debug.Log("Play Animation Interested");
             }
 
-            if (!idle && !interested && bored)
+            // Excited
+            if (!idle && !interested && excited && !bored && !confuse)
+            {
+                Debug.Log("Play Animation Excited");
+            }
+
+            // Bored
+            if (!idle && !interested && !excited && bored && !confuse)
             {
                 Debug.Log("Play Animation Bored");
+            }
+
+            // Confuse
+            if (!idle && !interested && !excited && !bored && confuse)
+            {
+                Debug.Log("Play Animation Confuse");
             }
 
             return Node.Status.Running;
