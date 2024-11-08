@@ -5,6 +5,8 @@ using BehaviourTrees;
 
 public class NPC_AI : MonoBehaviour
 {
+    [SerializeField] HeadLookAtPlayer head;
+
     [Header("Scriptable Object")]
     [SerializeField] FloatValue wpm;
     [SerializeField] FloatValue volume;
@@ -36,8 +38,13 @@ public class NPC_AI : MonoBehaviour
     //[SerializeField]
     //private bool isNormal;
 
-    readonly private Animator anim;
+    private Animator anim;
     BehaviourTree tree;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -157,7 +164,7 @@ public class NPC_AI : MonoBehaviour
         interestedSequence.AddChild(new Leaf("IsPassTimeInterested?", new Condition(CheckTimeInterested)));
         interestedSequence.AddChild(new Leaf("IsPassWPMInterested?", new Condition(CheckWPMInterested)));
         interestedSequence.AddChild(new Leaf("IsPassEyeContactInterested?", new Condition(CheckEyeContactInterested)));
-        interestedSequence.AddChild(new Leaf("PlayAnimationInterested", new PlayAnimationNPC(anim, false, true)));
+        interestedSequence.AddChild(new Leaf("PlayAnimationInterested", new PlayAnimationNPC(anim, head, false, true)));
         actions.AddChild(interestedSequence);
         // -----------------------------------------------------------
 
@@ -166,13 +173,13 @@ public class NPC_AI : MonoBehaviour
         excitedSequence.AddChild(new Leaf("IsPassWPMExcited?", new Condition(CheckWPMExcited)));
         excitedSequence.AddChild(new Leaf("IsPassHandExcited?", new Condition(CheckHandExcited)));
         excitedSequence.AddChild(new Leaf("IsEyeContactDone?", new Condition(CheckEyeContactExcited)));
-        excitedSequence.AddChild(new Leaf("PlayAnimationExcited", new PlayAnimationNPC(anim, false, false, true)));
+        excitedSequence.AddChild(new Leaf("PlayAnimationExcited", new PlayAnimationNPC(anim, head, false, false, true)));
         actions.AddChild(excitedSequence);
         // -------------------------------------------------------------
 
         // Sequence Bored
         boredSequence.AddChild(new Leaf("IsPassTimeBored?", new Condition(CheckTimeBored)));
-        boredSequence.AddChild(new Leaf("PlayAnimationBored", new PlayAnimationNPC(anim, false, false, false, true)));
+        boredSequence.AddChild(new Leaf("PlayAnimationBored", new PlayAnimationNPC(anim, head, false, false, false, true)));
         actions.AddChild(boredSequence);
         // -------------------------------------------------------------
 
@@ -181,12 +188,12 @@ public class NPC_AI : MonoBehaviour
         confuseSequence.AddChild(new Leaf("IsPassWPMConfuse?", new Condition(CheckWPMConfuse)));
         confuseSequence.AddChild(new Leaf("IsPassVolumeConfuse?", new Condition(CheckVolumeConfuse)));
         confuseSequence.AddChild(new Leaf("IsPassEyeContactConfuse?", new Condition(CheckEyeContactConfuse)));
-        confuseSequence.AddChild(new Leaf("PlayAnimationConfuse", new PlayAnimationNPC(anim, false, false, false, false, true)));
+        confuseSequence.AddChild(new Leaf("PlayAnimationConfuse", new PlayAnimationNPC(anim, head, false, false, false, false, true)));
         actions.AddChild(confuseSequence);
         // -------------------------------------------------------------
 
         // Play idle animation
-        Leaf playNormal = new("PlayAnimationNormal", new PlayAnimationNPC(anim, true));
+        Leaf playNormal = new("PlayAnimationNormal", new PlayAnimationNPC(anim, head, true));
         actions.AddChild(playNormal);
 
         tree.AddChild(actions);

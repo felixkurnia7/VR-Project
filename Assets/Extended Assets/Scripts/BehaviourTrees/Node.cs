@@ -122,6 +122,7 @@ namespace BehaviourTrees
         public Leaf(string name, IStrategy strategy, int priority = 0) : base(name, priority)
         {
             // Preconditions.CheckNotNull(strategy);
+            Preconditions.CheckNotNull(strategy);
             this.strategy = strategy;
         }
 

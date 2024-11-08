@@ -68,6 +68,7 @@ namespace BehaviourTrees
 
     public class PlayAnimationNPC : IStrategy
     {
+        readonly HeadLookAtPlayer head;
         readonly Animator anim;
         readonly bool idle;
         readonly bool interested;
@@ -75,10 +76,11 @@ namespace BehaviourTrees
         readonly bool bored;
         readonly bool confuse;
 
-        public PlayAnimationNPC(Animator anim, bool idle = false, bool interested = false,
+        public PlayAnimationNPC(Animator anim, HeadLookAtPlayer head, bool idle = false, bool interested = false,
                                 bool excited = false, bool bored = false, bool confuse = false)
         {
             this.anim = anim;
+            this.head = head;
             this.idle = idle;
             this.interested = interested;
             this.excited = excited;
@@ -92,6 +94,9 @@ namespace BehaviourTrees
             if (idle && !interested && !excited && !bored && !confuse)
             {
                 Debug.Log("Play Animation idle");
+                anim.SetBool("idle", true);
+                head.bored = false;
+                head.lookAtPlayer = true;
             }
 
             // Interested
@@ -110,6 +115,10 @@ namespace BehaviourTrees
             if (!idle && !interested && !excited && bored && !confuse)
             {
                 Debug.Log("Play Animation Bored");
+                anim.SetBool("bored", true);
+                anim.SetBool("idle", false);
+                head.lookAtPlayer = false;
+                head.bored = true;
             }
 
             // Confuse

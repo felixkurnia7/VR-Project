@@ -9,8 +9,7 @@ public class VRMap
     public Vector3 trackingRotationOffset;
     public void Map()
     {
-        ikTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
-        ikTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
+        ikTarget.SetPositionAndRotation(vrTarget.TransformPoint(trackingPositionOffset), vrTarget.rotation * Quaternion.Euler(trackingRotationOffset));
     }
 }
 

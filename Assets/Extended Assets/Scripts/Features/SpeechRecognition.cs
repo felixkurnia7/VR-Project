@@ -24,9 +24,7 @@ public class SpeechRecognition : MonoBehaviour
 
     private AudioClip clip;
     private byte[] bytes;
-    private bool recording;
     private float[] samples;
-    private float recordingStartTime;
 
     private void Start()
     {

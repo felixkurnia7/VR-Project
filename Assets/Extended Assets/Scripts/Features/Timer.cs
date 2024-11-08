@@ -16,7 +16,6 @@ public class Timer : MonoBehaviour
     //private float time;
     [SerializeField]
     private FloatValue time;
-    [SerializeField]
     public bool isRunning;
 
     TimeSpan timespan;

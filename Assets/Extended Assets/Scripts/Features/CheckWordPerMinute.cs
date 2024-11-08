@@ -39,7 +39,7 @@ public class CheckWordPerMinute : MonoBehaviour
 
     void CountWPM(string responseText)
     {
-        WPM.ResetValue();
+        //WPM.ResetValue();
         int newWordCount = CountWords(responseText);
         Debug.Log(newWordCount);
         // Update word count
@@ -48,13 +48,13 @@ public class CheckWordPerMinute : MonoBehaviour
 
         if (time.value < 60)
         {
-            WPM.value = words;
+            WPM.value += words;
         }
         else
         {
             // Calculate WPM
             float durationInMinutes = time.value / 60f; // Convert seconds to minutes
-            WPM.value = words / durationInMinutes;
+            WPM.value += words / durationInMinutes;
         }
     }
 

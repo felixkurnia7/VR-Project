@@ -11,14 +11,10 @@ public class CheckVolumeSpeaking : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button stopButton;
     [SerializeField] private FloatValue volume;
+    [SerializeField] private int numberOfVolume = 0;
     public string microphoneName; // The name of the microphone
     public int sampleRate = 44100; // Sample rate for the microphone
     public int bufferSize = 256; // Buffer size for audio samples
-    private bool isMicrophoneAvailable;
-    private bool isRecording;
-    private float recordingStartTime;
-    private float totalVolume;
-    private int volumeSampleCount;
 
     void Start()
     {
@@ -38,13 +34,15 @@ public class CheckVolumeSpeaking : MonoBehaviour
     private void ResetVolumeSpeaking()
     {
         volume.ResetValue();
+        numberOfVolume = 0;
     }
 
     void CheckVolume(float[] samples)
     {
         float currentVolume = CalculateVolume(samples);
+        numberOfVolume++;
 
-        volume.value = currentVolume;
+        volume.value = (volume.value + currentVolume) / numberOfVolume;
 
         // Accumulate volume data
         //totalVolume += currentVolume;
