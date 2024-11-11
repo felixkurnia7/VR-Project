@@ -66,7 +66,15 @@ public class Training : MonoBehaviour
 
     [Header("NPC")]
     [SerializeField]
-    private GameObject NPC;
+    private GameObject Char_NPC1;
+    [SerializeField]
+    private GameObject Char_NPC2;
+    [SerializeField]
+    private GameObject Char_NPC3;
+    [SerializeField]
+    private GameObject Char_NPC4;
+    [SerializeField]
+    private GameObject Char_NPC5;
 
     public void StartTraining()
     {
@@ -97,7 +105,11 @@ public class Training : MonoBehaviour
         chair4.GetComponent<ObjLookAtPlayer>().enabled = true;
         chair5.GetComponent<ObjLookAtPlayer>().enabled = true;
 
-        NPC.SetActive(true);
+        Char_NPC1.SetActive(true);
+        Char_NPC2.SetActive(true);
+        Char_NPC3.SetActive(true);
+        Char_NPC4.SetActive(true);
+        Char_NPC5.SetActive(true);
     }
 
     public void StopTraining()
@@ -114,6 +126,16 @@ public class Training : MonoBehaviour
         statistic.SetActive(true);
         resultUI.SetActive(true);
 
-        NPC.SetActive(false);
+        chair1.GetComponent<ObjLookAtPlayer>().enabled = false;
+        chair2.GetComponent<ObjLookAtPlayer>().enabled = false;
+        chair3.GetComponent<ObjLookAtPlayer>().enabled = false;
+        chair4.GetComponent<ObjLookAtPlayer>().enabled = false;
+        chair5.GetComponent<ObjLookAtPlayer>().enabled = false;
+
+        Char_NPC1.SetActive(false);
+        Char_NPC2.SetActive(false);
+        Char_NPC3.SetActive(false);
+        Char_NPC4.SetActive(false);
+        Char_NPC5.SetActive(false);
     }
 }

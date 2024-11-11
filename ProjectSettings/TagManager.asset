@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Flame
   - NPC
+  - Whiteboard
   layers:
   - Default
   - TransparentFX
