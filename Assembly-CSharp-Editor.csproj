@@ -61,6 +61,7 @@
     <Compile Include="Assets\_Course Library\Source Files\Editor\XRJoystickEditor.cs" />
     <Compile Include="Assets\_Course Library\Source Files\Editor\XRKnobEditor.cs" />
     <Compile Include="Assets\_Course Library\Source Files\Editor\XRLeverEditor.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\Editor\SaveManagerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -4,10 +4,11 @@ using System.Linq;
 using Unity.Collections;
 using UnityEngine;
 
-public class WhiteboardMarker : MonoBehaviour
+public class WhiteboardEraser : MonoBehaviour
 {
     [SerializeField] private Transform _tip;
-    [SerializeField] private int _penSize = 5;
+    [SerializeField] private int _penSize;
+    //[SerializeField] private Color _eraserColor = Color.white;
 
     private Renderer _renderer;
     private Color[] _colors;
@@ -18,11 +19,12 @@ public class WhiteboardMarker : MonoBehaviour
     private Vector2 _touchPos, _lastTouchPos;
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
-    
+
     void Start()
     {
+
         _renderer = _tip.GetComponent<Renderer>();
-        _colors = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
+        _colors = Enumerable.Repeat(_renderer.material.color, (22/7) * _penSize * _penSize).ToArray();
         _tipHeight = _tip.localScale.y;
     }
 
@@ -33,9 +35,9 @@ public class WhiteboardMarker : MonoBehaviour
 
     private void Draw()
     {
-        if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight))
+        if (Physics.Raycast(_tip.position, transform.forward, out _touch, _tipHeight))
         {
-            if (_touch.transform.GetComponent<Whiteboard>())
+            if (_touch.transform.CompareTag("Whiteboard"))
             {
                 if (_whiteboard == null)
                 {
@@ -61,7 +63,7 @@ public class WhiteboardMarker : MonoBehaviour
                     }
 
                     transform.rotation = _lastTouchRot;
-                    
+
                     _whiteboard.texture.Apply();
                 }
 
@@ -79,6 +81,6 @@ public class WhiteboardMarker : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight) ? Color.green : Color.red;
-        Gizmos.DrawRay(_tip.position, transform.up);
+        Gizmos.DrawRay(_tip.position, transform.forward);
     }
 }

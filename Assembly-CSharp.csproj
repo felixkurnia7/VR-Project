@@ -79,7 +79,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LookAtPlayer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\RemoveObjectsWithTag.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\ReticleRotation.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\NPC AI 2\NPC_AI.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\NPC_AI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnObject.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SceneTransitionManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetMaterialColor.cs" />
@@ -143,6 +143,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckVolumeSpeaking.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightIntensity.cs" />
     <Compile Include="Assets\Lets Make a VR Game\Oculus Hands\Scripts\AnimateHandOnInput.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\WhiteboardEraser.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\EyeContactUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\CreateTrail.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTilt.cs" />
@@ -157,9 +158,11 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlaySoundsFromList.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\LoadingManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleLight.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\WhiteboardMarker.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ShowMessageFromList.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTrigger.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetInteractionLayer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Whiteboard.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\VolumeMeterWithClip.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRKnob.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\FillerWordDetector.cs" />
@@ -175,8 +178,11 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\WhiteboardMarker.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Whiteboard.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\ISerializer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\IDataService.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\JsonSerializer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\FileDataService.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\SaveLoadSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

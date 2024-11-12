@@ -13,4 +13,11 @@ public class Whiteboard : MonoBehaviour
         texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
         r.material.mainTexture = texture;
     }
+
+    public void DeleteWhiteboard()
+    {
+        var r = GetComponent<Renderer>();
+        texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
+        r.material.mainTexture = texture;
+    }
 }
