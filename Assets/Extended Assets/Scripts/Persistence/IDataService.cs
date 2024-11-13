@@ -1,13 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace Systems.Persistence
+public interface IDataService
 {
-    public interface IDataService
-    {
-        void Save(GameData data, bool overwrite = true);
-        GameData Load(string name);
-        void Delete(string name);
-        void DeleteAll();
-        IEnumerable<string> ListSaves();
-    }
+    bool SaveData<T>(string RelativePath, T Data, bool Encrypted);
+
+    T LoadData<T>(string RelativePath, bool Encrypted);
+    List<T> LoadAllUserData<T>(bool Encrypted);
 }

@@ -124,6 +124,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnPull.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SO\NPC.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\BallBounce.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\SaveLoadSystem.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\WordPerMinuteUI.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\EyeContact.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\TeleportPlayer.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\VolumeMeter.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ManuallySelectObject.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnSceneLoad.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\IDataService.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleInterface.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ChangeMaterial.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\DisplayFPS.cs" />
@@ -178,11 +180,8 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Persistence\ISerializer.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Persistence\IDataService.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Persistence\JsonSerializer.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Persistence\FileDataService.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Persistence\SaveLoadSystem.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\JSONDataService.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\UserData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -459,7 +458,7 @@
       <HintPath>Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.1\Runtime\Newtonsoft.Json.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>

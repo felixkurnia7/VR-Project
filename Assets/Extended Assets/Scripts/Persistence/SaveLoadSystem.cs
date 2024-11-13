@@ -1,114 +1,77 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using TMPro;
+using Newtonsoft.Json;
+using System.IO;
 
-namespace Systems.Persistence
+public class SaveLoadSystem : MonoBehaviour
 {
-    [Serializable]
-    public class GameData
+    [SerializeField] UserData userData;
+    [SerializeField] TextMeshProUGUI inputText;
+    [SerializeField] List<UserData> AllUserData = new List<UserData>();
+
+    private IDataService DataService = new JSONDataService();
+    private long saveTime;
+    private long loadTime;
+
+
+    // Start is called before the first frame update
+    void Start()
     {
-        public string Name;
-        public string CurrentLevelName;
+        
     }
 
-    public interface ISaveable
+    // Update is called once per frame
+    void Update()
     {
-        string Id { get; set; }
+        
     }
 
-    public interface IBind<TData> where TData : ISaveable
+    public void SerializeJson()
     {
-        string Id { get; set; }
-        void Bind(TData data);
-    }
-
-    public class SaveLoadSystem : MonoBehaviour
-    {
-        [SerializeField] public GameData gameData;
-
-        IDataService dataService;
-
-        private void Awake()
+        long startTime = TimeSpan.TicksPerMillisecond;
+        if (DataService.SaveData("/save-data", userData, true))
         {
-            dataService = new FileDataService(new JsonSerializer());
+            saveTime = TimeSpan.TicksPerMillisecond - startTime;
+            Debug.Log($"Save Time:  {(saveTime / 1000f):N4}ms");
         }
-
-        //protected override void Awake()
-        //{
-        //    base.Awake();
-        //    dataService = new FileDataService(new JsonSerializer());
-        //}
-
-        //void Start() => NewGame();
-
-        //void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
-        //void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
-
-        //void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        //{
-        //    if (scene.name == "Menu") return;
-
-        //    Bind<Hero, PlayerData>(gameData.playerData);
-        //    Bind<Inventory.Inventory, InventoryData>(gameData.inventoryData);
-        //}
-
-        //void Bind<T, TData>(TData data) where T : MonoBehaviour, IBind<TData> where TData : ISaveable, new()
-        //{
-        //    var entity = FindObjectsByType<T>(FindObjectsSortMode.None).FirstOrDefault();
-        //    if (entity != null)
-        //    {
-        //        if (data == null)
-        //        {
-        //            data = new TData { Id = entity.Id };
-        //        }
-        //        entity.Bind(data);
-        //    }
-        //}
-
-        //void Bind<T, TData>(List<TData> datas) where T : MonoBehaviour, IBind<TData> where TData : ISaveable, new()
-        //{
-        //    var entities = FindObjectsByType<T>(FindObjectsSortMode.None);
-
-        //    foreach (var entity in entities)
-        //    {
-        //        var data = datas.FirstOrDefault(d => d.Id == entity.Id);
-        //        if (data == null)
-        //        {
-        //            data = new TData { Id = entity.Id };
-        //            datas.Add(data);
-        //        }
-        //        entity.Bind(data);
-        //    }
-        //}
-
-        public void NewGame()
+        else
         {
-            gameData = new GameData
-            {
-                Name = "Game",
-                CurrentLevelName = "Meeting Room"
-            };
-            SceneManager.LoadScene(gameData.CurrentLevelName);
+            Debug.LogError("Could not save file! Show something on the UI about it!");
         }
+    }
 
-        public void SaveGame() => dataService.Save(gameData);
-
-        public void LoadGame(string gameName)
+    public void LoadData()
+    {
+        long startTime = TimeSpan.TicksPerMillisecond;
+        try
         {
-            gameData = dataService.Load(gameName);
+            UserData data = DataService.LoadData<UserData>("/save-data", true);
+            loadTime = TimeSpan.TicksPerMillisecond - startTime;
+            inputText.text = "Loaded from file: \r\n" + JsonConvert.SerializeObject(data, Formatting.Indented);
+            Debug.Log($"Load Time:  {(loadTime / 1000f):N4}ms");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Could not read file! Show somwthing on the UI here!");
+        }
+    }
 
-            if (String.IsNullOrWhiteSpace(gameData.CurrentLevelName))
+    public void LoadAllData()
+    {
+        AllUserData = DataService.LoadAllUserData<UserData>(true);
+        
+        foreach (UserData data in AllUserData)
+        {
+            //inputText.text += "Loaded from file: \r\n" + JsonConvert.SerializeObject(data, Formatting.Indented);
+            inputText.text += "Loaded from file: \r\n";
+
+            if (data.textSpeechRecognition != null)
             {
-                gameData.CurrentLevelName = "Meeting Room";
+                inputText.text += $"{data.textSpeechRecognition.text}";
             }
-
-            SceneManager.LoadScene(gameData.CurrentLevelName);
         }
-
-        public void ReloadGame() => LoadGame(gameData.Name);
-
-        public void DeleteGame(string gameName) => dataService.Delete(gameName);
     }
 }

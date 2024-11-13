@@ -9,7 +9,7 @@ using System;
 
 public class SpeechRecognition : MonoBehaviour
 {
-    public string savePath = "microphone_recording.wav";
+
     public Action<string> CheckWMP;
     public Action StartTimer;
     public Action StopTimer;

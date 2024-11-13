@@ -5,7 +5,7 @@ using UnityEngine;
 public class Whiteboard : MonoBehaviour
 {
     public Texture2D texture;
-    public Vector2 textureSize = new Vector2(2048, 2048);
+    public Vector2 textureSize = new(2048, 2048);
 
     void Start()
     {
