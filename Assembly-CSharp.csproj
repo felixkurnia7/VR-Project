@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckWordPerMinute.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\JSONDataService.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnFromList.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRJoystick.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Z Axis -1\Drawer_Pull_Zopp.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnVelocity.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\Timer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetParticleRate.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Persistence\UserData.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightColor.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRSlider.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\Notes.cs" />
@@ -180,8 +182,6 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Persistence\JSONDataService.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Persistence\UserData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

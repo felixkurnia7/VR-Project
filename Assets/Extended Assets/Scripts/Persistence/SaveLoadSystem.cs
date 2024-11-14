@@ -32,7 +32,8 @@ public class SaveLoadSystem : MonoBehaviour
     public void SerializeJson()
     {
         long startTime = TimeSpan.TicksPerMillisecond;
-        if (DataService.SaveData("/save-data", userData, true))
+        userData.uniqueID = System.Guid.NewGuid().ToString();
+        if (DataService.SaveData($"/save-data-{userData.uniqueID}", userData, false))
         {
             saveTime = TimeSpan.TicksPerMillisecond - startTime;
             Debug.Log($"Save Time:  {(saveTime / 1000f):N4}ms");
@@ -61,17 +62,22 @@ public class SaveLoadSystem : MonoBehaviour
 
     public void LoadAllData()
     {
-        AllUserData = DataService.LoadAllUserData<UserData>(true);
+        AllUserData = DataService.LoadAllUserData<UserData>(false);
         
         foreach (UserData data in AllUserData)
         {
-            //inputText.text += "Loaded from file: \r\n" + JsonConvert.SerializeObject(data, Formatting.Indented);
-            inputText.text += "Loaded from file: \r\n";
+            inputText.text += "Loaded from file: \r\n" + JsonConvert.SerializeObject(data, Formatting.Indented);
+            //inputText.text += "Loaded from file: \r\n";
 
-            if (data.textSpeechRecognition != null)
-            {
-                inputText.text += $"{data.textSpeechRecognition.text}";
-            }
+            //if (data.textSpeechRecognition != null)
+            //{
+            //    inputText.text += $"{data.textSpeechRecognition.text}";
+            //}
         }
+    }
+
+    public bool DeleteData(string uniqueID)
+    {
+        return DataService.DeleteData($"/save-data-{uniqueID}");
     }
 }

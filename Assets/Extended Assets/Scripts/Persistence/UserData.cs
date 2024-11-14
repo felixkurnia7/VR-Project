@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New User Data", menuName = "User Data")]
 public class UserData : ScriptableObject
 {
+    public string uniqueID;
     public StringValue textSpeechRecognition;
     public FloatValue wpm;
     public FloatValue timer;

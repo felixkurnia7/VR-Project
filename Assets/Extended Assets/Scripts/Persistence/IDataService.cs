@@ -8,4 +8,8 @@ public interface IDataService
 
     T LoadData<T>(string RelativePath, bool Encrypted);
     List<T> LoadAllUserData<T>(bool Encrypted);
+
+    bool DeleteData(string RelativePath);
+
+    bool DeleteAllData();
 }
