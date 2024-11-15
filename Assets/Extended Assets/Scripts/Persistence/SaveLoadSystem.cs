@@ -8,6 +8,7 @@ using System.IO;
 
 public class SaveLoadSystem : MonoBehaviour
 {
+    public Action<UserData> CreateHistorySlot;
     [SerializeField] UserData userData;
     [SerializeField] TextMeshProUGUI inputText;
     [SerializeField] List<UserData> AllUserData = new List<UserData>();
@@ -66,7 +67,8 @@ public class SaveLoadSystem : MonoBehaviour
         
         foreach (UserData data in AllUserData)
         {
-            inputText.text += "Loaded from file: \r\n" + JsonConvert.SerializeObject(data, Formatting.Indented);
+            CreateHistorySlot?.Invoke(data);
+            //inputText.text += "Loaded from file: \r\n" + JsonConvert.SerializeObject(data, Formatting.Indented);
             //inputText.text += "Loaded from file: \r\n";
 
             //if (data.textSpeechRecognition != null)
