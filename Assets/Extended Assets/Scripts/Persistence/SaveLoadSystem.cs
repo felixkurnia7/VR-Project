@@ -16,7 +16,7 @@ public class SaveLoadSystem : MonoBehaviour
     private IDataService DataService = new JSONDataService();
     private long saveTime;
     private long loadTime;
-
+    private int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,7 @@ public class SaveLoadSystem : MonoBehaviour
     {
         long startTime = TimeSpan.TicksPerMillisecond;
         userData.uniqueID = System.Guid.NewGuid().ToString();
+        //userData.name = $"Data-{userData.uniqueID}";
         if (DataService.SaveData($"/save-data-{userData.uniqueID}", userData, false))
         {
             saveTime = TimeSpan.TicksPerMillisecond - startTime;
@@ -81,5 +82,10 @@ public class SaveLoadSystem : MonoBehaviour
     public bool DeleteData(string uniqueID)
     {
         return DataService.DeleteData($"/save-data-{uniqueID}");
+    }
+
+    public bool DeleteAllData()
+    {
+        return DataService.DeleteAllData();
     }
 }

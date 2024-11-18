@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.UI;
 
 public class UI_History : MonoBehaviour
 {
     public Action<UserData, GameObject> InitializeData;
     [SerializeField] SaveLoadSystem saveLoadManager;
     [SerializeField] GameObject saveSlot;
-    [SerializeField] List<string> uniqueID = new List<string>();
+    [SerializeField] TMP_Dropdown dropdown;
+    [SerializeField] Dictionary<string, string> DictUniqueID = new();
 
     // List to store references to instantiated prefabs
     private List<GameObject> instantiatedPrefabs = new List<GameObject>();
+    int index = 1;
+    string selectedOption;
 
     // Start is called before the first frame update
     void Start()
     {
+        dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
         saveLoadManager.CreateHistorySlot += CreateSlot;
     }
 
@@ -31,6 +36,23 @@ public class UI_History : MonoBehaviour
         saveLoadManager.CreateHistorySlot -= CreateSlot;
     }
 
+    private void OnDropdownValueChanged(int index)
+    {
+        selectedOption = dropdown.options[index].text;
+    }
+
+    public void DeleteData()
+    {
+        saveLoadManager.DeleteData(GetUniqueID(selectedOption));
+        // Close History UI so when open it again, it reset
+    }
+
+    public void DeleteAllData()
+    {
+        saveLoadManager.DeleteAllData();
+        // Close History UI so when open it again, it reset
+    }
+
     public void DeleteAllHistoryWhenOpen()
     {
         foreach (GameObject prefab in instantiatedPrefabs)
@@ -41,9 +63,42 @@ public class UI_History : MonoBehaviour
         instantiatedPrefabs.Clear();
     }
 
+    private void StoreUniqueID(string uniqueID, string name)
+    {
+        DictUniqueID[name] = uniqueID;
+    }
+
+    private string GetUniqueID(string key)
+    {
+        if (DictUniqueID.ContainsKey(key))
+        {
+            return DictUniqueID[key];
+        }
+
+        return "";
+    }
+
+    private string DisplayKey(string key)
+    {
+        if (DictUniqueID.ContainsKey(key))
+        {
+            return key;
+        }
+        return "";
+    }
+
+    public void ClearDictionary()
+    {
+        DictUniqueID.Clear();
+        index = 1;
+        dropdown.options.Clear();
+    }
+
     private void CreateSlot(UserData data)
     {
-        uniqueID.Add(data.uniqueID);
+        //uniqueID.Add(data.uniqueID);
+        data.name = $"Data {index}";
+        StoreUniqueID(data.uniqueID, data.name);
 
         int eyeContactDone = 0;
         if (data.NPC1.eyeContactDone == true)
@@ -69,29 +124,46 @@ public class UI_History : MonoBehaviour
 
         TextMeshProUGUI[] texts = slot.GetComponentsInChildren<TextMeshProUGUI>();
 
-        if (texts[2] != null)
+        //for (int i = 0; i < texts.Length; i++)
+        //{
+        //    Debug.Log(texts[i]);
+        //}
+
+        //uniqueID.Add(data.uniqueID);
+
+        dropdown.options.Add(new TMP_Dropdown.OptionData(DisplayKey(data.name)));
+
+        if (texts[1] != null)
         {
-            texts[2].text = data.wpm.value.ToString();
+            texts[1].text = data.wpm.value.ToString();
         }
 
-        if (texts[4] != null)
+        if (texts[3] != null)
         {
-            texts[4].text = eyeContactDone.ToString();
+            texts[3].text = eyeContactDone.ToString();
         }
 
-        if (texts[6] != null)
+        if (texts[5] != null)
         {
-            texts[6].text = data.volume.value.ToString();
+            texts[5].text = data.volume.value.ToString();
         }
 
-        if (texts[8] != null)
+        if (texts[7] != null)
         {
-            texts[8].text = data.timer.value.ToString();
+            texts[7].text = data.timer.value.ToString();
+        }
+
+        if (texts[9] != null)
+        {
+            texts[9].text = handMovement.ToString();
         }
 
         if (texts[10] != null)
         {
-            texts[10].text = handMovement.ToString();
+            texts[10].text = DisplayKey(data.name);
+            //texts[10].text = data.uniqueID;
         }
+
+        index++;
     }
 }

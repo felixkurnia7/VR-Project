@@ -155,6 +155,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Node.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleParticle.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\SpeechRecognition.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\UI\UI_History_Slot.cs" />
     <Compile Include="Assets\Lets Make a VR Game\UI 3D Examples\UI_3D\Scripts\XRPushButton.cs" />
     <Compile Include="Assets\Lets Make a VR Game\UI 3D Examples\UI_3D\Scripts\ClawMachine\ClawMachine.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\TeleportAnchorWithFade.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\VolumeMeterWithClip.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRKnob.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\FillerWordDetector.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\UI\UI_History.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\VolumeUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlayQuickSound.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ConvertValueToHue.cs" />
@@ -182,8 +184,6 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\UI\UI_History_Slot.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\UI\UI_History.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
