@@ -196,6 +196,7 @@ public class JSONDataService : IDataService
             {
                 File.Delete(file);
             }
+            Debug.Log("Data exists. Deleting All files!");
         }
 
         return true;

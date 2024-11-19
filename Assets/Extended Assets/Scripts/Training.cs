@@ -29,8 +29,8 @@ public class Training : MonoBehaviour
     private Hand rightHand;
 
     [Header("User Interface")]
-    //[SerializeField]
-    //private GameObject timerCanvas;
+    [SerializeField]
+    private GameObject timerCanvas;
     [SerializeField]
     private GameObject statistic;
     [SerializeField]
@@ -76,8 +76,22 @@ public class Training : MonoBehaviour
     [SerializeField]
     private GameObject Char_NPC5;
 
-    public void StartTraining()
+    [Header("Fade In & Out")]
+    [SerializeField]
+    private FadeCanvas _fade;
+    private float alpha = 0.0f;
+    [SerializeField]
+    private CanvasGroup canvasGroup = null;
+
+    public void StartTrainingSession()
     {
+        StartCoroutine(StartTrainingIEnum());
+    }
+
+    private void StartTraining()
+    {
+        timerCanvas.SetActive(true);
+
         text.ResetText();
         WPM.ResetValue();
         volume.ResetValue();
@@ -110,6 +124,65 @@ public class Training : MonoBehaviour
         Char_NPC3.SetActive(true);
         Char_NPC4.SetActive(true);
         Char_NPC5.SetActive(true);
+    }
+
+    public IEnumerator StartTrainingIEnum()
+    {
+        StartCoroutine(FadeIn(3f));
+
+        while (alpha <= 1)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha >= 0.9f)
+            //    StartTraining();
+        }
+
+        StartTraining();
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(FadeOut(3f));
+
+        while (alpha >= 0)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha <= 0.3f)
+            //    StartTraining();
+        }
+    }
+
+    private IEnumerator FadeIn(float duration)
+    {
+        float elapsedTime = 0.0f;
+
+        while (alpha <= 1.0f)
+        {
+            SetAlpha(elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private IEnumerator FadeOut(float duration)
+    {
+        float elapsedTime = 0.0f;
+
+        while (alpha >= 0.0f)
+        {
+            SetAlpha(1 - (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private void SetAlpha(float value)
+    {
+        alpha = value;
+        canvasGroup.alpha = alpha;
     }
 
     public void StopTraining()

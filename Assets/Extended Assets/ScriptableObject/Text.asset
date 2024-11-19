@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005a54e128804a94c97ab2085c84d4a1, type: 3}
   m_Name: Text
   m_EditorClassIdentifier: 
-  text: Hello, World! Hello, World!
+  text: 
   fillerWords: []
   totalFillerWords: 0

@@ -43,7 +43,7 @@ public class UI_History : MonoBehaviour
 
     public void DeleteData()
     {
-        saveLoadManager.DeleteData(GetUniqueID(selectedOption));
+        //saveLoadManager.DeleteData(GetUniqueID(selectedOption));
         // Close History UI so when open it again, it reset
     }
 
@@ -94,9 +94,20 @@ public class UI_History : MonoBehaviour
         dropdown.options.Clear();
     }
 
+    public void SetDropdownValue()
+    {
+        if (instantiatedPrefabs.Count == 0)
+        {
+            return;
+        }
+        else
+        {
+            dropdown.value = 0;
+        }
+    }
+
     private void CreateSlot(UserData data)
     {
-        //uniqueID.Add(data.uniqueID);
         data.name = $"Data {index}";
         StoreUniqueID(data.uniqueID, data.name);
 
@@ -129,7 +140,6 @@ public class UI_History : MonoBehaviour
         //    Debug.Log(texts[i]);
         //}
 
-        //uniqueID.Add(data.uniqueID);
 
         dropdown.options.Add(new TMP_Dropdown.OptionData(DisplayKey(data.name)));
 
