@@ -35,6 +35,10 @@ public class Training : MonoBehaviour
     private GameObject statistic;
     [SerializeField]
     private GameObject resultUI;
+    [SerializeField]
+    private GameObject preparationUI;
+    [SerializeField]
+    private GameObject whiteboardUI;
 
     [Header("Systems")]
     [SerializeField]
@@ -82,10 +86,26 @@ public class Training : MonoBehaviour
     private float alpha = 0.0f;
     [SerializeField]
     private CanvasGroup canvasGroup = null;
+    public Coroutine CurrentRoutine { private set; get; } = null;
 
     public void StartTrainingSession()
     {
         StartCoroutine(StartTrainingIEnum());
+    }
+
+    public void StopTrainingSession()
+    {
+        StartCoroutine(StopTrainingIEnum());
+    }
+
+    public void EndTrainingSession()
+    {
+        StartCoroutine(EndTrainingSessionIEnum());
+    }
+
+    public void RetryTrainingSession()
+    {
+        StartCoroutine(RetryTrainingSessionIEnum());
     }
 
     private void StartTraining()
@@ -106,6 +126,11 @@ public class Training : MonoBehaviour
 
         timer.StartTimer();
 
+        preparationUI.SetActive(false);
+        statistic.SetActive(false);
+        resultUI.SetActive(false);
+        whiteboardUI.SetActive(false);
+
         speechRecognition.SetActive(true);
         eyeContactSystem.SetActive(true);
         checkVolumeSystem.SetActive(true);
@@ -113,20 +138,171 @@ public class Training : MonoBehaviour
         checkWPMSystem.SetActive(true);
         fillerWordDetector.SetActive(true);
 
-        chair1.GetComponent<ObjLookAtPlayer>().enabled = true;
-        chair2.GetComponent<ObjLookAtPlayer>().enabled = true;
-        chair3.GetComponent<ObjLookAtPlayer>().enabled = true;
-        chair4.GetComponent<ObjLookAtPlayer>().enabled = true;
-        chair5.GetComponent<ObjLookAtPlayer>().enabled = true;
-
         Char_NPC1.SetActive(true);
         Char_NPC2.SetActive(true);
         Char_NPC3.SetActive(true);
         Char_NPC4.SetActive(true);
         Char_NPC5.SetActive(true);
+
+        Char_NPC1.GetComponent<NPCLookAtPlayer>().StartTraining();
+        Char_NPC2.GetComponent<NPCLookAtPlayer>().StartTraining();
+        Char_NPC3.GetComponent<NPCLookAtPlayer>().StartTraining();
+        Char_NPC4.GetComponent<NPCLookAtPlayer>().StartTraining();
+        Char_NPC5.GetComponent<NPCLookAtPlayer>().StartTraining();
+
+        chair1.GetComponent<ObjLookAtPlayer>().StartTraining();
+        chair2.GetComponent<ObjLookAtPlayer>().StartTraining();
+        chair3.GetComponent<ObjLookAtPlayer>().StartTraining();
+        chair4.GetComponent<ObjLookAtPlayer>().StartTraining();
+        chair5.GetComponent<ObjLookAtPlayer>().StartTraining();
+    }
+
+    public void StopTraining()
+    {
+        timerCanvas.SetActive(false);
+
+        speechRecognition.SetActive(false);
+        eyeContactSystem.SetActive(false);
+        checkVolumeSystem.SetActive(false);
+        handMovementSystem.SetActive(false);
+        checkWPMSystem.SetActive(false);
+        fillerWordDetector.SetActive(false);
+
+        timer.StopTimer();
+
+        statistic.SetActive(true);
+        resultUI.SetActive(true);
+        preparationUI.SetActive(false);
+        whiteboardUI.SetActive(false);
+
+        Char_NPC1.SetActive(false);
+        Char_NPC2.SetActive(false);
+        Char_NPC3.SetActive(false);
+        Char_NPC4.SetActive(false);
+        Char_NPC5.SetActive(false);
+    }
+
+    private void EndSession()
+    {
+        timerCanvas.SetActive(false);
+
+        speechRecognition.SetActive(false);
+        eyeContactSystem.SetActive(false);
+        checkVolumeSystem.SetActive(false);
+        handMovementSystem.SetActive(false);
+        checkWPMSystem.SetActive(false);
+        fillerWordDetector.SetActive(false);
+
+        timerCanvas.SetActive(false);
+
+        statistic.SetActive(false);
+        resultUI.SetActive(false);
+        preparationUI.SetActive(true);
+        whiteboardUI.SetActive(true);
+
+        chair1.GetComponent<ObjLookAtPlayer>().StopTraining();
+        chair2.GetComponent<ObjLookAtPlayer>().StopTraining();
+        chair3.GetComponent<ObjLookAtPlayer>().StopTraining();
+        chair4.GetComponent<ObjLookAtPlayer>().StopTraining();
+        chair5.GetComponent<ObjLookAtPlayer>().StopTraining();
+
+        Char_NPC1.SetActive(false);
+        Char_NPC2.SetActive(false);
+        Char_NPC3.SetActive(false);
+        Char_NPC4.SetActive(false);
+        Char_NPC5.SetActive(false);
     }
 
     public IEnumerator StartTrainingIEnum()
+    {
+        StartCoroutine(FadeIn(3f));
+
+        while (alpha <= 1)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha >= 0.9f)
+            //    StartTraining();
+        }
+
+        StartTraining();
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(FadeOut(3f));
+
+        while (alpha >= 0)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha <= 0.3f)
+            //    StartTraining();
+        }
+    }
+
+    public IEnumerator StopTrainingIEnum()
+    {
+        StartCoroutine(FadeIn(2f));
+
+        while (alpha <= 1)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha >= 0.9f)
+            //    StartTraining();
+        }
+
+        StopTraining();
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(FadeOut(2f));
+
+        while (alpha >= 0)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha <= 0.3f)
+            //    StartTraining();
+        }
+    }
+
+    public IEnumerator EndTrainingSessionIEnum()
+    {
+        StartCoroutine(FadeIn(2f));
+
+        while (alpha <= 1)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha >= 0.9f)
+            //    StartTraining();
+        }
+
+        EndSession();
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(FadeOut(2f));
+
+        while (alpha >= 0)
+        {
+            Debug.Log(alpha);
+            yield return null;
+
+            //if (alpha <= 0.3f)
+            //    StartTraining();
+        }
+
+        gameObject.SetActive(false);
+    }
+
+    public IEnumerator RetryTrainingSessionIEnum()
     {
         StartCoroutine(FadeIn(3f));
 
@@ -185,30 +361,15 @@ public class Training : MonoBehaviour
         canvasGroup.alpha = alpha;
     }
 
-    public void StopTraining()
+    public void StartFadeIn(float seconds)
     {
-        speechRecognition.SetActive(false);
-        eyeContactSystem.SetActive(false);
-        checkVolumeSystem.SetActive(false);
-        handMovementSystem.SetActive(false);
-        checkWPMSystem.SetActive(false);
-        fillerWordDetector.SetActive(false);
+        StopAllCoroutines();
+        CurrentRoutine = StartCoroutine(FadeIn(seconds));
+    }
 
-        timer.StopTimer();
-
-        statistic.SetActive(true);
-        resultUI.SetActive(true);
-
-        chair1.GetComponent<ObjLookAtPlayer>().enabled = false;
-        chair2.GetComponent<ObjLookAtPlayer>().enabled = false;
-        chair3.GetComponent<ObjLookAtPlayer>().enabled = false;
-        chair4.GetComponent<ObjLookAtPlayer>().enabled = false;
-        chair5.GetComponent<ObjLookAtPlayer>().enabled = false;
-
-        Char_NPC1.SetActive(false);
-        Char_NPC2.SetActive(false);
-        Char_NPC3.SetActive(false);
-        Char_NPC4.SetActive(false);
-        Char_NPC5.SetActive(false);
+    public void StartFadeOut(float seconds)
+    {
+        StopAllCoroutines();
+        CurrentRoutine = StartCoroutine(FadeOut(seconds));
     }
 }

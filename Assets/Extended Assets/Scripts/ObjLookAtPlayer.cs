@@ -6,15 +6,23 @@ public class ObjLookAtPlayer : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform
     public float rotationSpeed = 5.0f; // Speed of rotation
+    public Quaternion originRotation;
+    public bool trainingStart;
 
     private void Awake()
     {
         player = Camera.main.transform;
+        trainingStart = false;
+    }
+
+    private void Start()
+    {
+        originRotation = transform.rotation;
     }
 
     void Update()
     {
-        if (player != null)
+        if (player != null && trainingStart == true)
         {
             // Get the direction to the player
             Vector3 direction = player.position - transform.position;
@@ -31,5 +39,19 @@ public class ObjLookAtPlayer : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
             }
         }
+        else
+        {
+            transform.rotation = originRotation;
+        }
+    }
+
+    public void StartTraining()
+    {
+        trainingStart = true;
+    }
+
+    public void StopTraining()
+    {
+        trainingStart = false;
     }
 }
