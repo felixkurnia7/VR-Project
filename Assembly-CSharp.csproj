@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckWordPerMinute.cs" />
+    <Compile Include="Assets\HeadDetection.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Persistence\JSONDataService.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnFromList.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRJoystick.cs" />
