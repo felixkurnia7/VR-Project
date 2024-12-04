@@ -8,24 +8,35 @@ public class Clock : MonoBehaviour
     [SerializeField] GameObject hourHand;
     [SerializeField] GameObject minuteHand;
     [SerializeField] GameObject secondHand;
+    [SerializeField] Material morningSkybox;
+    [SerializeField] Material afternoonSkybox;
+    [SerializeField] Material nightSkybox;
+    [SerializeField] float skySpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        
         InvokeRepeating("UpdateClock", 0f, 1f);
     }
 
     private void Update()
     {
-        //Debug.Log(System.DateTime.Now.Hour + " " + System.DateTime.Now.Minute + " " + System.DateTime.Now.Second);
+        Debug.Log(DateTime.Now.Hour + " " + DateTime.Now.Minute + " " + DateTime.Now.Second);
+        if (DateTime.Now.Hour >= 6 && DateTime.Now.Hour < 15)
+            RenderSettings.skybox = morningSkybox;
+        if (DateTime.Now.Hour >= 15 && DateTime.Now.Hour < 19)
+            RenderSettings.skybox = afternoonSkybox;
+        if (DateTime.Now.Hour >= 19 && DateTime.Now.Hour < 6)
+            RenderSettings.skybox = nightSkybox;
+
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * skySpeed);
     }
 
     void UpdateClock()
     {
-        float hourAngle = ((System.DateTime.Now.Hour + (System.DateTime.Now.Minute / 60)) * 30) + 90;
-        float minuteAngle = (System.DateTime.Now.Minute * (360f / 60)) + 90;
-        float secondAngle = (System.DateTime.Now.Second * (360 / 60)) + 90;
+        float hourAngle = ((DateTime.Now.Hour + (DateTime.Now.Minute / 60)) * 30) + 90;
+        float minuteAngle = (DateTime.Now.Minute * (360f / 60)) + 90;
+        float secondAngle = (DateTime.Now.Second * (360 / 60)) + 90;
 
         Vector3 targetHour = new Vector3(hourAngle, 0, -90);
         Vector3 targetMinute = new Vector3(minuteAngle, 0, -90);
