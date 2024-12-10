@@ -44,6 +44,12 @@ public class ShowMessageFromList : MonoBehaviour
         ShowMessage();
     }
 
+    public void ResetMessage()
+    {
+        index = 0;
+        ShowMessage();
+    }
+
     private void ShowMessage()
     {
         messageOutput.text = messages[Mathf.Abs(index)];
