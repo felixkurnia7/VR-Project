@@ -80,9 +80,11 @@
     <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Strategies.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\LookAtPlayer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\RemoveObjectsWithTag.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Managers\SoundFXManager.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\ReticleRotation.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\NPC_AI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnObject.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Audio\PlaySoundFX.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SceneTransitionManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetMaterialColor.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\PracticeSoftSkills.cs" />
@@ -122,6 +124,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\Persistence\UserData.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetLightColor.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRSlider.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\UI\ButtonUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\Notes.cs" />
     <Compile Include="Assets\Lets Make a VR Game\UI 3D Examples\UI_3D\Scripts\ClawMachine\UfoAbductionForce.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnPull.cs" />
@@ -162,6 +165,7 @@
     <Compile Include="Assets\Lets Make a VR Game\UI 3D Examples\UI_3D\Scripts\ClawMachine\ClawMachine.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Testing\TeleportAnchorWithFade.cs" />
     <Compile Include="Assets\Resources\HuggingFaceAPI\Examples\Scripts\TextToImageExample.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Managers\SoundMixerManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlaySoundsFromList.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\LoadingManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleLight.cs" />
