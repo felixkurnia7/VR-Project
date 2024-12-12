@@ -8,6 +8,7 @@ public class WhiteboardMarker : MonoBehaviour
 {
     [SerializeField] private Transform _tip;
     [SerializeField] private int _penSize = 5;
+    [SerializeField] PlaySoundFX markerSoundFX;
 
     private Renderer _renderer;
     private Color[] _colors;
@@ -18,6 +19,8 @@ public class WhiteboardMarker : MonoBehaviour
     private Vector2 _touchPos, _lastTouchPos;
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
+
+    public bool useMarker;
     
     void Start()
     {
@@ -29,6 +32,11 @@ public class WhiteboardMarker : MonoBehaviour
     void Update()
     {
         Draw();
+    }
+
+    public void UseMarker(bool use)
+    {
+        useMarker = use;
     }
 
     private void Draw()

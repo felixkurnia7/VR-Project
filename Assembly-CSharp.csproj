@@ -101,6 +101,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\ApplyPhysics.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRButton.cs" />
     <Compile Include="Assets\VR Body\AnimateOnInput.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Environment\SkyRotation.cs" />
     <Compile Include="Assets\Resources\HuggingFaceAPI\Examples\Scripts\ConversationExample.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetVolume.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\LoadScene.cs" />
