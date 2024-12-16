@@ -31,7 +31,7 @@ public class WhiteboardMarker : MonoBehaviour
 
     void Update()
     {
-        Draw();
+        //Draw();
     }
 
     public void UseMarker(bool use)
@@ -39,8 +39,9 @@ public class WhiteboardMarker : MonoBehaviour
         useMarker = use;
     }
 
-    private void Draw()
+    public void Draw()
     {
+        useMarker = true;
         if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight))
         {
             if (_touch.transform.GetComponent<Whiteboard>())
@@ -59,6 +60,8 @@ public class WhiteboardMarker : MonoBehaviour
 
                 if (_touchedLastFrame)
                 {
+                    markerSoundFX.Play();
+
                     _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
 
                     for (float f = 0.01f; f < 1.00f; f += 0.01f)
@@ -86,7 +89,10 @@ public class WhiteboardMarker : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight) ? Color.green : Color.red;
-        Gizmos.DrawRay(_tip.position, transform.up);
+        if (useMarker)
+        {
+            Gizmos.color = Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight) ? Color.green : Color.red;
+            Gizmos.DrawRay(_tip.position, transform.up);
+        }
     }
 }
