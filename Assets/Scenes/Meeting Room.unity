@@ -9594,7 +9594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Delete
+  m_text: Reset
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13104,6 +13104,8 @@ MonoBehaviour:
   handMovement: {fileID: 1790582757}
   leftHandTextPractice: {fileID: 1280293796}
   rightHandTextPractice: {fileID: 1364557958}
+  leftHandTextResult: {fileID: 0}
+  rightHandTextResult: {fileID: 0}
   TotalHandMovementResult: {fileID: 646257278}
 --- !u!1 &276416602
 GameObject:
@@ -34913,6 +34915,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 301454947}
+        m_TargetAssemblyTypeName: PlaySoundFX, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 638568600}
         m_TargetAssemblyTypeName: PracticeSoftSkills, Assembly-CSharp
         m_MethodName: SelectPractice
@@ -45750,7 +45764,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 100, y: 15}
+  m_SizeDelta: {x: 120, y: 15}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1309689837
 MonoBehaviour:
@@ -47430,7 +47444,7 @@ MonoBehaviour:
 
     2. Practice
 
-    3. Location
+    3. Settings
 
     4. History
 
@@ -47443,30 +47457,32 @@ MonoBehaviour:
     Tombol start untuk memulai sesi pelatihan. Saat sesi dimulai,
     Anda akan berbicara melakukan presentasi di depan beberapa <i>audience</i>. Dalam
     sesi pelatihan, akan terdapat beberapa fitur penilaian seperti <i>speech recognition</i>,
-    <i>word per minute</i>, <i>volume</i>, dan sebagainya. Jika Anda telah selesai
-    dan ingin mengakhiri sesi, dapat menekan tombol <i><b>End</b></i>. Kemudian,
-    Anda akan diberikan feedback berupa hasil yang Anda peroleh dari sesi yang telah
-    dijalani.'
+    <i>words per minute</i>, <i>volume</i>, dan sebagainya. Jika Anda telah selesai
+    dan ingin mengakhiri sesi, dapat menekan tombol <i><b>Finish</b></i>. Kemudian,
+    Anda akan diberikan <i>feedback</i> berupa hasil yang Anda peroleh dari sesi
+    yang telah dijalani.'
   - '<b>2. Practice</b>
 
     Tombol practice untuk mencoba fitur - fitur yang akan
     dinilai pada saat sesi pelatihan. Fitur tersebut meliputi <i>speech recognition,
     word per minute, volume, eye contact, dan hand movement</i>.'
-  - '<b>3. Location</b>
+  - '<b>3. Settings</b>
 
-    Tombol location untuk melakukan perpindahan lokasi,
-    dimana terdapat 2 lokasi yang berbeda yaitu ruang meeting dan ruang kelas. Setiap
-    lokasi memiliki objek dan lingkungan yang berbeda-beda sesuai dengan lokasi tersebut.'
+    Tombol settings untuk mengatur suara musik dan <i>sound
+    effects</i>, <i>location</i>, dan <i>control</i>. Tombol location untuk melakukan
+    perpindahan lokasi, dimana terdapat 2 lokasi yang berbeda yaitu ruang meeting
+    dan ruang kelas. Setiap lokasi memiliki objek dan lingkungan yang berbeda-beda
+    sesuai dengan lokasi tersebut. Control untuk menampilkan informasi mengenai cara
+    menggunakan controller. '
   - '<b>4. History</b>
 
-    Tombol history untuk melihat data hasil sesi yang telah
-    Anda lakukan. Anda dapat melacak progres pelatihan dari halaman ini. Anda juga
-    dapat menghapus data yang telah disimpan jika tidak diperlukan.'
+    Tombol history untuk melihat data hasil pelatihan yang
+    telah Anda lakukan. Anda dapat melacak progres pelatihan dari halaman ini. Anda
+    juga dapat menghapus data yang telah disimpan jika tidak diperlukan.'
   - '<b>5. Help</b>
 
     Tombol help untuk menampilkan halaman bantuan dalam sesi
-    ini. Halaman ini beguna untuk membantu Anda jika merasa kebingungan dalam sesi
-    ini.'
+    ini. Halaman ini beguna untuk membantu Anda jika merasa kebingungan.'
   - '<b>6. Main Menu</b>
 
     Tombol main menu untuk kembali ke halaman menu awal.'
@@ -47490,7 +47506,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '<b>5. Help</b>
+
+    Tombol help untuk menampilkan halaman bantuan dalam
+    sesi ini. Halaman ini beguna untuk membantu Anda jika merasa kebingungan.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -47848,7 +47867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Timer
+  m_text: Time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -50625,7 +50644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: End
+  m_text: Finish
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -60456,8 +60475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5a57b9816dbcd4eb230b86316369b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandController: {fileID: 1003823484}
-  rightHandController: {fileID: 1942489550}
+  leftHandController: {fileID: 1492424150}
+  rightHandController: {fileID: 928464883}
   movementThreshold: 0.5
   stationaryTimeThreshold: 1
   smoothFactor: 0.05

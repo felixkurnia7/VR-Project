@@ -15,10 +15,10 @@ public class HandMovementUI : MonoBehaviour
     private TextMeshProUGUI leftHandTextPractice;
     [SerializeField]
     private TextMeshProUGUI rightHandTextPractice;
-    //[SerializeField]
-    //private TextMeshProUGUI leftHandTextResult;
-    //[SerializeField]
-    //private TextMeshProUGUI rightHandTextResult;
+    [SerializeField]
+    private TextMeshProUGUI leftHandTextResult;
+    [SerializeField]
+    private TextMeshProUGUI rightHandTextResult;
     [SerializeField]
     private TextMeshProUGUI TotalHandMovementResult;
 
@@ -31,19 +31,19 @@ public class HandMovementUI : MonoBehaviour
     private void ShowHandMovementUI()
     {
         if (leftHandTextPractice != null)
-            leftHandTextPractice.text = leftHand.score.ToString();
+            leftHandTextPractice.text = leftHand.score.ToString("F1");
 
         if (rightHandTextPractice != null)
-            rightHandTextPractice.text = rightHand.score.ToString();
+            rightHandTextPractice.text = rightHand.score.ToString("F1");
 
         if (TotalHandMovementResult != null)
             TotalHandMovementResult.text = handMovement.totalScore.ToString("F1");
 
-        //if (leftHandTextResult != null)
-        //    leftHandTextResult.text = leftHand.score.ToString();
+        if (leftHandTextResult != null)
+            leftHandTextResult.text = leftHand.score.ToString("F1");
 
-        //if (rightHandTextResult != null)
-        //    rightHandTextResult.text = rightHand.score.ToString();
+        if (rightHandTextResult != null)
+            rightHandTextResult.text = rightHand.score.ToString("F1");
     }
 
     public void ResetHandMovement()
