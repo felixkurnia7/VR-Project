@@ -14251,8 +14251,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -6, y: 75}
+  m_AnchoredPosition: {x: 0, y: -10.4}
+  m_SizeDelta: {x: -6, y: 105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298273192
 MonoBehaviour:
@@ -14274,10 +14274,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dalam pilihan ini, Anda dapat mencoba fitur <i>Speech Recognition</i>.
+  m_text: "Dalam pilihan ini, Anda dapat mencoba fitur <i>Speech Recognition</i>.
     Tekan dan tahan <i><b>tombol secondary</b></i> untuk memulai record dan lepaskan
     untuk mendapat hasil dari suara Anda. Hasil berupa jumlah kata yang Anda ucapkan,
-    volume suara, dan tulisan teks tersebut.
+    volume suara, dan tulisan teks tersebut. \n\n<b>Jika hasil teks kurang sesuai,
+    Anda dapat berbicara lebih pelan agar mendapat hasil yang lebih optimal.</b>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16923,7 +16924,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 30}
+  m_SizeDelta: {x: 0, y: 50.48}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &371746408
 MonoBehaviour:
@@ -51953,10 +51954,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dalam pilihan ini, Anda dapat mencoba fitur <i>Speech Recognition</i>.
+  m_text: "Dalam pilihan ini, Anda dapat mencoba fitur <i>Speech Recognition</i>.
     Tekan dan tahan <i><b>tombol secondary</b></i> untuk memulai record dan lepaskan
     untuk mendapat hasil dari suara Anda. Hasil berupa jumlah kata yang Anda ucapkan,
-    volume suara, dan tulisan teks tersebut.
+    volume suara, dan tulisan teks tersebut. \n\n<b>Jika hasil teks kurang sesuai,
+    Anda dapat berbicara lebih pelan agar mendapat hasil yang lebih optimal.</b>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
