@@ -70,7 +70,7 @@ public class SpeechRecognition : MonoBehaviour
         //}
     }
 
-    private void ResetText()
+    public void ResetText()
     {
         textSO.ResetText();
     }
