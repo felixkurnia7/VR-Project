@@ -14698,6 +14698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6806753140477462092, guid: af1e39d807c2a9a42b42fd25abed4c78,
         type: 3}
+      propertyPath: daySkybox
+      value: 
+      objectReference: {fileID: 2100000, guid: 85cf0b004bc4a654b9e501efcce47902, type: 2}
+    - target: {fileID: 6806753140477462092, guid: af1e39d807c2a9a42b42fd25abed4c78,
+        type: 3}
       propertyPath: nightSkybox
       value: 
       objectReference: {fileID: 2100000, guid: d4454f71d85928744be7771e2143dab7, type: 2}
@@ -35860,7 +35865,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryButton
       value: 
-      objectReference: {fileID: 1606516596}
+      objectReference: {fileID: 8019230052470668052}
     - target: {fileID: 5062960488185547547, guid: 580ce54377b960a458222e0699519eeb,
         type: 3}
       propertyPath: eyeContactSystem

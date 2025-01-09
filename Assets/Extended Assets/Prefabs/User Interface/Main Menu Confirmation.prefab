@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 5427533961409295104}
   - component: {fileID: 5427533961409295109}
   - component: {fileID: 5427533961409295106}
-  - component: {fileID: 5427533961409295107}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -361,23 +360,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &5427533961409295107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5427533961409295105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7131db8fcbb72d74e9a7202204604807, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speechRecognition: {fileID: 0}
-  timerText: {fileID: 5427533961409295106}
-  isCountdown: 0
-  time: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
-  isRunning: 0
 --- !u!1 &5427533961702612756
 GameObject:
   m_ObjectHideFlags: 0
