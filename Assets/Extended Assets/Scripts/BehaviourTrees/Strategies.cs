@@ -95,6 +95,10 @@ namespace BehaviourTrees
             {
                 Debug.Log("Play Animation idle");
                 anim.SetBool("idle", true);
+                anim.SetBool("interested", false);
+                anim.SetBool("bored", false);
+                anim.SetBool("confuse", false);
+                anim.SetBool("frustrated", false);
                 head.bored = false;
                 head.lookAtPlayer = true;
             }
@@ -103,12 +107,22 @@ namespace BehaviourTrees
             if (!idle && interested && !excited && !bored && !confuse)
             {
                 Debug.Log("Play Animation Interested");
+                anim.SetBool("interested", true);
+                anim.SetBool("idle", false);
+                anim.SetBool("bored", false);
+                anim.SetBool("confuse", false);
+                anim.SetBool("frustrated", false);
             }
 
             // Excited
             if (!idle && !interested && excited && !bored && !confuse)
             {
                 Debug.Log("Play Animation Excited");
+                anim.SetBool("frustrated", true);
+                anim.SetBool("interested", false);
+                anim.SetBool("idle", false);
+                anim.SetBool("bored", false);
+                anim.SetBool("confuse", false);
             }
 
             // Bored
@@ -116,7 +130,10 @@ namespace BehaviourTrees
             {
                 Debug.Log("Play Animation Bored");
                 anim.SetBool("bored", true);
+                anim.SetBool("interested", false);
                 anim.SetBool("idle", false);
+                anim.SetBool("confuse", false);
+                anim.SetBool("frustrated", false);
                 head.lookAtPlayer = false;
                 head.bored = true;
             }
@@ -125,6 +142,11 @@ namespace BehaviourTrees
             if (!idle && !interested && !excited && !bored && confuse)
             {
                 Debug.Log("Play Animation Confuse");
+                anim.SetBool("confuse", true);
+                anim.SetBool("interested", false);
+                anim.SetBool("idle", false);
+                anim.SetBool("bored", false);
+                anim.SetBool("frustrated", false);
             }
 
             return Node.Status.Running;

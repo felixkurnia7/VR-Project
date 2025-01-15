@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Left Hand
   m_EditorClassIdentifier: 
   value: 0
+  movementThreshold: 10
+  score: 0

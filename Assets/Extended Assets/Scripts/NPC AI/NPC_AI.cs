@@ -54,10 +54,10 @@ public class NPC_AI : MonoBehaviour
         PrioritySelector actions = new("NPC Logic");
 
         // All Sequences
-        Sequence interestedSequence = new("InterestedSequence", 5);
-        Sequence excitedSequence = new("ExcitedSequence", 10);
-        Sequence boredSequence = new("BoredSequence", 20);
-        Sequence confuseSequence = new("ConfuseSequence", 15);
+        Sequence interestedSequence = new("InterestedSequence");
+        Sequence excitedSequence = new("ExcitedSequence");
+        Sequence boredSequence = new("BoredSequence");
+        Sequence confuseSequence = new("ConfuseSequence");
 
         // Check Statuses
         bool CheckTimeInterested()
@@ -160,23 +160,6 @@ public class NPC_AI : MonoBehaviour
             return false;
         }
 
-        // Sequence Interested
-        interestedSequence.AddChild(new Leaf("IsPassTimeInterested?", new Condition(CheckTimeInterested)));
-        interestedSequence.AddChild(new Leaf("IsPassWPMInterested?", new Condition(CheckWPMInterested)));
-        interestedSequence.AddChild(new Leaf("IsPassEyeContactInterested?", new Condition(CheckEyeContactInterested)));
-        interestedSequence.AddChild(new Leaf("PlayAnimationInterested", new PlayAnimationNPC(anim, head, false, true)));
-        actions.AddChild(interestedSequence);
-        // -----------------------------------------------------------
-
-        // Sequence Excited
-        excitedSequence.AddChild(new Leaf("IsPassTimeExcited?", new Condition(CheckTimeExcited)));
-        excitedSequence.AddChild(new Leaf("IsPassWPMExcited?", new Condition(CheckWPMExcited)));
-        excitedSequence.AddChild(new Leaf("IsPassHandExcited?", new Condition(CheckHandExcited)));
-        excitedSequence.AddChild(new Leaf("IsEyeContactDone?", new Condition(CheckEyeContactExcited)));
-        excitedSequence.AddChild(new Leaf("PlayAnimationExcited", new PlayAnimationNPC(anim, head, false, false, true)));
-        actions.AddChild(excitedSequence);
-        // -------------------------------------------------------------
-
         // Sequence Bored
         boredSequence.AddChild(new Leaf("IsPassTimeBored?", new Condition(CheckTimeBored)));
         boredSequence.AddChild(new Leaf("PlayAnimationBored", new PlayAnimationNPC(anim, head, false, false, false, true)));
@@ -191,6 +174,23 @@ public class NPC_AI : MonoBehaviour
         confuseSequence.AddChild(new Leaf("PlayAnimationConfuse", new PlayAnimationNPC(anim, head, false, false, false, false, true)));
         actions.AddChild(confuseSequence);
         // -------------------------------------------------------------
+
+        // Sequence Excited
+        excitedSequence.AddChild(new Leaf("IsPassTimeExcited?", new Condition(CheckTimeExcited)));
+        excitedSequence.AddChild(new Leaf("IsPassWPMExcited?", new Condition(CheckWPMExcited)));
+        excitedSequence.AddChild(new Leaf("IsPassHandExcited?", new Condition(CheckHandExcited)));
+        excitedSequence.AddChild(new Leaf("IsEyeContactDone?", new Condition(CheckEyeContactExcited)));
+        excitedSequence.AddChild(new Leaf("PlayAnimationExcited", new PlayAnimationNPC(anim, head, false, false, true)));
+        actions.AddChild(excitedSequence);
+        // -------------------------------------------------------------
+
+        // Sequence Interested
+        interestedSequence.AddChild(new Leaf("IsPassTimeInterested?", new Condition(CheckTimeInterested)));
+        interestedSequence.AddChild(new Leaf("IsPassWPMInterested?", new Condition(CheckWPMInterested)));
+        interestedSequence.AddChild(new Leaf("IsPassEyeContactInterested?", new Condition(CheckEyeContactInterested)));
+        interestedSequence.AddChild(new Leaf("PlayAnimationInterested", new PlayAnimationNPC(anim, head, false, true)));
+        actions.AddChild(interestedSequence);
+        // -----------------------------------------------------------
 
         // Play idle animation
         Leaf playNormal = new("PlayAnimationNormal", new PlayAnimationNPC(anim, head, true));
