@@ -77,12 +77,10 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\FadeCanvas.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\ObjLookAtPlayer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRLever.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Strategies.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\LookAtPlayer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\RemoveObjectsWithTag.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Managers\SoundFXManager.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\ReticleRotation.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\NPC_AI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SpawnObject.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Audio\PlaySoundFX.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SceneTransitionManager.cs" />
@@ -159,7 +157,6 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\CreateTrail.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTilt.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SO\Hand.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\BehaviourTrees\Node.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleParticle.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\SpeechRecognition.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\UI_History_Slot.cs" />
@@ -192,6 +189,25 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviorTree\Node.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviorTree\Tree.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviorTree\Selector.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\BehaviorTree\Sequence.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\CheckTimerValue.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\NPC_AI.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\TaskNormal.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Idle\CheckIdle.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Idle\CheckIdleTimer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Idle\PlayIdleAnim.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Idle\SetNPCToIdle.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Interested\CheckInterested.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Interested\CheckInterestedTimer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Interested\SetNPCToInterested.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Interested\PlayInterestedAnim.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Bored\CheckBored.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Bored\CheckBoredTimer.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Bored\SetNPCToBored.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Bored\PlayBoredAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

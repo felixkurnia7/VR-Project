@@ -1,207 +1,88 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using BehaviourTrees;
+using BehaviorTree;
 
-public class NPC_AI : MonoBehaviour
+public class NPC_AI : Tree
 {
-    [SerializeField] HeadLookAtPlayer head;
+    public NPC npc;
+    public StringValue text;
+    public FloatValue timer;
+    public FloatValue volume;
+    public FloatValue wpm;
 
-    [Header("Scriptable Object")]
-    [SerializeField] FloatValue wpm;
-    [SerializeField] FloatValue volume;
-    [SerializeField] FloatValue timer;
-    [SerializeField] Hand leftHand;
-    [SerializeField] Hand rightHand;
-    [SerializeField] NPC npc;
+    public bool notIdle = false;
+    public bool notInterested = false;
+    public bool notBored = false;
 
-    [Header("Interested Value Threshold")]
-    [SerializeField] float timeInterestedThreshold;
-    [SerializeField] float wpmInterestedThreshold;
-    [SerializeField] float stareInterestedThreshold;
-
-    [Header("Excited Value Threshold")]
-    [SerializeField] float timeExcitedThreshold;
-    [SerializeField] float wpmExcitedThreshold;
-    [SerializeField] bool isStareDone;
-    [SerializeField] float handExcitedThreshold;
-
-    [Header("Bored Value Threshold")]
-    [SerializeField] float timeBoredThreshold;
-
-    [Header("Confuse Value Threshold")]
-    [SerializeField] float timeConfuseThreshold;
-    [SerializeField] float wpmConfuseThreshold;
-    [SerializeField] float stareConfuseThreshold;
-    [SerializeField] float volumeConfuseThreshold;
-
-    //[SerializeField]
-    //private bool isNormal;
-
-    private Animator anim;
-    BehaviourTree tree;
-
-    private void Awake()
+    protected override Node SetupTree()
     {
-        anim = GetComponent<Animator>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        tree = new BehaviourTree("NPC");
-
-        PrioritySelector actions = new("NPC Logic");
-
-        // All Sequences
-        Sequence interestedSequence = new("InterestedSequence");
-        Sequence excitedSequence = new("ExcitedSequence");
-        Sequence boredSequence = new("BoredSequence");
-        Sequence confuseSequence = new("ConfuseSequence");
-
-        // Check Statuses
-        bool CheckTimeInterested()
+        Node root = new Sequence(new List<Node>
         {
-            if (timer.value > timeInterestedThreshold)
+            new Selector(new List<Node>
             {
-                return true;
-            }
-            interestedSequence.Reset();
-            return false;
-        }
+                new CheckIdle(transform),
 
-        bool CheckWPMInterested()
-        {
-            if (wpm.value > wpmInterestedThreshold)
-                return true;
-            interestedSequence.Reset();
-            return false;
-        }
+                new Sequence(new List<Node>
+                {
+                    new PlayIdleAnim(transform),
 
-        bool CheckEyeContactInterested()
-        {
-            if (npc.stare > stareInterestedThreshold)
-                return true;
-            interestedSequence.Reset();
-            return false;
-        }
+                    new CheckIdleTimer(timer, transform)
+                })
+            })
+            //new Selector(new List<Node>
+            //{
+            //    new CheckIdle(transform),
 
-        bool CheckTimeExcited()
-        {
-            if (timer.value > timeExcitedThreshold)
-                return true;
-            excitedSequence.Reset();
-            return false;
-        }
+            //    new Sequence(new List<Node>
+            //    {
+            //        new CheckIdleTimer(timer),
+            //        new SetNPCToIdle(transform),
+            //        new PlayIdleAnim(transform)
+            //    })
+            //}),
 
-        bool CheckWPMExcited()
-        {
-            if (wpm.value > wpmExcitedThreshold)
-                return true;
-            excitedSequence.Reset();
-            return false;
-        }
+            //new Selector(new List<Node>
+            //{
+            //    new CheckInterested(transform),
 
-        bool CheckHandExcited()
-        {
-            if ((leftHand.value + rightHand.value) > handExcitedThreshold)
-                return true;
-            excitedSequence.Reset();
-            return false;
-        }
+            //    new Sequence(new List<Node>
+            //    {
+            //        new CheckInterestedTimer(timer),
+            //        new SetNPCToInterested(transform),
+            //        new PlayInterestedAnim(transform)
+            //    })
+            //}),
 
-        bool CheckEyeContactExcited()
-        {
-            if (npc.eyeContactDone == isStareDone)
-                return true;
-            excitedSequence.Reset();
-            return false;
-        }
+            //new Selector(new List<Node>
+            //{
+            //    new CheckBored(transform),
 
-        bool CheckTimeBored()
-        {
-            if (timer.value > timeBoredThreshold)
-            {
-                return true;
-            }
-            boredSequence.Reset();
-            return false;
-        }
+            //    new Sequence(new List<Node>
+            //    {
+            //        new CheckBoredTimer(timer),
+            //        new SetNPCToBored(transform),
+            //        new PlayBoredAnimation(transform)
+            //    })
+            //}),
 
-        bool CheckTimeConfuse()
-        {
-            if (timer.value > timeConfuseThreshold)
-                return true;
-            confuseSequence.Reset();
-            return false;
-        }
+            //new Sequence(new List<Node>
+            //{
+            //    new CheckTimerValue(timer),
+            //    new TaskNormal(npc, text, timer, volume, wpm, transform),
 
-        bool CheckWPMConfuse()
-        {
-            if (wpm.value < wpmConfuseThreshold)
-                return true;
-            confuseSequence.Reset();
-            return false;
-        }
+            //}),
+            //new Sequence(new List<Node>
+            //{
+            //    new CheckEnemyInAttackRange(transform),
+            //    new TaskAttack(transform),
+            //}),
+            //new Sequence(new List<Node>
+            //{
+            //    new CheckEnemyInFOVRange(transform),
+            //    new TaskGoToTarget(transform),
+            //}),
+            //new TaskPatrol(transform, waypoints),
+        });
 
-        bool CheckVolumeConfuse()
-        {
-            if (volume.value < volumeConfuseThreshold)
-                return true;
-            confuseSequence.Reset();
-            return false;
-        }
-
-        bool CheckEyeContactConfuse()
-        {
-            if (npc.stare < stareConfuseThreshold)
-                return true;
-            confuseSequence.Reset();
-            return false;
-        }
-
-        // Sequence Bored
-        boredSequence.AddChild(new Leaf("IsPassTimeBored?", new Condition(CheckTimeBored)));
-        boredSequence.AddChild(new Leaf("PlayAnimationBored", new PlayAnimationNPC(anim, head, false, false, false, true)));
-        actions.AddChild(boredSequence);
-        // -------------------------------------------------------------
-
-        // Sequence Confuse
-        confuseSequence.AddChild(new Leaf("IsPassTimeConfuse?", new Condition(CheckTimeConfuse)));
-        confuseSequence.AddChild(new Leaf("IsPassWPMConfuse?", new Condition(CheckWPMConfuse)));
-        confuseSequence.AddChild(new Leaf("IsPassVolumeConfuse?", new Condition(CheckVolumeConfuse)));
-        confuseSequence.AddChild(new Leaf("IsPassEyeContactConfuse?", new Condition(CheckEyeContactConfuse)));
-        confuseSequence.AddChild(new Leaf("PlayAnimationConfuse", new PlayAnimationNPC(anim, head, false, false, false, false, true)));
-        actions.AddChild(confuseSequence);
-        // -------------------------------------------------------------
-
-        // Sequence Excited
-        excitedSequence.AddChild(new Leaf("IsPassTimeExcited?", new Condition(CheckTimeExcited)));
-        excitedSequence.AddChild(new Leaf("IsPassWPMExcited?", new Condition(CheckWPMExcited)));
-        excitedSequence.AddChild(new Leaf("IsPassHandExcited?", new Condition(CheckHandExcited)));
-        excitedSequence.AddChild(new Leaf("IsEyeContactDone?", new Condition(CheckEyeContactExcited)));
-        excitedSequence.AddChild(new Leaf("PlayAnimationExcited", new PlayAnimationNPC(anim, head, false, false, true)));
-        actions.AddChild(excitedSequence);
-        // -------------------------------------------------------------
-
-        // Sequence Interested
-        interestedSequence.AddChild(new Leaf("IsPassTimeInterested?", new Condition(CheckTimeInterested)));
-        interestedSequence.AddChild(new Leaf("IsPassWPMInterested?", new Condition(CheckWPMInterested)));
-        interestedSequence.AddChild(new Leaf("IsPassEyeContactInterested?", new Condition(CheckEyeContactInterested)));
-        interestedSequence.AddChild(new Leaf("PlayAnimationInterested", new PlayAnimationNPC(anim, head, false, true)));
-        actions.AddChild(interestedSequence);
-        // -----------------------------------------------------------
-
-        // Play idle animation
-        Leaf playNormal = new("PlayAnimationNormal", new PlayAnimationNPC(anim, head, true));
-        actions.AddChild(playNormal);
-
-        tree.AddChild(actions);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        tree.Process();
+        return root;
     }
 }

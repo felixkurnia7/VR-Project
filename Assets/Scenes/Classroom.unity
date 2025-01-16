@@ -6514,8 +6514,98 @@ PrefabInstance:
       objectReference: {fileID: 1232876273}
     - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
         type: 3}
+      propertyPath: npc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: wpm
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: isStareDone
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
       propertyPath: timeBoredThreshold
-      value: 600
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: wpmConfuseThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: wpmExcitedThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: handExcitedThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: timeConfuseThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: timeExcitedThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: stareConfuseThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: volumeConfuseThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: wpmInterestedThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: timeInterestedThreshold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc,
+        type: 3}
+      propertyPath: stareInterestedThreshold
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3052321143461722538, guid: db62022a69c269342951c56d1c627acc,
         type: 3}
@@ -6527,7 +6617,8 @@ PrefabInstance:
       propertyPath: bored
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3052321143461722534, guid: db62022a69c269342951c56d1c627acc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: db62022a69c269342951c56d1c627acc, type: 3}
 --- !u!4 &619025681 stripped
 Transform:
@@ -15633,6 +15724,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432243259}
   m_Mesh: {fileID: 1378968506556707602, guid: 517146af7a2f33d44a2435a12efff1f4, type: 3}
+--- !u!1 &1441333566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2384609019554915111, guid: db62022a69c269342951c56d1c627acc,
+    type: 3}
+  m_PrefabInstance: {fileID: 619025680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441333574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441333566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7f56d4b1b794f428a0f7adae1448c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 11400000, guid: a288804068c08394f97d394c91ae6a29, type: 2}
+  text: {fileID: 11400000, guid: f0f451d7495dddc4ab36b7108432f163, type: 2}
+  timer: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
+  volume: {fileID: 11400000, guid: 526d35bd406931143be5a52e89c7d2ce, type: 2}
+  wpm: {fileID: 11400000, guid: 4da69f4e19079044ea484ec00c86fb3f, type: 2}
+  isIdle: 0
 --- !u!1 &1443420783
 GameObject:
   m_ObjectHideFlags: 0
