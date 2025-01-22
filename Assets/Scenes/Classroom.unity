@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.67177045, g: 0.7664037, b: 0.8712957, a: 1}
+  m_IndirectSpecularColor: {r: 0.6718558, g: 0.7664367, b: 0.8714047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: df776977fcfe36d4ba41eb29815b58d4,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: feed29f62b4a4a346afc58f95c1c4af4,
     type: 2}
 --- !u!196 &4
@@ -1969,6 +1970,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #5</b>
+
+
+        Fitur yang dapat dicoba pada
+        sesi persiapan sekarang ialah speech recognition, words per minute, volume,
+        eye contact, dan hand movement'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3990876008389115636, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
       propertyPath: m_InteractionManager
@@ -3025,6 +3041,10 @@ Transform:
   - {fileID: 1277125887}
   - {fileID: 732710902}
   - {fileID: 245374142}
+  - {fileID: 1207760438}
+  - {fileID: 1567847728}
+  - {fileID: 1300803857}
+  - {fileID: 1094798684}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3646,6 +3666,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #9</b>
+
+
+        Untuk melihat sesi pelatihan
+        yang telah Anda simpan terdapat pada History. Untuk menghapus data yang tersedia
+        dengan dua cara, yaitu memilih data tertentu yang ingin dihapus, dan menghapus
+        keseluruhan data.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3990876008389115636, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
       propertyPath: m_InteractionManager
@@ -3735,6 +3771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351795597176153194, guid: c69177192f3337f43a6e775a5ce3981d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69177192f3337f43a6e775a5ce3981d, type: 3}
@@ -8312,6 +8353,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #1</b>
+
+
+        Pengaturan controller terletak
+        pada Control dalam settings.
+
+
+        Terdapat dua jenis Control yang berbeda
+        pada saat sesi persiapan (sekarang) dan sesi pelatihan.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3990876008389115636, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
       propertyPath: m_InteractionManager
@@ -11704,6 +11763,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1092102897}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1094798683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 303859695}
+    m_Modifications:
+    - target: {fileID: 6179891356167851091, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_B_Blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.532
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df50609db81c7174393667a508dfbd0b, type: 3}
+--- !u!4 &1094798684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6811891105908659945, guid: df50609db81c7174393667a508dfbd0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1094798683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1098646290
 GameObject:
   m_ObjectHideFlags: 0
@@ -11806,6 +11940,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #3</b>
+
+
+        Sebelum memulai sesi pelatihan,
+        Anda disarankan untuk mencoba fitur yang tersedia terlebih dahulu untuk memudahkan
+        dalam sesi pelatihan.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3990876008389115636, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
@@ -12978,6 +13127,81 @@ CanvasGroup:
     type: 3}
   m_PrefabInstance: {fileID: 1193221363}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1207760437
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 303859695}
+    m_Modifications:
+    - target: {fileID: 4802088018255816542, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_C_Yellow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.676
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.736
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.038
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df549f40edf47964495dc93b3cd28b8a, type: 3}
+--- !u!4 &1207760438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5327654114803088868, guid: df549f40edf47964495dc93b3cd28b8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1207760437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1216553320
 GameObject:
   m_ObjectHideFlags: 0
@@ -13175,7 +13399,7 @@ PrefabInstance:
     - target: {fileID: 3479545118231474661, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6609252
+      value: 0.6768
       objectReference: {fileID: 0}
     - target: {fileID: 3479545118231474661, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
@@ -13216,6 +13440,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #6</b>
+
+
+        Speech recognition akan mendeteksi
+        suara Anda dan menampilkan dalam bentuk teks. Bersamaan dengan itu juga,
+        akan mendeteksi words per minute dan volume suara Anda'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3990876008389115636, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
@@ -14571,6 +14810,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1723244774}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #10</b>
+
+
+        Anda dapat menulis sesuatu
+        dengan menggunakan marker dan menekan tombol ... pada controller, kemudian
+        arahkan marker ke papan tulis.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8138287216460143717, guid: 6b5c3b79939e2554bae99da255dd2ea6,
         type: 3}
       propertyPath: m_Name
@@ -14942,6 +15196,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.00034942653, y: 0.013870362, z: 0.0001454854}
   m_Center: {x: 0.0003312462, y: 0.00022933228, z: -0.007213601}
+--- !u!1001 &1300803856
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 303859695}
+    m_Modifications:
+    - target: {fileID: 7065119778386355222, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_B_Red (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.668999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7323
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5339998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95edd8924f5da7d41bc637c678acf661, type: 3}
+--- !u!4 &1300803857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7586183477293121196, guid: 95edd8924f5da7d41bc637c678acf661,
+    type: 3}
+  m_PrefabInstance: {fileID: 1300803856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1304241361
 GameObject:
   m_ObjectHideFlags: 0
@@ -15012,6 +15341,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1723244774}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #8</b>
+
+
+        Hand movement pada sesi ini
+        akan mendeteksi pergerakan tangan Anda. Setiap pergerakan tangan akan menambah
+        skor penilaian.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8138287216460143717, guid: 6b5c3b79939e2554bae99da255dd2ea6,
         type: 3}
       propertyPath: m_Name
@@ -18065,6 +18409,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541771568}
   m_Mesh: {fileID: 1569848960508905575, guid: 517146af7a2f33d44a2435a12efff1f4, type: 3}
+--- !u!1001 &1567847727
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 303859695}
+    m_Modifications:
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.6851993
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6876001
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.037533
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114586418043817855, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Book_A_Brown (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5469c8856e022fe4e8f0b3849324e1c7, type: 3}
+--- !u!4 &1567847728 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 305152811510420933, guid: 5469c8856e022fe4e8f0b3849324e1c7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567847727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1584908428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20245,6 +20664,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1723244774}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #4</b>
+
+
+        Terdapat fitur "Filler Words"
+        yang mendeteksi kata filler word yang terdapat dalam teks. Fitur ini tidak
+        tersedia dalam sesi persiapan, hanya tersedia saat sesi pelatihan.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8138287216460143717, guid: 6b5c3b79939e2554bae99da255dd2ea6,
         type: 3}
       propertyPath: m_Name
@@ -20384,6 +20818,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #7</b>
+
+
+        Fitur eye contact pada sesi
+        ini ialah Anda akan ditampilkan sebuah panel. Saat menatap panel, panel akan
+        perlahan menjadi transparan. Saat transparan sepenuhnya akan menambah skor.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3990876008389115636, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
@@ -34839,6 +35288,24 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1723244774}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #2</b>
+
+
+        Anda dapat berpindah lokasi
+        dengan memilih "Change Location".
+
+
+        Terdapat dua lokasi yang tersedia
+        yaitu ruangan pertemuan dan ruangan kelas.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740314828872758397, guid: 6b5c3b79939e2554bae99da255dd2ea6,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8138287216460143717, guid: 6b5c3b79939e2554bae99da255dd2ea6,
         type: 3}
       propertyPath: m_Name
