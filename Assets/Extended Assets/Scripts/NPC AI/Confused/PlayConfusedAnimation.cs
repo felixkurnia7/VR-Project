@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorTree;
 
-public class PlayBoredAnimation : Node
+public class PlayConfusedAnimation : Node
 {
     private readonly Animator anim;
 
-    public PlayBoredAnimation(Transform transform)
+    public PlayConfusedAnimation(Transform transform)
     {
         anim = transform.GetComponent<Animator>();
     }
 
     public override NodeState Evaluate()
     {
-        Debug.Log("Play bored anim");
+        Debug.Log("Play confused anim");
         anim.SetBool("idle", false);
-        anim.SetBool("listening", false);
-        anim.SetBool("bored", true);
         anim.SetBool("interested", false);
-        anim.SetBool("confused", false);
+        anim.SetBool("bored", false);
+        anim.SetBool("listening", false);
+        anim.SetBool("confused", true);
 
         state = NodeState.SUCCESS;
         return state;

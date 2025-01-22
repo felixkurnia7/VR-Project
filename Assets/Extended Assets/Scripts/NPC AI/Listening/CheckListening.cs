@@ -3,28 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using BehaviorTree;
 
-public class CheckIdle : Node
+public class CheckListening : Node
 {
-    //private bool _isIdle = false;
     private readonly NPC_AI _npc;
 
-    public CheckIdle(Transform transform)
+    public CheckListening(Transform transform)
     {
         _npc = transform.GetComponent<NPC_AI>();
     }
 
     public override NodeState Evaluate()
     {
-        if (_npc.notIdle == true)
+        if (_npc.notListening == true)
         {
-            Debug.Log("not idle is true");
-            // Apakah transisi animasi disini?
+            Debug.Log("not listening is true");
             state = NodeState.SUCCESS;
             return state;
         }
         else
         {
-            Debug.Log("not idle is false");
+            Debug.Log("not listening is false");
             state = NodeState.FAILURE;
             return state;
         }

@@ -5,7 +5,7 @@ using BehaviorTree;
 
 public class PlayInterestedAnim : Node
 {
-    private Animator anim;
+    private readonly Animator anim;
 
     public PlayInterestedAnim(Transform transform)
     {
@@ -14,9 +14,12 @@ public class PlayInterestedAnim : Node
 
     public override NodeState Evaluate()
     {
-        anim.SetBool("interested", true);
+        Debug.Log("Play interested anim");
         anim.SetBool("idle", false);
+        anim.SetBool("interested", true);
         anim.SetBool("bored", false);
+        anim.SetBool("listening", false);
+        anim.SetBool("confused", false);
 
         state = NodeState.SUCCESS;
         return state;

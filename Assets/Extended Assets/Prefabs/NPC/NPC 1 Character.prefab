@@ -982,10 +982,10 @@ GameObject:
   - component: {fileID: 8832941201071377866}
   - component: {fileID: 8832941201071377463}
   - component: {fileID: 8832941201071377864}
-  - component: {fileID: 8832941201071377462}
   - component: {fileID: 8832941201071377460}
   - component: {fileID: 8832941201071377461}
   - component: {fileID: 8832941201071377459}
+  - component: {fileID: 8208779914268360458}
   m_Layer: 6
   m_Name: NPC 1 Character
   m_TagString: Untagged
@@ -1138,37 +1138,6 @@ MonoBehaviour:
   - m_Rig: {fileID: 3170108148164429046}
     m_Active: 1
   m_Effectors: []
---- !u!114 &8832941201071377462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2828002460667743498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06d4f2312427e064e819ad9a6a8acce7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  head: {fileID: 0}
-  wpm: {fileID: 11400000, guid: 4da69f4e19079044ea484ec00c86fb3f, type: 2}
-  volume: {fileID: 11400000, guid: 526d35bd406931143be5a52e89c7d2ce, type: 2}
-  timer: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
-  leftHand: {fileID: 11400000, guid: aeca039298ed9254aa18a8a7c85517ff, type: 2}
-  rightHand: {fileID: 11400000, guid: 369dc8f7d8ae5d240a44dfd8f55100ac, type: 2}
-  npc: {fileID: 11400000, guid: f8e650723962a254cb41e5b30d086c1c, type: 2}
-  timeInterestedThreshold: 60
-  wpmInterestedThreshold: 50
-  stareInterestedThreshold: 2
-  timeExcitedThreshold: 120
-  wpmExcitedThreshold: 100
-  isStareDone: 1
-  handExcitedThreshold: 50
-  timeBoredThreshold: 10
-  timeConfuseThreshold: 300
-  wpmConfuseThreshold: 50
-  stareConfuseThreshold: 3
-  volumeConfuseThreshold: 40
 --- !u!65 &8832941201071377460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1215,6 +1184,40 @@ MonoBehaviour:
   rotationSpeed: 5
   trainingStart: 0
   npcPos: {fileID: 0}
+--- !u!114 &8208779914268360458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2828002460667743498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7f56d4b1b794f428a0f7adae1448c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 11400000, guid: f8e650723962a254cb41e5b30d086c1c, type: 2}
+  text: {fileID: 11400000, guid: f0f451d7495dddc4ab36b7108432f163, type: 2}
+  timer: {fileID: 11400000, guid: c7f226e948ef7eb4c979af188165a3b1, type: 2}
+  volume: {fileID: 11400000, guid: 526d35bd406931143be5a52e89c7d2ce, type: 2}
+  wpm: {fileID: 11400000, guid: 4da69f4e19079044ea484ec00c86fb3f, type: 2}
+  notIdle: 0
+  notListening: 0
+  isInterested: 0
+  isConfused: 0
+  isBored: 0
+  _header: --- IDLE THRESHOLD ---
+  timeIdle: 45
+  __header: --- LISTENING THRESHOLD ---
+  timeListening: 100
+  ___header: --- INTERESTED THRESHOLD ---
+  wpmInterested: 90
+  eyeContactInterested: 2
+  ____header: --- CONFUSED THRESHOLD ---
+  wpmConfused: 40
+  eyeContactConfused: 2
+  _____header: --- BORED THRESHOLD ---
+  timeBored: 540
 --- !u!1 &2882474041682240375
 GameObject:
   m_ObjectHideFlags: 0

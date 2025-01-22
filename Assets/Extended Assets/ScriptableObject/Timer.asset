@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06726ef089acd7349a971ae423bb0b5d, type: 3}
   m_Name: Timer
   m_EditorClassIdentifier: 
-  value: 121.17
+  value: 0
   numberOfValue: 0

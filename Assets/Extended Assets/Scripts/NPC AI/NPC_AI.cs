@@ -10,8 +10,27 @@ public class NPC_AI : Tree
     public FloatValue wpm;
 
     public bool notIdle = false;
-    public bool notInterested = false;
-    public bool notBored = false;
+    public bool notListening = false;
+    public bool isInterested = false;
+    public bool isConfused = false;
+    public bool isBored = false;
+
+    public string _header = "--- IDLE THRESHOLD ---";
+    public float timeIdle;
+
+    public string __header = "--- LISTENING THRESHOLD ---";
+    public float timeListening;
+
+    public string ___header = "--- INTERESTED THRESHOLD ---";
+    public float wpmInterested;
+    public float eyeContactInterested;
+
+    public string ____header = "--- CONFUSED THRESHOLD ---";
+    public float wpmConfused;
+    public float eyeContactConfused;
+
+    public string _____header = "--- BORED THRESHOLD ---";
+    public float timeBored;
 
     protected override Node SetupTree()
     {
@@ -25,62 +44,52 @@ public class NPC_AI : Tree
                 {
                     new PlayIdleAnim(transform),
 
-                    new CheckIdleTimer(timer, transform)
+                    new CheckIdleTimer(timer, transform, timeIdle)
+                })
+            }),
+
+            new Selector(new List<Node>
+            {
+                new CheckListening(transform),
+
+                new Sequence(new List<Node>
+                {
+                    new PlayListeningAnimation(transform),
+
+                    new CheckListeningTimer(timer, transform, timeIdle, timeListening)
+                })
+            }),
+
+            new Selector(new List<Node>
+            {
+                new Sequence(new List<Node>
+                {
+                    new CheckBoredTimer(timer, timeBored),
+
+                    new PlayBoredAnimation(transform)
+                }),
+
+                new Selector(new List<Node>
+                {
+                    new Sequence(new List<Node>
+                    {
+                        new CheckInterestedWPM(wpm, wpmInterested),
+
+                        new CheckInterestedEyeContact(npc, eyeContactInterested),
+
+                        new PlayInterestedAnim(transform)
+                    }),
+
+                    new Sequence(new List<Node>
+                    {
+                        new CheckConfusedWPM(wpm, wpmConfused),
+
+                        new CheckConfusedEyeContact(npc, eyeContactConfused),
+
+                        new PlayConfusedAnimation(transform)
+                    })
                 })
             })
-            //new Selector(new List<Node>
-            //{
-            //    new CheckIdle(transform),
-
-            //    new Sequence(new List<Node>
-            //    {
-            //        new CheckIdleTimer(timer),
-            //        new SetNPCToIdle(transform),
-            //        new PlayIdleAnim(transform)
-            //    })
-            //}),
-
-            //new Selector(new List<Node>
-            //{
-            //    new CheckInterested(transform),
-
-            //    new Sequence(new List<Node>
-            //    {
-            //        new CheckInterestedTimer(timer),
-            //        new SetNPCToInterested(transform),
-            //        new PlayInterestedAnim(transform)
-            //    })
-            //}),
-
-            //new Selector(new List<Node>
-            //{
-            //    new CheckBored(transform),
-
-            //    new Sequence(new List<Node>
-            //    {
-            //        new CheckBoredTimer(timer),
-            //        new SetNPCToBored(transform),
-            //        new PlayBoredAnimation(transform)
-            //    })
-            //}),
-
-            //new Sequence(new List<Node>
-            //{
-            //    new CheckTimerValue(timer),
-            //    new TaskNormal(npc, text, timer, volume, wpm, transform),
-
-            //}),
-            //new Sequence(new List<Node>
-            //{
-            //    new CheckEnemyInAttackRange(transform),
-            //    new TaskAttack(transform),
-            //}),
-            //new Sequence(new List<Node>
-            //{
-            //    new CheckEnemyInFOVRange(transform),
-            //    new TaskGoToTarget(transform),
-            //}),
-            //new TaskPatrol(transform, waypoints),
         });
 
         return root;

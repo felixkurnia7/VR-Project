@@ -5,21 +5,24 @@ using BehaviorTree;
 
 public class CheckIdleTimer : Node
 {
-    private FloatValue _timer;
-    private NPC_AI _npc;
+    private readonly FloatValue _timer;
+    private readonly NPC_AI _npc;
+    private readonly float timeThreshold;
 
-    public CheckIdleTimer(FloatValue timer, Transform transform)
+    public CheckIdleTimer(FloatValue timer, Transform transform, float timeIdle)
     {
         _timer = timer;
         _npc = transform.GetComponent<NPC_AI>();
+        timeThreshold = timeIdle;
     }
 
     public override NodeState Evaluate()
     {
-        if (_timer.value > 120f)
+        if (_timer.value > timeThreshold)
         {
             Debug.Log("timer value > 120f");
             _npc.notIdle = true;
+            _npc.notListening = false;
             state = NodeState.SUCCESS;
             return state;
         }
