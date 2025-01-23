@@ -102,8 +102,10 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\ScaleObject.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Listening\PlayListeningAnimation.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SpeechPaceDetector.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Objects\MarkerCollide.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ApplyPhysics.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Controls\XRButton.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Push Back Effects\HeadCollisionHandler.cs" />
     <Compile Include="Assets\VR Body\AnimateOnInput.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Environment\SkyRotation.cs" />
     <Compile Include="Assets\Resources\HuggingFaceAPI\Examples\Scripts\ConversationExample.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="Assets\Resources\HuggingFaceAPI\Examples\Scripts\SpeechRecognitionExample.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Slide\BRGlassDoor.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnVelocity.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Push Back Effects\HeadCollisionDetector.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\Timer.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Bored\CheckBoredTimer.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\SetParticleRate.cs" />
@@ -187,6 +190,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\Managers\SoundMixerManager.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\PlaySoundsFromList.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\LoadingManager.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Objects\BookCollide.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ToggleLight.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\WhiteboardMarker.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Idle\SetNPCToIdle.cs" />
@@ -212,10 +216,6 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Push Back Effects\HeadCollisionDetector.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Push Back Effects\HeadCollisionHandler.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Objects\BookCollide.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\Objects\MarkerCollide.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

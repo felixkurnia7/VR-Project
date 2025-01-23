@@ -1478,6 +1478,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8112385648864608115, guid: 8f576d7b6006f5b4c96f96ac5fee87fa,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -519061170942026592, guid: 9056f434d88fc684ab7fdaad4af0eedc,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f576d7b6006f5b4c96f96ac5fee87fa, type: 3}
 --- !u!1 &203879125
@@ -8487,6 +8493,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990876008113162720, guid: d3fd8b2633030f544aa5cc4d825e2adf,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Panduan Aplikasi VR #1</b>
+
+
+        Sebelum memulai sesi pelatihan,
+        Anda disarankan untuk mencoba fitur yang tersedia terlebih dahulu untuk memudahkan
+        dalam sesi pelatihan.'
       objectReference: {fileID: 0}
     - target: {fileID: 3990876008389115636, guid: d3fd8b2633030f544aa5cc4d825e2adf,
         type: 3}
@@ -19153,6 +19169,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 303859695}
     m_Modifications:
+    - target: {fileID: 2282197157201002420, guid: e46d40f008123a44399be02eab5e6fba,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -519061170942026592, guid: 9056f434d88fc684ab7fdaad4af0eedc,
+        type: 2}
     - target: {fileID: 2886161969558153065, guid: e46d40f008123a44399be02eab5e6fba,
         type: 3}
       propertyPath: m_Name
@@ -22662,6 +22684,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 303859695}
     m_Modifications:
+    - target: {fileID: -7854438570154955267, guid: caeb66d8011d2064295e1ec1ce65b209,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -519061170942026592, guid: 9056f434d88fc684ab7fdaad4af0eedc,
+        type: 2}
     - target: {fileID: 6436314120584793026, guid: caeb66d8011d2064295e1ec1ce65b209,
         type: 3}
       propertyPath: m_Name
