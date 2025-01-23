@@ -30,8 +30,14 @@ public class PlaySoundFX : MonoBehaviour
         randomVariance += defaultPitch;
 
         audioSource.pitch = randomVariance;
+        audioSource.volume = volume;
         audioSource.PlayOneShot(sound[rand], volume);
         audioSource.pitch = defaultPitch;
+    }
+
+    public void Stop()
+    {
+        audioSource.Stop();
     }
 
     private void OnValidate()

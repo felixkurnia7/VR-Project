@@ -72,7 +72,7 @@ public class SaveLoadSystem : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError($"Could not read file! Show somwthing on the UI here!");
+            Debug.LogError($"Could not read file! Show somwthing on the UI here! error: " + e.Message);
         }
     }
 

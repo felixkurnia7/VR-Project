@@ -212,6 +212,10 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Push Back Effects\HeadCollisionDetector.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Push Back Effects\HeadCollisionHandler.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Objects\BookCollide.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Objects\MarkerCollide.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
