@@ -29,9 +29,9 @@ public class SpeechRecognition : MonoBehaviour
     private void Start()
     {
         ResetText();
-        startButton.onClick.AddListener(StartRecording);
-        stopButton.onClick.AddListener(StopRecording);
-        stopButton.interactable = false;
+        //startButton.onClick.AddListener(StartRecording);
+        //stopButton.onClick.AddListener(StopRecording);
+        //stopButton.interactable = false;
     }
 
     private void Update()
