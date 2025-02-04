@@ -9,7 +9,10 @@ public class CheckHandMovement : MonoBehaviour
     private Transform leftHandController;
     [SerializeField]
     private Transform rightHandController;
-
+    [SerializeField]
+    private GameObject warningHandMovement;
+    [SerializeField]
+    private TextMeshProUGUI warningText;
     [SerializeField]
     private float movementThreshold;
     [SerializeField]
@@ -51,7 +54,7 @@ public class CheckHandMovement : MonoBehaviour
 
         float rightVelocity = (curRightHandPosition - prevRightHandPosition).magnitude / Time.deltaTime;
 
-        CheckHandMove(leftVelocity, rightVelocity);
+        CheckHandPosition(leftVelocity, rightVelocity);
 
         prevLeftHandPosition = curLeftHandPosition;
         prevRightHandPosition = curRightHandPosition;
@@ -77,6 +80,25 @@ public class CheckHandMovement : MonoBehaviour
             rightHand.score = 100f;
 
         totalScore = (leftHand.score + rightHand.score) / 2;
+    }
+
+    private void CheckHandPosition(float leftVelocity, float rightVelocity)
+    {
+        if (leftHandController.localPosition.y > -0.2f || rightHandController.localPosition.y > -0.2f)
+        {
+            warningText.text = "Posisi tangan Anda terlalu tinggi!";
+            warningHandMovement.SetActive(true);
+        }
+        else if (leftHandController.localPosition.y < -0.7f || rightHandController.localPosition.y < -0.7f)
+        {
+            warningText.text = "Posisi tangan Anda terlalu rendah!";
+            warningHandMovement.SetActive(true);
+        }
+        else
+        {
+            warningHandMovement.SetActive(false);
+            CheckHandMove(leftVelocity, rightVelocity);
+        }
     }
 
     private void CheckHandMove(float leftVelocity, float rightVelocity)

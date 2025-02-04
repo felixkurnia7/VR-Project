@@ -67,6 +67,8 @@ public class PracticeSoftSkills : MonoBehaviour
     private GameObject infoButtonHandMovement;
     [SerializeField]
     private GameObject informationHandMovement;
+    [SerializeField]
+    private GameObject warningHandMovement;
 
     private int index;
 
@@ -177,6 +179,7 @@ public class PracticeSoftSkills : MonoBehaviour
                 resetHandMovement.SetActive(false);
                 infoButtonHandMovement.SetActive(false);
                 informationHandMovement.SetActive(false);
+                warningHandMovement.SetActive(false);
 
                 gameObject.SetActive(false);
 
@@ -213,6 +216,7 @@ public class PracticeSoftSkills : MonoBehaviour
                 resetHandMovement.SetActive(false);
                 infoButtonHandMovement.SetActive(false);
                 informationHandMovement.SetActive(false);
+                warningHandMovement.SetActive(false);
 
                 gameObject.SetActive(false);
 
