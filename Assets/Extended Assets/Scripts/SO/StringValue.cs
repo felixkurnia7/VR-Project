@@ -13,6 +13,7 @@ public class StringValue : ScriptableObject
     {
         text = "";
         fillerWords.Clear();
+        totalFillerWords = 0;
     }
 
     public void CountFillerWords()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Training : MonoBehaviour
+public class Training1 : MonoBehaviour
 {
     [Header("Scriptable Object")]
     [SerializeField]
@@ -56,17 +56,17 @@ public class Training : MonoBehaviour
     [SerializeField]
     private Timer timer;
 
-    [Header("GameObject")]
-    [SerializeField]
-    private GameObject chair1;
-    [SerializeField]
-    private GameObject chair2;
-    [SerializeField]
-    private GameObject chair3;
-    [SerializeField]
-    private GameObject chair4;
-    [SerializeField]
-    private GameObject chair5;
+    //[Header("GameObject")]
+    //[SerializeField]
+    //private GameObject chair1;
+    //[SerializeField]
+    //private GameObject chair2;
+    //[SerializeField]
+    //private GameObject chair3;
+    //[SerializeField]
+    //private GameObject chair4;
+    //[SerializeField]
+    //private GameObject chair5;
 
     [Header("NPC")]
     [SerializeField]
@@ -150,14 +150,14 @@ public class Training : MonoBehaviour
         Char_NPC4.GetComponent<NPCLookAtPlayer>().StartTraining();
         Char_NPC5.GetComponent<NPCLookAtPlayer>().StartTraining();
 
-        chair1.GetComponent<ObjLookAtPlayer>().StartTraining();
-        chair2.GetComponent<ObjLookAtPlayer>().StartTraining();
-        chair3.GetComponent<ObjLookAtPlayer>().StartTraining();
-        chair4.GetComponent<ObjLookAtPlayer>().StartTraining();
-        chair5.GetComponent<ObjLookAtPlayer>().StartTraining();
+        //chair1.GetComponent<ObjLookAtPlayer>().StartTraining();
+        //chair2.GetComponent<ObjLookAtPlayer>().StartTraining();
+        //chair3.GetComponent<ObjLookAtPlayer>().StartTraining();
+        //chair4.GetComponent<ObjLookAtPlayer>().StartTraining();
+        //chair5.GetComponent<ObjLookAtPlayer>().StartTraining();
     }
 
-    public void StopTraining()
+    private void StopTraining()
     {
         timerCanvas.SetActive(false);
 
@@ -200,11 +200,11 @@ public class Training : MonoBehaviour
         preparationUI.SetActive(true);
         //whiteboardUI.SetActive(true);
 
-        chair1.GetComponent<ObjLookAtPlayer>().StopTraining();
-        chair2.GetComponent<ObjLookAtPlayer>().StopTraining();
-        chair3.GetComponent<ObjLookAtPlayer>().StopTraining();
-        chair4.GetComponent<ObjLookAtPlayer>().StopTraining();
-        chair5.GetComponent<ObjLookAtPlayer>().StopTraining();
+        //chair1.GetComponent<ObjLookAtPlayer>().StopTraining();
+        //chair2.GetComponent<ObjLookAtPlayer>().StopTraining();
+        //chair3.GetComponent<ObjLookAtPlayer>().StopTraining();
+        //chair4.GetComponent<ObjLookAtPlayer>().StopTraining();
+        //chair5.GetComponent<ObjLookAtPlayer>().StopTraining();
 
         Char_NPC1.SetActive(false);
         Char_NPC2.SetActive(false);

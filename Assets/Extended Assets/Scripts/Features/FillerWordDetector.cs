@@ -6,13 +6,25 @@ using System;
 public class FillerWordDetector : MonoBehaviour
 {
     [SerializeField]
+    private SpeechRecognition speechRecognition;
+    [SerializeField]
     private List<string> fillerWords = new();
     [SerializeField]
     private StringValue recognizedSpeech;
 
-    public void CheckFillerWord()
+    private void Awake()
     {
-        string[] words = recognizedSpeech.text.ToLower().Split(new char[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+        speechRecognition.CheckFillerWord += CheckFillerWord;
+    }
+
+    private void OnDestroy()
+    {
+        speechRecognition.CheckFillerWord -= CheckFillerWord;
+    }
+
+    public void CheckFillerWord(string text)
+    {
+        string[] words = text.ToLower().Split(new char[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
         List<string> detectedFillerWords = new();
 
         foreach (string word in words)
@@ -36,6 +48,7 @@ public class FillerWordDetector : MonoBehaviour
         if (detectedFillerWords.Count > 0)
         {
             Debug.Log("Detected filler words: " + string.Join(", ", detectedFillerWords));
+            recognizedSpeech.CountFillerWords();
         }
         else
         {

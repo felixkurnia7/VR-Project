@@ -131,6 +131,7 @@
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Windows\opencloseWindowApt.cs" />
     <Compile Include="Assets\Resources\HuggingFaceAPI\Examples\Scripts\SpeechRecognitionExample.cs" />
     <Compile Include="Assets\Brick Project Studio\Apartment Kit\Common\Scripts &amp; Animation\Slide\BRGlassDoor.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\UI\MenuActivationUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnVelocity.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Push Back Effects\HeadCollisionDetector.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\Timer.cs" />
@@ -216,7 +217,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
-    <Compile Include="Assets\Extended Assets\Scripts\UI\MenuActivationUI.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Training1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

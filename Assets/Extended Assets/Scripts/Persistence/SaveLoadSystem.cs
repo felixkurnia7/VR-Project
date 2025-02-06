@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using Newtonsoft.Json;
 using System.IO;
+using UnityEngine.UI;
 
 public class SaveLoadSystem : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class SaveLoadSystem : MonoBehaviour
     [SerializeField] GameObject saveSlot;
     [SerializeField] TMP_Dropdown dropdown;
     [SerializeField] Transform content;
-    string selectedOption;
+    private string selectedOption;
 
     private IDataService DataService = new JSONDataService();
     private long saveTime;
@@ -32,14 +33,14 @@ public class SaveLoadSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
-
+        dropdown.onValueChanged.AddListener(SetDropdown);
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SerializeJson()
@@ -76,9 +77,9 @@ public class SaveLoadSystem : MonoBehaviour
         }
     }
 
-    private void OnDropdownValueChanged(int index)
+    private void SetDropdown(int value)
     {
-        selectedOption = dropdown.options[index].text;
+        selectedOption = dropdown.options[value].text;
     }
 
     public void DeleteAllHistoryWhenOpen()
@@ -173,35 +174,45 @@ public class SaveLoadSystem : MonoBehaviour
 
             dropdown.options.Add(new TMP_Dropdown.OptionData(DisplayKey(data.name)));
 
-            if (texts[1] != null)
+            if (texts[0] != null)
             {
-                texts[1].text = data.wpm.value.ToString();
+                texts[0].text = DisplayKey(data.name);
+                //texts[0].text = data.uniqueID;
+                //texts[1].text = data.wpm.value.ToString();
             }
 
-            if (texts[3] != null)
+            if (texts[2] != null)
             {
-                texts[3].text = eyeContactDone.ToString();
+                texts[2].text = data.wpm.value.ToString();
+                //texts[3].text = eyeContactDone.ToString();
             }
 
-            if (texts[5] != null)
+            if (texts[4] != null)
             {
-                texts[5].text = data.volume.value.ToString();
+                texts[4].text = eyeContactDone.ToString();
+                //texts[5].text = data.volume.value.ToString();
             }
 
-            if (texts[7] != null)
+            if (texts[6] != null)
             {
-                texts[7].text = data.timer.value.ToString();
+                texts[6].text = data.volume.value.ToString();
+                //texts[7].text = data.timer.value.ToString();
             }
 
-            if (texts[9] != null)
+            if (texts[8] != null)
             {
-                texts[9].text = handMovement.ToString();
+                texts[8].text = data.timer.value.ToString();
+                //texts[9].text = handMovement.ToString();
             }
 
             if (texts[10] != null)
             {
-                //texts[10].text = DisplayKey(data.name);
-                texts[10].text = data.uniqueID;
+                texts[10].text = handMovement.ToString();
+            }
+
+            if (texts[12] != null)
+            {
+                texts[12].text = data.textSpeechRecognition.totalFillerWords.ToString();
             }
 
             index++;

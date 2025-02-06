@@ -21,17 +21,17 @@ public class Timer : MonoBehaviour
     TimeSpan timespan;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        speechRecognition.StartTimer += StartTimer;
-        speechRecognition.StopTimer += StopTimer;
-    }
+    //void Start()
+    //{
+    //    speechRecognition.StartTimer += StartTimer;
+    //    speechRecognition.StopTimer += StopTimer;
+    //}
 
-    private void OnDestroy()
-    {
-        speechRecognition.StartTimer -= StartTimer;
-        speechRecognition.StopTimer -= StopTimer;
-    }
+    //private void OnDestroy()
+    //{
+    //    speechRecognition.StartTimer -= StartTimer;
+    //    speechRecognition.StopTimer -= StopTimer;
+    //}
 
     // Update is called once per frame
     void Update()
