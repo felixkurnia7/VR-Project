@@ -11,7 +11,7 @@ public class ObjLookAtPlayer : MonoBehaviour
 
     private void Awake()
     {
-        player = Camera.main.transform;
+        //player = Camera.main.transform;
         trainingStart = false;
     }
 

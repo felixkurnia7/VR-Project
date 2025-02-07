@@ -220,7 +220,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 212706321}
+  m_Camera: {fileID: 1912700344}
   m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e937981c63fe90f44b42b5b0a11647fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 344008523f42fb54d97a91995c3d9bd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1770,7 +1770,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1912700344}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3272,7 +3272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3446,7 +3446,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1912700344}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4365,7 +4365,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1912700344}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4586,7 +4586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4723,14 +4723,14 @@ MonoBehaviour:
         m_CallState: 2
   messages:
   - 'Selamat datang di aplikasi pelatihan soft skills komunikasi. Ini merupakan halaman
-    main menu aplikasi. Anda dapat berjalanseperti biasa untuk bergerak. Selain itu,
-    Anda juga dapat melakukan teleport untuk berpindah tempat. Tekan tombol primary
-    untuk menyalakan laser dan arahkan ke tanah pada posisi yang Anda inginkan, lalu
-    tekan tombol grab untuk berpindah.
+    main menu aplikasi. Anda dapat berjalan seperti biasa untuk bergerak. Selain
+    itu, Anda juga dapat melakukan teleport untuk berpindah tempat. Tekan tombol
+    A atau X pada controller untuk menyalakan laser dan arahkan ke tanah pada posisi
+    yang Anda inginkan, lalu tekan tombol grab untuk berpindah.
 
 
-    Untuk keseluruhan control dapat Anda
-    lihat pada bagian settings.'
+    Untuk keseluruhan
+    control dapat Anda lihat pada bagian settings.'
   - "Anda dapat memilih 2 lokasi yang berbeda yaitu ruang meeting dan ruang kelas.
     Setiap lokasi memiliki objek dan lingkungan yang berbeda, namun fitur pelatihan
     komunikasi yang sama. \n\nTerdapat 2 sesi dalam proses pelatihan komunikasi.
@@ -5089,7 +5089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6041,7 +6041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba9e36f9aea92574b83b58a1dda4124f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 78e33da2c67d28341b2282cebab88ad6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7834,6 +7834,7 @@ GameObject:
   - component: {fileID: 1011498760}
   - component: {fileID: 1011498759}
   - component: {fileID: 1011498758}
+  - component: {fileID: 1011498762}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -7920,6 +7921,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011498762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011498757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ff8c141078fcc047989a6de06ad07e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 1270935241}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 32
+  m_SelectMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TeleportationProvider: {fileID: 0}
+  m_MatchOrientation: 2
+  m_TeleportTrigger: 0
+  m_Teleporting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1027189678
 GameObject:
   m_ObjectHideFlags: 0
@@ -9103,7 +9188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9636,7 +9721,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 212706321}
+  m_Camera: {fileID: 1912700344}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -10463,8 +10548,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288190616
-  m_fontColor: {r: 0.59607846, g: 0.59607846, b: 0.59607846, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11993,7 +12078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Location 1
+  m_text: Meeting Room
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12289,8 +12374,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 663966678bbe0004ebe13a47d21d54f1, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -14380,6 +14465,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7707151084995844857}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1912700344 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7707151084156938053, guid: 33b5bee8f3a7d2140b8e950431f43023,
+    type: 3}
+  m_PrefabInstance: {fileID: 7707151084995844857}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1917986341
 GameObject:
   m_ObjectHideFlags: 0
@@ -14509,9 +14600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Location 2
-
-'
+  m_text: Classroom
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19911,6 +20000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6585284199568137302, guid: 7c4d5356a62a9934995cb6305a81dc82,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6585284199568137303, guid: 7c4d5356a62a9934995cb6305a81dc82,
         type: 3}
       propertyPath: m_RootOrder
@@ -20385,6 +20479,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1270935241}
+    - target: {fileID: 7707151083862091332, guid: 33b5bee8f3a7d2140b8e950431f43023,
+        type: 3}
+      propertyPath: m_PlayAudioClipOnSelectEntered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7707151083878075592, guid: 33b5bee8f3a7d2140b8e950431f43023,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -20476,6 +20575,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1270935241}
+    - target: {fileID: 7707151085028368486, guid: 33b5bee8f3a7d2140b8e950431f43023,
+        type: 3}
+      propertyPath: m_PlayAudioClipOnSelectEntered
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7707151085281488603, guid: 33b5bee8f3a7d2140b8e950431f43023,
         type: 3}
       propertyPath: m_InteractionManager
