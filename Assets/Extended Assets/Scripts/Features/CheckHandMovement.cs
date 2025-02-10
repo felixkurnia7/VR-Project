@@ -84,12 +84,12 @@ public class CheckHandMovement : MonoBehaviour
 
     private void CheckHandPosition(float leftVelocity, float rightVelocity)
     {
-        if (leftHandController.localPosition.y > -0.2f || rightHandController.localPosition.y > -0.2f)
+        if (leftHandController.localPosition.y > 1.8f || rightHandController.localPosition.y > 1.8f)
         {
             warningText.text = "Posisi tangan Anda terlalu tinggi!";
             warningHandMovement.SetActive(true);
         }
-        else if (leftHandController.localPosition.y < -0.7f || rightHandController.localPosition.y < -0.7f)
+        else if (leftHandController.localPosition.y < 0.8f || rightHandController.localPosition.y < 0.8f)
         {
             warningText.text = "Posisi tangan Anda terlalu rendah!";
             warningHandMovement.SetActive(true);

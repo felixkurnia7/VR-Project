@@ -28,7 +28,7 @@ public class Panel : MonoBehaviour
     {
         if (npc.stare >= eyeContactThreshold && !npc.eyeContactDone)
         {
-            eyeContactUI.EyeContactFinish();
+            eyeContactUI.PanelFinish();
             npc.DoneEyeContact();
         }
 

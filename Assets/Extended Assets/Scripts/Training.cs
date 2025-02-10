@@ -37,6 +37,8 @@ public class Training : MonoBehaviour
     private GameObject resultUI;
     [SerializeField]
     private GameObject preparationUI;
+    [SerializeField]
+    private EyeContactUI eyeContactUI;
     //[SerializeField]
     //private GameObject whiteboardUI;
 
@@ -129,6 +131,7 @@ public class Training : MonoBehaviour
         preparationUI.SetActive(false);
         statistic.SetActive(false);
         resultUI.SetActive(false);
+        eyeContactUI.ResetEyeContact();
         //whiteboardUI.SetActive(false);
 
         speechRecognition.SetActive(true);

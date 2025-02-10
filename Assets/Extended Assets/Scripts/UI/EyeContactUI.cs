@@ -10,7 +10,30 @@ public class EyeContactUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI eyeContactTextResult;
 
-    public int total;
+    [SerializeField]
+    private NPC npc1;
+    [SerializeField]
+    private NPC npc2;
+    [SerializeField]
+    private NPC npc3;
+    [SerializeField]
+    private NPC npc4;
+    [SerializeField]
+    private NPC npc5;
+
+    [SerializeField]
+    private NPC panel1;
+    [SerializeField]
+    private NPC panel2;
+    [SerializeField]
+    private NPC panel3;
+    [SerializeField]
+    private NPC panel4;
+    [SerializeField]
+    private NPC panel5;
+
+    private int totalPractice;
+    private int totalResult;
 
     // Update is called once per frame
     void Update()
@@ -21,19 +44,25 @@ public class EyeContactUI : MonoBehaviour
     private void CheckEyeContactUI()
     {
         if (eyeContactTextPractice != null)
-            eyeContactTextPractice.text = total.ToString();
+            eyeContactTextPractice.text = totalPractice.ToString();
 
         if (eyeContactTextResult != null)
-            eyeContactTextResult.text = total.ToString();
+            eyeContactTextResult.text = totalResult.ToString();
     }
 
     public void EyeContactFinish()
     {
-        total++;
+        totalResult++;
+    }
+
+    public void PanelFinish()
+    {
+        totalPractice++;
     }
 
     public void ResetEyeContact()
     {
-        total = 0;
+        totalResult = 0;
+        totalPractice = 0;
     }
 }
