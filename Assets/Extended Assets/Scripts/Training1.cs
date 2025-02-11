@@ -147,6 +147,12 @@ public class Training1 : MonoBehaviour
         Char_NPC4.SetActive(true);
         Char_NPC5.SetActive(true);
 
+        Char_NPC1.GetComponent<NPC_AI>().SetNPCToIdle();
+        Char_NPC2.GetComponent<NPC_AI>().SetNPCToIdle();
+        Char_NPC3.GetComponent<NPC_AI>().SetNPCToIdle();
+        Char_NPC4.GetComponent<NPC_AI>().SetNPCToIdle();
+        Char_NPC5.GetComponent<NPC_AI>().SetNPCToIdle();
+
         Char_NPC1.GetComponent<NPCLookAtPlayer>().StartTraining();
         Char_NPC2.GetComponent<NPCLookAtPlayer>().StartTraining();
         Char_NPC3.GetComponent<NPCLookAtPlayer>().StartTraining();

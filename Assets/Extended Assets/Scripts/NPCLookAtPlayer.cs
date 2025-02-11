@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NPCLookAtPlayer : MonoBehaviour
 {
+    private NPC_AI npcAI;
+    private Animator animator;
     public Transform player; // Reference to the player's transform
     public float rotationSpeed = 5.0f; // Speed of rotation
     public bool trainingStart;
@@ -13,6 +15,8 @@ public class NPCLookAtPlayer : MonoBehaviour
     {
         //player = Camera.main.transform;
         trainingStart = false;
+        npcAI = GetComponent<NPC_AI>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -20,6 +24,12 @@ public class NPCLookAtPlayer : MonoBehaviour
         transform.position = npcPos.position;
         if (player != null && trainingStart == true)
         {
+            if (animator.GetBool("confused") == true)
+            {
+                Debug.Log("confused is true");
+                return;
+            }
+
             // Get the direction to the player
             Vector3 direction = player.position - transform.position;
             direction.y = 0; // Ignore the Y component to keep the character upright

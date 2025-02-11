@@ -15,10 +15,10 @@ MonoBehaviour:
   _apiKey: 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
   _useBackupEndpoints: 1
   _waitForModel: 1
-  _maxTimeout: 30
+  _maxTimeout: 20
   _taskEndpoints:
   - taskName: AutomaticSpeechRecognition
-    endpoint: https://api-inference.huggingface.co/models/Bagus/wav2vec2-large-xlsr-bahasa-indonesia
+    endpoint: https://api-inference.huggingface.co/models/indonesian-nlp/wav2vec2-large-xlsr-indonesian
   - taskName: Conversation
     endpoint: https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill
   - taskName: QuestionAnswering

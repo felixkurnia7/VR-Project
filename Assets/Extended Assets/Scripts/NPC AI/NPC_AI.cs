@@ -32,6 +32,15 @@ public class NPC_AI : Tree
     public string _____header = "--- BORED THRESHOLD ---";
     public float timeBored;
 
+    public void SetNPCToIdle()
+    {
+        notIdle = false;
+        notListening = false;
+        isInterested = false;
+        isConfused = false;
+        isBored = false;
+    }
+
     protected override Node SetupTree()
     {
         Node root = new Sequence(new List<Node>
