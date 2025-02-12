@@ -27915,6 +27915,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5062960488988861931, guid: 580ce54377b960a458222e0699519eeb,
+        type: 3}
+      propertyPath: m_text
+      value: Tekan dan tahan tombol B untuk menggunakan Mic
+      objectReference: {fileID: 0}
     - target: {fileID: 5062960489007605237, guid: 580ce54377b960a458222e0699519eeb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
