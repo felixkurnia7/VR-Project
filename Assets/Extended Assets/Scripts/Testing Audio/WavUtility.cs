@@ -58,7 +58,7 @@ public static class WavUtility
         SendRecording(bytesData);
     }
 
-    private static void SendRecording(Byte[] bytes)
+    private static void SendRecording(byte[] bytes)
     {
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response =>
         {
