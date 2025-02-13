@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.435626, g: 0.55295646, b: 0.5428761, a: 1}
+  m_IndirectSpecularColor: {r: 0.24569184, g: 0.36074394, b: 0.4522351, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21623,6 +21623,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whiteboard
       objectReference: {fileID: 0}
+    - target: {fileID: 156725218681879770, guid: 0bf259873dba7934fb7543c587fb32eb,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 156725218681879770, guid: 0bf259873dba7934fb7543c587fb32eb,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bf259873dba7934fb7543c587fb32eb, type: 3}
 --- !u!1 &237443834911415676
@@ -22729,7 +22739,7 @@ PrefabInstance:
     - target: {fileID: 5351795597176153194, guid: c69177192f3337f43a6e775a5ce3981d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69177192f3337f43a6e775a5ce3981d, type: 3}
