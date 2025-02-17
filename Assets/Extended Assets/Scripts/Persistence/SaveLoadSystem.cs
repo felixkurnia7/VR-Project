@@ -29,6 +29,7 @@ public class SaveLoadSystem : MonoBehaviour
     private long loadTime;
     private int index;
     private bool isSaveSlotAvailable;
+    TimeSpan timespan;
 
     // Start is called before the first frame update
     void Start()
@@ -183,7 +184,7 @@ public class SaveLoadSystem : MonoBehaviour
 
             if (texts[2] != null)
             {
-                texts[2].text = data.wpm.value.ToString();
+                texts[2].text = data.wpm.value.ToString("F2");
                 //texts[3].text = eyeContactDone.ToString();
             }
 
@@ -195,13 +196,16 @@ public class SaveLoadSystem : MonoBehaviour
 
             if (texts[6] != null)
             {
-                texts[6].text = data.volume.value.ToString();
+                texts[6].text = data.volume.value.ToString("F2");
                 //texts[7].text = data.timer.value.ToString();
             }
 
             if (texts[8] != null)
             {
-                texts[8].text = data.timer.value.ToString();
+                timespan = TimeSpan.FromSeconds(data.timer.value);
+
+                //timerText.text = String.Format("{1:D2}:{2:D2}", timespan.Hours, timespan.Minutes, timespan.Seconds);
+                texts[8].text = String.Format("{1:D2}:{2:D2}", timespan.Hours, timespan.Minutes, timespan.Seconds);
                 //texts[9].text = handMovement.ToString();
             }
 
