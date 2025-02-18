@@ -49,11 +49,13 @@ public class CheckWordPerMinute : MonoBehaviour
         if (time.value < 60)
         {
             WPM.value += words;
+            WPM.listValues.Add(words);
         }
         else
         {
             // Calculate WPM
             float durationInMinutes = time.value / 60f; // Convert seconds to minutes
+            WPM.listValues.Add(words);
             WPM.value += words / durationInMinutes;
         }
     }

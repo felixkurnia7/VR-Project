@@ -4285,7 +4285,7 @@ PrefabInstance:
     - target: {fileID: 5351795597176153194, guid: c69177192f3337f43a6e775a5ce3981d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69177192f3337f43a6e775a5ce3981d, type: 3}
@@ -6341,6 +6341,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2043386244}
     m_Modifications:
+    - target: {fileID: 38515958312152435, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38515958312152435, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38515958312152435, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968554026945881477, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968554026945881477, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968554026945881477, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6360393437759563882, guid: 2423997d3853a4349b73e2e9ab7f01e5,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -6510,6 +6540,73 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360393438212375432, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_text
+      value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel
+        arcu a lacus egestas tempor. Sed tincidunt nulla et odio fermentum, sit amet
+        vulputate lorem efficitur. Nam vestibulum convallis turpis, a congue purus
+        scelerisque at. Nunc tempor dolor nec ex ultricies, id rhoncus odio scelerisque.
+        Aliquam erat volutpat. Integer sed mauris at lectus scelerisque elementum
+        a in odio. Quisque id nisi ac urna viverra fringilla in non odio. Nam faucibus
+        tortor et ex suscipit, sed facilisis ipsum elementum. Integer id orci vitae
+        urna tincidunt sodales. Sed nec nisi sollicitudin, egestas orci et, euismod
+        metus.
+
+
+        Proin venenatis mollis ligula, sit amet posuere enim laoreet
+        at. Phasellus et erat vel sem maximus tincidunt. Vivamus convallis risus
+        orci, ac auctor purus tincidunt vitae. Donec sed erat sollicitudin, placerat
+        mi a, tincidunt nulla. Aenean lacinia ligula eget diam dictum lacinia. Nulla
+        pharetra magna vitae volutpat auctor. Morbi fringilla massa sit amet ex convallis,
+        non dapibus nisl condimentum. Curabitur nec ex non elit condimentum sodales
+        sed sed felis. Sed egestas dolor ac augue laoreet, ac gravida erat eleifend.
+
+
+        Curabitur
+        euismod tortor nec nisi mollis, et gravida justo varius. Sed ut risus quis
+        libero iaculis ultricies ac nec neque. Donec id nunc nisi. Nullam volutpat
+        sapien eu lacus feugiat, et facilisis est lacinia. Phasellus gravida tortor
+        sit amet dui ullamcorper, vitae volutpat mi pharetra. Fusce et suscipit eros,
+        id luctus ligula. Nulla facilisi. Nam id augue magna. Vestibulum ut augue
+        tristique, fermentum urna eget, maximus ante. Ut et varius ligula, nec feugiat
+        lorem.
+
+
+        Etiam bibendum velit ac erat fermentum, sed fermentum ante
+        tristique. Nam sodales dui eu magna scelerisque volutpat. Suspendisse potenti.
+        Nulla facilisi. Sed ut velit in odio varius venenatis. Mauris lobortis ligula
+        a viverra lacinia. Vivamus sollicitudin purus at erat laoreet mollis. In
+        euismod, purus id tincidunt auctor, ipsum nunc sodales turpis, non luctus
+        arcu elit id urna. Aenean ac sapien erat. Suspendisse volutpat neque libero,
+        nec convallis enim volutpat et. Integer tincidunt risus vel orci varius,
+        ut laoreet ante scelerisque.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360393438212375432, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360393438212375432, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360393438212375432, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360393438212375432, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360393438212375433, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6360393438451240388, guid: 2423997d3853a4349b73e2e9ab7f01e5,
         type: 3}
@@ -6951,6 +7048,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6360393439195648871, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_text
+      value: Text Speech Recognition
+      objectReference: {fileID: 0}
     - target: {fileID: 6360393439301820176, guid: 2423997d3853a4349b73e2e9ab7f01e5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6990,6 +7092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
       value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8345821081893351077, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2423997d3853a4349b73e2e9ab7f01e5, type: 3}
@@ -27267,6 +27374,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Welcome Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779964743054262056, guid: 176b17f92967e484d8ff55a1e238ac4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 176b17f92967e484d8ff55a1e238ac4f, type: 3}

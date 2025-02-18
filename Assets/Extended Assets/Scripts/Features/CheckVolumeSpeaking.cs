@@ -42,6 +42,7 @@ public class CheckVolumeSpeaking : MonoBehaviour
         float currentVolume = CalculateVolume(samples);
         numberOfVolume++;
 
+        volume.listValues.Add(currentVolume);
         volume.value = (volume.value + currentVolume) / numberOfVolume;
 
         // Accumulate volume data

@@ -30188,6 +30188,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 313851351}
     m_Modifications:
+    - target: {fileID: 38515958312152435, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38515958312152435, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38515958312152435, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968554026945881477, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968554026945881477, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968554026945881477, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6360393437759563882, guid: 2423997d3853a4349b73e2e9ab7f01e5,
         type: 3}
       propertyPath: m_TargetGraphic
@@ -30398,6 +30428,11 @@ PrefabInstance:
       propertyPath: speechRecognition
       value: 
       objectReference: {fileID: 54100441}
+    - target: {fileID: 6360393438688353848, guid: 2423997d3853a4349b73e2e9ab7f01e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6360393438708707866, guid: 2423997d3853a4349b73e2e9ab7f01e5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
