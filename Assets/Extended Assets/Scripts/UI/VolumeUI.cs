@@ -21,10 +21,10 @@ public class VolumeUI : MonoBehaviour
     private void ShowVolumeUI()
     {
         if (volumePractice != null)
-            volumePractice.text = volume.value.ToString("F2");
+            volumePractice.text = volume.mean.ToString("F2");
 
         if (volumeResult != null)
-            volumeResult.text = volume.value.ToString("F2");
+            volumeResult.text = volume.mean.ToString("F2");
     }
 
     public void ResetVolume()

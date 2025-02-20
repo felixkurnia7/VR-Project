@@ -5036,7 +5036,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1001071736}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.5559194
+  m_Size: 0.5183969
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5313,39 +5313,38 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Assets yang digunakan:
+  m_text: 'Model Speech Recognition : Hugging Face indonesian-nlp/wav2vec2-large-xlsr-indonesian
 
 
-    Model Karakter : Mixamo
+    Model
+    Karakter : Mixamo
 
-    Animasi Karakter
-    : Mixamo
-
-    
-
-    main menu music : The Cynic Project / cynicmusic.com / pixelsphere.org
-    (Synthwave & Lifewave)
-
-    Meeting room & classroom music : ventilation by
-    freesound_community from Pixabay
-
-    Chiptone by SFBGames
-
-    Sfx object by
-    freesound_community from Pixabay
+    Animasi Karakter : Mixamo
 
 
-    Skybox : Skybox Series Free by Avionx
-    (Unity Asset Store)
+    Main Menu Music : The
+    Cynic Project / cynicmusic.com / pixelsphere.org (Synthwave & Lifewave)
+
+    Meeting
+    room & classroom music : ventilation by freesound_community from Pixabay
+
+    Chiptone
+    by SFBGames
+
+    Sfx object by freesound_community from Pixabay
 
 
-    HDRP Furniture Pack by Tridify (Unity Asset Store)
+    Skybox
+    : Skybox Series Free by Avionx (Unity Asset Store)
 
-    Apartment
-    Kit by Brick Project Studio (Unity Asset Store)
 
-    Polygon Dining Room by Alebrijes
-    Studio (Unity Asset Store)
+    HDRP Furniture Pack
+    by Tridify (Unity Asset Store)
+
+    Apartment Kit by Brick Project Studio (Unity
+    Asset Store)
+
+    Polygon Dining Room by Alebrijes Studio (Unity Asset Store)
 
     CGTrader.com
 
@@ -5383,8 +5382,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 32
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8134,7 +8133,7 @@ RectTransform:
   m_Father: {fileID: 1576496670}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.44408053}
+  m_AnchorMin: {x: 0, y: 0.4816031}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -15038,7 +15037,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 610.79}
+  m_SizeDelta: {x: 0, y: 655}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1973102142
 GameObject:

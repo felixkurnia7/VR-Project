@@ -35,6 +35,7 @@ public class CheckWordPerMinute : MonoBehaviour
     private void ResetWPM()
     {
         WPM.ResetValue();
+        time.ResetValue();
     }
 
     void CountWPM(string responseText)

@@ -16,6 +16,7 @@ public class CheckVolumeSpeaking : MonoBehaviour
     public int sampleRate = 44100; // Sample rate for the microphone
     public int bufferSize = 256; // Buffer size for audio samples
 
+    private float totalVolume;
     void Start()
     {
         //speechRecognition.StartCheckVolume += StartVolumeRecording;
@@ -42,8 +43,13 @@ public class CheckVolumeSpeaking : MonoBehaviour
         float currentVolume = CalculateVolume(samples);
         numberOfVolume++;
 
+        totalVolume += currentVolume;
+
         volume.listValues.Add(currentVolume);
-        volume.value = (volume.value + currentVolume) / numberOfVolume;
+        volume.value = currentVolume;
+
+        volume.mean = totalVolume / numberOfVolume;
+        //volume.value = (volume.value + currentVolume) / numberOfVolume;
 
         // Accumulate volume data
         //totalVolume += currentVolume;
@@ -58,6 +64,6 @@ public class CheckVolumeSpeaking : MonoBehaviour
             sum += samples[i] * samples[i]; // Square of the sample
         }
         float rms = Mathf.Sqrt(sum / samples.Length); // Root Mean Square
-        return rms * 1000.0f; // Scale for better visualization
+        return rms * 2000.0f; // Scale for better visualization
     }
 }

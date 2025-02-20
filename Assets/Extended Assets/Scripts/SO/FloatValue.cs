@@ -8,11 +8,13 @@ public class FloatValue : ScriptableObject
     public float value;
     public int numberOfValue;
     public List<float> listValues = new();
+    public float mean;
 
     public void ResetValue()
     {
         value = 0f;
         numberOfValue = 0;
+        mean = 0;
         listValues.Clear();
     }
 }
