@@ -17,6 +17,6 @@ public class Hand : ScriptableObject
 
     public void HandMoving()
     {
-        value += Time.deltaTime;
+        value += Time.deltaTime * 0.35f;
     }
 }
