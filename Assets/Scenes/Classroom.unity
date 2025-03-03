@@ -11618,6 +11618,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2043386244}
     m_Modifications:
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1273758923}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1362949375}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlaySoundFX, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4716327877636980656, guid: d1d728b612f920646a8ce625c9b7c626,
         type: 3}
       propertyPath: m_Pivot.x

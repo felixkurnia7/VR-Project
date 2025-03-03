@@ -26662,6 +26662,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 313851351}
     m_Modifications:
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 301454947}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 984255769}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833489701203095358, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 4716327876174983408, guid: d1d728b612f920646a8ce625c9b7c626,
         type: 3}
       propertyPath: speechRecognition
@@ -26776,6 +26796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Timer Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4716327877636980659, guid: d1d728b612f920646a8ce625c9b7c626,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4716327877636980660, guid: d1d728b612f920646a8ce625c9b7c626,
         type: 3}
