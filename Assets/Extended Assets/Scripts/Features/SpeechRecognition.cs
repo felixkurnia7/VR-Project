@@ -105,7 +105,7 @@ public class SpeechRecognition : MonoBehaviour
 
     public void StartRecording()
     {
-        clip = Microphone.Start(null, true, 10, 44100);
+        clip = Microphone.Start(null, false, 20, 44100);
         //StartTimer?.Invoke();
     }
 
