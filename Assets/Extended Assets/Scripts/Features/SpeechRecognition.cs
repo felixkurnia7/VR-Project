@@ -27,9 +27,16 @@ public class SpeechRecognition : MonoBehaviour
     private byte[] bytes;
     private float[] samples;
 
+    public string selectedMicrophone;
+
     private void Start()
     {
         ResetText();
+        // Automatically set to the first available microphone
+        if (Microphone.devices.Length > 0)
+        {
+            selectedMicrophone = Microphone.devices[0];
+        }
     }
 
     private void Update()
