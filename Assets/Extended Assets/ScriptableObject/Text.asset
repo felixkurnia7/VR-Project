@@ -12,6 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005a54e128804a94c97ab2085c84d4a1, type: 3}
   m_Name: Text
   m_EditorClassIdentifier: 
-  text: 
-  fillerWords: []
-  totalFillerWords: 0
+  text: ' olmokai selamat pagi perkenalkan nama saya indazahra dan di sini saya akan
+    menjelaskan tentang perkembangan aaiatau artivisial intelijen dan dampaknya kepada
+    kehidupan sehari hari nah kecerdasan buatan atau eai adalah bidang dalam ilmu
+    komputer yang berfokos pada pengembangan tengdapa uandalam prokmasi dalam beberapa
+    dekade terakhir eaitu telah mengalami perkembangan pesat berkat kemajuan dalam
+    komputasi algoritma dan akses terhadap data besar ataupun dikdata imesin lening
+    dalam pempelajaradan pempelajaran mendalam atepun di peleningtu memungkinkan
+    eai untuk belajar dari dataing ny sedia dan meningkatkan kinerjanya tanpa perlu
+    di program secara eksplesiat nah kehadiran eai dalam kehidupan sehari hari semaa
+    ya terhindap salah satu contohnya itu e bisa kita lihat dari siri ataupon aleksa
+    taupun googal asistan yang memanfatakai untuk mempermuda intraksi pengguna dengan
+    perangkat di jital selain itu dalam sektor transportasi teknologi sefdraivingkhars
+    atau pun mobil oton nommulai diuji coba di berbagai belahan dunia dan diharapkan
+    dapat meningkatkan evesiansi dan di jalan raya meskipun manfaat eai sangat besar
+    perkembangan teknolagi ini juga memunculkantantangan dan isu apis yang perpud
+    pertibang salah satu kekhawatiran utamanya itu adalah lepotensi hilangnya pekerjaan
+    manusia karena otomatisasi yang lebih cepat nah penggunaan eai dalam pengembal
+    pengambilan keputusan seperti di bidang hukum atau keuangan juga mengundang pertanyaan
+    tentang transparasi dan dia salgori mariang dapat mempengaruhi keadilan oke iskian
+    lmpersentasi dari saya saya harap kalian bisa mengerti terima kasih'
+  fillerWords:
+  - nah
+  - nah
+  - e
+  - nah
+  totalFillerWords: 4
