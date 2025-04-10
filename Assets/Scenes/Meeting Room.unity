@@ -25326,6 +25326,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Practice Eye Contact
       objectReference: {fileID: 0}
+    - target: {fileID: 3262203024955311016, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3262203024955311023, guid: 3027d34ac94875546a9c8984c11a6a25,
         type: 3}
       propertyPath: m_RootOrder
@@ -25396,6 +25401,26 @@ PrefabInstance:
       propertyPath: eyeContactThreshold
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3262203025246776591, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025246776591, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025246776591, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025246776591, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3262203025325185706, guid: 3027d34ac94875546a9c8984c11a6a25,
         type: 3}
       propertyPath: eyeContact
@@ -25410,6 +25435,26 @@ PrefabInstance:
         type: 3}
       propertyPath: eyeContactThreshold
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025325185707, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025325185707, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025325185707, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025325185707, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3262203025986929998, guid: 3027d34ac94875546a9c8984c11a6a25,
         type: 3}
@@ -25426,6 +25471,26 @@ PrefabInstance:
       propertyPath: eyeContactThreshold
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3262203025986929999, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025986929999, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025986929999, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203025986929999, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3262203026494177717, guid: 3027d34ac94875546a9c8984c11a6a25,
         type: 3}
       propertyPath: eyeContact
@@ -25441,6 +25506,26 @@ PrefabInstance:
       propertyPath: eyeContactThreshold
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3262203026494177718, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203026494177718, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203026494177718, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.74999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203026494177718, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3262203026926687811, guid: 3027d34ac94875546a9c8984c11a6a25,
         type: 3}
       propertyPath: eyeContact
@@ -25455,6 +25540,26 @@ PrefabInstance:
         type: 3}
       propertyPath: eyeContactThreshold
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203026926687869, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203026926687869, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203026926687869, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262203026926687869, guid: 3027d34ac94875546a9c8984c11a6a25,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3027d34ac94875546a9c8984c11a6a25, type: 3}
