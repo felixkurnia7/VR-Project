@@ -18,7 +18,7 @@ MonoBehaviour:
   _maxTimeout: 30
   _taskEndpoints:
   - taskName: AutomaticSpeechRecognition
-    endpoint: https://api-inference.huggingface.co/models/indonesian-nlp/wav2vec2-large-xlsr-indonesian
+    endpoint: https://api-inference.huggingface.co/models/Bagus/wav2vec2-large-xlsr-bahasa-indonesia
   - taskName: Conversation
     endpoint: https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill
   - taskName: QuestionAnswering
