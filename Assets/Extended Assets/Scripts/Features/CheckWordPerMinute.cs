@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using TMPro;
+using System.Linq;
 
 public class CheckWordPerMinute : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class CheckWordPerMinute : MonoBehaviour
     [SerializeField]
     private FloatValue WPM;
     public float words;
+    public float total;
 
     private void Awake()
     {
@@ -49,15 +51,22 @@ public class CheckWordPerMinute : MonoBehaviour
 
         if (time.value < 60)
         {
-            WPM.value += words;
             WPM.listValues.Add(words);
+            WPM.total = WPM.listValues.Sum();
+            WPM.value = WPM.total;
         }
         else
         {
-            // Calculate WPM
+            //// Calculate WPM OLD !!!!!!!!!!!!!!
+            //float durationInMinutes = time.value / 60f; // Convert seconds to minutes
+            //WPM.listValues.Add(words);
+            //WPM.value += words / durationInMinutes;
+
+            // Calculate WPM NEW !!!!!!!!!!!!!!!!
             float durationInMinutes = time.value / 60f; // Convert seconds to minutes
             WPM.listValues.Add(words);
-            WPM.value += words / durationInMinutes;
+            WPM.total = WPM.listValues.Sum();
+            WPM.value = WPM.total / durationInMinutes;
         }
     }
 

@@ -9,6 +9,7 @@ public class FloatValue : ScriptableObject
     public int numberOfValue;
     public List<float> listValues = new();
     public float mean;
+    public float total;
 
     public void ResetValue()
     {
@@ -16,5 +17,6 @@ public class FloatValue : ScriptableObject
         numberOfValue = 0;
         mean = 0;
         listValues.Clear();
+        total = 0;
     }
 }
