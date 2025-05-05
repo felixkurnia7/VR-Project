@@ -44,20 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d826b2b2c17dee0428f7032bf7782674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speechRecognition: {fileID: 0}
   fillerWords:
-  - um
-  - uh
-  - ah
   - jadi
-  - nah
-  - ee
-  - em
-  - kan
-  - gini
   - begini
   - terus
-  - kalau
-  - kalo
-  - apa tu namanya
+  - kayak
   - tu kan
+  - tuh kan
+  - loh
+  - dong
+  - deh
+  - kok
+  - sih
+  - gitu
   recognizedSpeech: {fileID: 11400000, guid: f0f451d7495dddc4ab36b7108432f163, type: 2}
