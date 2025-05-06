@@ -159,7 +159,7 @@ public class SpeechRecognition : MonoBehaviour
         }, error =>
         {
             Debug.Log(error);
-            startButton.interactable = true;
+            //startButton.interactable = true;
         });
     }
 
