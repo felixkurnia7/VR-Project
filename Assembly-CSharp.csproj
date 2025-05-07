@@ -71,6 +71,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\Clock.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnCollision.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnJoystickMove.cs" />
+    <Compile Include="Assets\HuggingFaceAPI\Examples\Scripts\SpeechRecognitionExample.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Panel.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Idle\CheckIdle.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\BehaviorTree\Selector.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Assets\_Course Library\Scripts\Testing\TeleportAreaWithFade.cs" />
     <Compile Include="Assets\VR Body\IKFootSolver.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\SpeechRecognitionUI.cs" />
+    <Compile Include="Assets\HuggingFaceAPI\Examples\Scripts\TextToImageExample.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\ScaleObject.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Listening\PlayListeningAnimation.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SpeechPaceDetector.cs" />
@@ -151,6 +153,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\BallBounce.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Persistence\SaveLoadSystem.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\WordPerMinuteUI.cs" />
+    <Compile Include="Assets\HuggingFaceAPI\Examples\Scripts\ConversationExample.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\EyeContact.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Listening\CheckListening.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\TeleportPlayer.cs" />
@@ -181,6 +184,7 @@
     <Compile Include="Assets\Extended Assets\Scripts\WhiteboardEraser.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\UI\EyeContactUI.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\CreateTrail.cs" />
+    <Compile Include="Assets\Extended Assets\Scripts\Features\DataObservation.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Conditions\OnTilt.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\NPC AI\Confused\CheckConfusedEyeContact.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\SO\Hand.cs" />
@@ -919,6 +923,9 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="HuggingFaceAPI.Editor">
+      <HintPath>Library\ScriptAssemblies\HuggingFaceAPI.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
@@ -1002,6 +1009,9 @@
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="HuggingFaceAPI">
+      <HintPath>Library\ScriptAssemblies\HuggingFaceAPI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>

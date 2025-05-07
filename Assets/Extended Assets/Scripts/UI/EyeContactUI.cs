@@ -33,7 +33,7 @@ public class EyeContactUI : MonoBehaviour
     private NPC panel5;
 
     private int totalPractice;
-    private int totalResult;
+    public int totalResult;
 
     // Update is called once per frame
     void Update()

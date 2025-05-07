@@ -190,4 +190,11 @@ public class SpeechRecognition : MonoBehaviour
         return memoryStream.ToArray();
     }
 
+    public void CallData(string text)
+    {
+        textSO.text += " " + text;
+        CheckWMP?.Invoke(text);
+        CheckFillerWord?.Invoke(text);
+    }
+
 }

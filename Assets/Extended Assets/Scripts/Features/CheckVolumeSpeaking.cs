@@ -62,4 +62,15 @@ public class CheckVolumeSpeaking : MonoBehaviour
         float rms = Mathf.Sqrt(sum / samples.Length); // Root Mean Square
         return rms * 2000.0f; // Scale for better visualization
     }
+
+    public void InsertVolume(float value)
+    {
+        float currentVolume = value;
+        volume.numberOfValue++;
+
+        volume.value += currentVolume;
+        volume.listValues.Add(currentVolume);
+
+        volume.mean = volume.value / volume.numberOfValue;
+    }
 }

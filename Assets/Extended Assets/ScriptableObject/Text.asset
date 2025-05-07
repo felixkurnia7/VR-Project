@@ -12,28 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005a54e128804a94c97ab2085c84d4a1, type: 3}
   m_Name: Text
   m_EditorClassIdentifier: 
-  text: ' baik selambat siang temanteman sekaliannya di sini kita akan membahasterkait
-    dengan nerning dan tiga bagian bagian sebabuan akah adamembuat anfildasi film
-    di naxli pos sekedar melihat mobil tanpa pengumudih aku semua karena adanya mesin
-    lerning ataupun pempelajaran mesin komputer bisa belajar dari data tanpa di program
-    secara menual kita masuk ke bagian bagian dari mesananing itu ada tiga yang pertama
-    ya itu ada pembelajaran terbimbing atau sepervaisle pembelajaran ini bekerja
-    dengan cara menggunakan ata data yang diberikan sudah diberileba jardari contoh
-    mesin yang diberikan tiga data yang sudah diberi leb memagajah lebel kedua pular
-    dan lebal ketiga jerapa dari mesinarening ataupon model yang dihasilkan nanti
-    dia bakal bisa menebak atapun memperdiksi dari data yang kita beri tak itu gajah
-    jerapah atau ular yang kedua ayah itu ada pempelajaran tanpa bimbingan mau pembelajaran
-    ini bekerja dengan cara data yang diberikan akan delatih oleh model tanpa data
-    tersebut diberi lebal shi model bisa memberikan pola atapun mengetahui pola dari
-    datag yang kita aya data perenggan di seyang asa digunakan untuk mencari target
-    di klan yang sesua yang ketigaya itu adalah pembelajaran penguatan atau pun renphorsemon
-    lerning keto pembelajaran ini tentang mesin yang belajar untuk mengambil tindakan
-    agar memaksi malkan imbalan bagai cantanya itu ada serat draiting baik mungkin
-    sekiran penjelasan hari ini tentang mesin larning dan tiga bagiannya semaga temanteman
-    bisa memahaminya dan bisa mengaplikasi'
-  fillerWords:
-  - itu
-  - itu
-  - itu
-  - itu
-  totalFillerWords: 6
+  text: 
+  fillerWords: []
+  totalFillerWords: 0
