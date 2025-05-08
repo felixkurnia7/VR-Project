@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 0
   numberOfValue: 0
+  listValues: []
+  mean: 0
+  total: 0
