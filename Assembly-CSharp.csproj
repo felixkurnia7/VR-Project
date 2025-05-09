@@ -223,6 +223,9 @@
     <Compile Include="Assets\_Course Library\Scripts\Actions\LaunchProjectile.cs" />
     <Compile Include="Assets\Extended Assets\Scripts\Features\CheckHandMovement.cs" />
     <Compile Include="Assets\_Course Library\Scripts\Actions\DestroyObject.cs" />
+    <Compile Include="Assets\Scenes\TestWhisper.cs" />
+    <Compile Include="Assets\Samples\OpenAI Unity\0.2.2\Whisper\Whisper.cs" />
+    <Compile Include="Assets\Samples\OpenAI Unity\0.2.2\Whisper\SaveWav.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -501,7 +504,7 @@
       <HintPath>Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Unsafe">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.Unsafe.dll</HintPath>
@@ -1060,6 +1063,12 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenAI.Runtime">
+      <HintPath>Library\ScriptAssemblies\OpenAI.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenAI.Editor">
+      <HintPath>Library\ScriptAssemblies\OpenAI.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
